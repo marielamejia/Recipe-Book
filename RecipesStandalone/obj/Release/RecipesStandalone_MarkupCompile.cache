@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\itony\source\repos\Recipe-Book\RecipesStandalone\obj\Debug\
+C:\Users\itony\source\repos\Recipe-Book\RecipesStandalone\obj\Release\
 RecipesStandalone
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\itony\source\repos\Recipe-Book\RecipesStandalone\App.xaml
 5-1872765847
 
@@ -16,5 +16,5 @@ C:\Users\itony\source\repos\Recipe-Book\RecipesStandalone\App.xaml
 13-1505183044
 AddNutriologo.xaml;BuscarNutriologo.xaml;ElliminarNutriologo.xaml;MainWindow.xaml;Nutriologo.xaml;
 
-False
+True
 

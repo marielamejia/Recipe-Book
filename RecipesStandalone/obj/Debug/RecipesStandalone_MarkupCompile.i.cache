@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Retama\Desktop\RecipesStandalone\obj\Debug\
+C:\Users\itony\source\repos\Recipe-Book\RecipesStandalone\obj\Debug\
 RecipesStandalone
 none
 false
 DEBUG;TRACE
-C:\Users\Retama\Desktop\RecipesStandalone\App.xaml
-11151548125
+C:\Users\itony\source\repos\Recipe-Book\RecipesStandalone\App.xaml
+5-1872765847
 
-61434861427
+10844372989
 13-1505183044
-MainWindow.xaml;
+AddNutriologo.xaml;BuscarNutriologo.xaml;ElliminarNutriologo.xaml;MainWindow.xaml;Nutriologo.xaml;
 
 True
 
