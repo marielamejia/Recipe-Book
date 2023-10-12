@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\MPENALO\Documents\repos3\Recipe-Book\RecipesStandalone\obj\Debug\
+C:\Users\MPENALO\Documents\repos3\Recipe-Book\RecipesStandalone\obj\Release\
 RecipesStandalone
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\MPENALO\Documents\repos3\Recipe-Book\RecipesStandalone\App.xaml
-2691698050
+1219584333
 
-71176651138
+51579654133
 13-1310406943
-login.xaml;MainWindow.xaml;
+MainWindow.xaml;
 
 True
 
