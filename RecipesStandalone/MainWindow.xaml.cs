@@ -24,5 +24,37 @@ namespace RecipesStandalone
         {
             InitializeComponent();
         }
+
+        private void txtUsuario_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (txtUsuario.Text == "USUARIO")
+            {
+                txtUsuario.Text = "";
+            }
+        }
+
+        private void txtContra_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (txtContra.Text == "CONTRASEÑA")
+            {
+                txtContra.Text = "";
+            }
+        }
+
+        private void txtUsuario_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.Text = "USUARIO";
+            }
+        }
+
+        private void txtContra_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (txtContra.Text == "")
+            {
+                txtContra.Text = "CONTRASEÑA";
+            }
+        }
     }
 }
