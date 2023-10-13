@@ -15,25 +15,30 @@ using System.Windows.Shapes;
 namespace RecipesStandalone
 {
     /// <summary>
-    /// Lógica de interacción para ElegirIngNutri.xaml
+    /// Lógica de interacción para BuscarNutriologo.xaml
     /// </summary>
-    public partial class ElegirIngNutri : Window
+    public partial class BuscarNutriologo : Window
     {
-        public ElegirIngNutri()
+        public BuscarNutriologo()
         {
             InitializeComponent();
         }
 
-        private void BotonSalir_Click(object sender, RoutedEventArgs e)
+        private void RegresarBus_Click(object sender, RoutedEventArgs e)
         {
-            App.Current.Shutdown();
+            Nutriologo w = new Nutriologo();
+            w.Show();
+            this.Hide();
         }
 
-        private void BotonCerrarSesion_Click(object sender, RoutedEventArgs e)
+        private void BuscarBus_Click(object sender, RoutedEventArgs e)
         {
-            Window main = new MainWindow();
-            main.Show();
-            this.Close();
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Retama\OneDrive - INSTITUTO TECNOLOGICO AUTONOMO DE MEXICO\3 Sem\Des de Apps Informaticas\Proyecto Recetas\Recipe-Book\RecipesStandalone\obj\Debug\
+C:\Users\itony\OneDrive\Escritorio\Github\Recipe-Book\RecipesStandalone\obj\Debug\
 RecipesStandalone
 none
 false
 DEBUG;TRACE
-C:\Users\Retama\OneDrive - INSTITUTO TECNOLOGICO AUTONOMO DE MEXICO\3 Sem\Des de Apps Informaticas\Proyecto Recetas\Recipe-Book\RecipesStandalone\App.xaml
-2-1010744620
+C:\Users\itony\OneDrive\Escritorio\Github\Recipe-Book\RecipesStandalone\App.xaml
+5-1872765847
 
-7-1044215363
+10844372989
 13-1505183044
-ElegirIngNutri.xaml;MainWindow.xaml;
+AddNutriologo.xaml;BuscarNutriologo.xaml;ElliminarNutriologo.xaml;MainWindow.xaml;Nutriologo.xaml;
 
-False
+True
 
