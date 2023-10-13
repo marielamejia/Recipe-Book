@@ -56,5 +56,12 @@ namespace RecipesStandalone
                 txtContra.Text = "CONTRASEÑA";
             }
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            ElegirIngNutri w = new ElegirIngNutri();
+            w.Show();
+            this.Hide();
+        }
     }
 }
