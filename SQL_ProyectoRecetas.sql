@@ -31,8 +31,8 @@ create table RegistroReceta(
 
 create table Ingrediente(
 	idIngrediente smallint not null primary key,
-	precioProm decimal(5,2),
-	nombre varchar(50))
+	nombre varchar(50),
+	precioPromPorKg decimal(5,2))
 
 create table RecetaIngrediente(
 	idReceta smallint references Receta,
@@ -69,6 +69,26 @@ create table IngredienteListaSuper(
 --Alta del administrador
 insert into Administrador values('Admin', 'Admin')
 
+--Registro de algunos ingredientes
+insert into Ingrediente values (82,'Aceite', 23.00)
+insert into Ingrediente values (83,'Arroz', 20.00)
+insert into Ingrediente values (84,'Azúcar' , 22.00)
+insert into Ingrediente values (85,'Harina', 16.00)
+insert into Ingrediente values (86,'Frijol bayo', 15.00)
+insert into Ingrediente values (87,'Frijol negro', 30.00)
+insert into Ingrediente values (88,'Huevo', 35.00)
+insert into Ingrediente values (89,'Carne molida de res', 110.00)
+insert into Ingrediente values (90,'Bistec de res', 150.00)
+insert into Ingrediente values (91,'Aguacate', 60.00)
+insert into Ingrediente values (92,'Limón', 20.00)
+insert into Ingrediente values (93,'Guayaba', 30.00)
+insert into Ingrediente values (94,'Manzana Golden', 30.00)
+insert into Ingrediente values (95,'Manzana roja', 40.00)
+insert into Ingrediente values (96,'Naranja', 10.00)
+insert into Ingrediente values (97,'Papaya', 20.00)
+insert into Ingrediente values (98,'Piña', 15.00)
+insert into Ingrediente values (99,'Plátano macho', 15.00)
+
 
 --Queries para el proyecto standalone
 
@@ -76,7 +96,7 @@ insert into Administrador values('Admin', 'Admin')
 select idUsuario from Usuario where idUsuario = '{}' and contrasena = '{}'
 
 --Ingrediente
-insert into Ingrediente values ('{}', {}, '{}') --para alta
+insert into Ingrediente values ({}, {}, '{}') --para alta
 delete from Ingrediente where idIngrediente = {} --para baja
 select * from Ingrediente where nombre like '{}' --búsqueda
 select * from Ingrediente --para ver todos
