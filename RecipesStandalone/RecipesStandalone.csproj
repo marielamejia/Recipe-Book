@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ElegirIngNutri.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -83,6 +87,9 @@
     </Compile>
     <Compile Include="ElliminarNutriologo.xaml.cs">
       <DependentUpon>ElliminarNutriologo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElegirIngNutri.xaml.cs">
+      <DependentUpon>ElegirIngNutri.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -124,6 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ImagenNut.jpg" />
+  </ItemGroup>clude="IMG_5477.PNG" />
+  <ItemGroup>
+    <Resource Include="IMG_5477.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
