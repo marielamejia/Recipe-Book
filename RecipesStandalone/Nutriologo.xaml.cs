@@ -46,9 +46,11 @@ namespace RecipesStandalone
 
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void BotonVolver_Click (object sender, RoutedEventArgs e)
         {
-
+            ElegirIngNutri w = new ElegirIngNutri();
+            w.Show();
+            this.Hide();
         }
     }
 }

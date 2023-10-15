@@ -15,7 +15,7 @@
         <Button x:Name ="btAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="50,89,0,0" VerticalAlignment="Top" Width="115" Height="41" Click="Button_Click"/>
         <Button x:Name ="Eliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="50,175,0,0" VerticalAlignment="Top" Width="115" Height="36" Click="Eliminar_Click"/>
         <Button x:Name ="Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="50,250,0,0" VerticalAlignment="Top" Width="115" Height="40" Click="Buscar_Click"/>
-        <Button x:Name ="Salir" Content="Salir" HorizontalAlignment="Left" Margin="630,325,0,0" VerticalAlignment="Top" Width="120" Height="50" Click="Button_Click_2" Background="#FFE80F0F" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name ="BotonVolver" Content="Volver" HorizontalAlignment="Left" Margin="630,325,0,0" VerticalAlignment="Top" Width="120" Height="50" Click="BotonVolver_Click" Background="#FFE80F0F" FontSize="20" FontWeight="Bold"/>
         <Image HorizontalAlignment="Left" Height="140" Margin="550,95,0,0" VerticalAlignment="Top" Width="150" Source="ImagenNut.jpg"/>
 
     </Grid>

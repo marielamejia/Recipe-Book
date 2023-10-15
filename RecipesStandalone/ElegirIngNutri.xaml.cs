@@ -35,5 +35,13 @@ namespace RecipesStandalone
             main.Show();
             this.Close();
         }
+
+        private void BotonNutriologos_Click(object sender, RoutedEventArgs e)
+        {
+            Nutriologo wNut = new Nutriologo();
+            wNut.Show();
+            this.Hide();
+        }
+
     }
 }
