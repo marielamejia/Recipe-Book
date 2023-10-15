@@ -131,8 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ImagenNut.jpg" />
-  </ItemGroup>clude="IMG_5477.PNG" />
-  <ItemGroup>
     <Resource Include="IMG_5477.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
