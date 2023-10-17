@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
-        Title="AgregarIngrediente" Height="501" Width="800">
+        Title="AgregarIngrediente" Height="501" Width="800" Background="#FF829949">
     <Grid>
         <Button x:Name ="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="448,413,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16"/>
         <Button x:Name="btHome" Content="Menú" HorizontalAlignment="Left" Margin="287,413,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16"/>
