@@ -61,7 +61,7 @@ namespace RecipesStandalone
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             int res;
-            res = Conexion.comprobarContra(txtUsuario.Text, txtContra.Text); //usamos el texto de las text boxes
+            res = comprobarContra(txtUsuario.Text, txtContra.Text); //usamos el texto de las text boxes
             if (res == 1) //el user y password es correcto
             {
                 ElegirIngNutri w = new ElegirIngNutri();
