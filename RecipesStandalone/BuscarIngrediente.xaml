@@ -1,0 +1,18 @@
+﻿<Window x:Class="RecipesStandalone.BuscarIngrediente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecipesStandalone"
+        mc:Ignorable="d"
+        Title="SearchIngredient" Height="542.8" Width="625.6" Background="#FF829949">
+    <Grid>
+        <Label Content="Buscar ingrediente" HorizontalAlignment="Left" Margin="214,34,0,0" VerticalAlignment="Top" FontFamily="Perpetua Bold" FontSize="24"/>
+        <Button x:Name="btSearch" Content="Buscar" HorizontalAlignment="Left" Margin="419,127,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btSearch_Click"/>
+        <TextBox x:Name="txName" HorizontalAlignment="Left" Height="29" Margin="214,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" Background="#9FA4A9"/>
+        <Label Content="Nombre del ingrediente" HorizontalAlignment="Left" Margin="44,122,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
+        <Label Content="Información del ingrediente" HorizontalAlignment="Left" Margin="44,204,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
+        <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="419,399,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btBack_Click"/>
+        <DataGrid x:Name="DataGridBuscarIngrediente" HorizontalAlignment="Left" Height="218" Margin="44,255,0,0" VerticalAlignment="Top" Width="338"/>
+    </Grid>
+</Window>

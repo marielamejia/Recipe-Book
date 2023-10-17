@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
         Title="ElegirIngNutri" Height="222" Width="396.5" Background="#FF9BB06B">
+
     <Grid Background="White">
         <Button x:Name="BotonIngredientes" Content="Ingredientes" HorizontalAlignment="Left" Margin="88,111,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FF9BB06B" BorderBrush="#FF9BB06B"/>
         <Button x:Name="BotonNutriologos" Content="Nutriólogos" HorizontalAlignment="Left" Margin="220,111,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FFE1A144" Click="BotonNutriologos_Click" BorderBrush="#FFE1A144"/>
@@ -13,6 +14,5 @@
         <Button x:Name="BotonCerrarSesion" Content="Cerrar sesión" HorizontalAlignment="Left" Margin="230,169,0,0" VerticalAlignment="Top" Width="80" Click="BotonCerrarSesion_Click" BorderBrush="Black" Background="Black" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="98" Margin="212,26,0,0" VerticalAlignment="Top" Width="106" Source="/IMG_5478.PNG"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="83,26,0,0" VerticalAlignment="Top" Width="100" Source="/IMG_5479.PNG"/>
-
     </Grid>
 </Window>

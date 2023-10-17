@@ -1,0 +1,14 @@
+﻿<Window x:Class="RecipesStandalone.ListarIngredientes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecipesStandalone"
+        mc:Ignorable="d"
+        Title="ListIngredients" Height="542.8" Width="625.6" Background="#FF829949">
+    <Grid>
+        <Label Content="Lista de ingredientes" HorizontalAlignment="Left" Margin="203,33,0,0" VerticalAlignment="Top" FontFamily="Perpetua Bold" FontSize="24"/>
+        <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="439,384,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btBack_Click"/>
+        <DataGrid x:Name="dgListarIngredientes" HorizontalAlignment="Left" Height="337" Margin="104,118,0,0" VerticalAlignment="Top" Width="262"/>
+    </Grid>
+</Window>

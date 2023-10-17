@@ -1,0 +1,18 @@
+﻿<Window x:Class="RecipesStandalone.ModificarIngrediente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecipesStandalone"
+        mc:Ignorable="d"
+        Title="ModifyIngredient" Height="542.8" Width="625.6" Background="#FF829949">
+    <Grid>
+        <Label Content="Modificar ingrediente" HorizontalAlignment="Left" Margin="190,42,0,0" VerticalAlignment="Top" FontFamily="Perpetua Bold" FontSize="24"/>
+        <TextBox x:Name="txID" HorizontalAlignment="Left" Height="41" Margin="213,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" Background="#9FA4A9"/>
+        <TextBox x:Name="txAvgPrice" HorizontalAlignment="Left" Height="41" Margin="213,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" Background="#9FA4A9"/>
+        <Label Content="ID del ingrediente" HorizontalAlignment="Left" Margin="52,143,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
+        <Label Content="Nuevo precio promedio" HorizontalAlignment="Left" Margin="52,232,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
+        <Button x:Name="btModify" Content="Modificar" HorizontalAlignment="Left" Margin="434,304,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btModify_Click"/>
+        <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="434,405,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btBack_Click"/>
+    </Grid>
+</Window>

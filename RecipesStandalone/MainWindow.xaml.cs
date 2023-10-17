@@ -75,7 +75,7 @@ namespace RecipesStandalone
                     MessageBox.Show("Usuario incorrecto");
         }
 
-          public static int comprobarContra(String usu, String cont)
+          public int comprobarContra(String usu, String cont)
           {
                int res = 0;
                SqlConnection con;
@@ -83,10 +83,10 @@ namespace RecipesStandalone
                SqlCommand cmd;
                try {
                     con = Conexion.agregarConexion(); //primero establecemos la conexión
-                    cmd = new SqlCommand(String.Format("select contrasena from Usuario where nombre='{0}'",usu), con); //
-                    //sqlCommand hace los queries, mandamos el query y la conexión
-                    //ponemos StringFormat para que remplace el {0} con el usu (primer elemento en nuestra lista)
-                    dr = cmd.ExecuteReader(); //ejecuta(lee datos)
+                cmd = new SqlCommand(String.Format("select contrasena from Administrador where usuAdmin='{0}'", usu), con); 
+                //sqlCommand hace los queries, mandamos el query y la conexión
+                //ponemos StringFormat para que remplace el {0} con el usu (primer elemento en nuestra lista)
+                dr = cmd.ExecuteReader(); //ejecuta(lee datos)
                     if (dr.Read())
                          if (dr.GetString(0).Equals(cont))
                               res = 1; //password correcto
