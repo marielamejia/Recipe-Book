@@ -88,5 +88,21 @@ namespace RecipesStandalone
             return lis;
         }
 
+        public List<Ingredient> IngredientNames()
+        {
+            List<Ingredient> lis = new List<Ingredient>();
+            Ingredient a;
+            SqlConnection con = Conexion.agregarConexion();
+            SqlCommand cmd = new SqlCommand(String.Format("select nombre* from ingrediente",  con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                a = new Ingredient();
+                a.name = dr.GetInt16(0);
+            }
+            con.Close();
+            return lis; 
+        }
+
     }
 }
