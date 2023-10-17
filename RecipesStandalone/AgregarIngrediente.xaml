@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
-        Title="AgregarIngrediente" Height="450" Width="800">
+        Title="AgregarIngrediente" Height="501" Width="800" Background="#FF829949">
     <Grid>
-        
+        <Button x:Name ="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="448,413,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16"/>
+        <Button x:Name="btHome" Content="Menú" HorizontalAlignment="Left" Margin="287,413,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16"/>
+        <Button x:Name="btAdd" Content="Agregar" HorizontalAlignment="Left" Margin="448,309,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16"/>
+        <TextBox x:Name="txName" HorizontalAlignment="Left" Height="57" Margin="263,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" Background="#9FA4A9"/>
+        <TextBox x:Name="txAvgPrice" HorizontalAlignment="Left" Height="57" Margin="263,219,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" Background="#9FA4A9"/>
+        <Label Content="Nombre ingrediente" HorizontalAlignment="Left" Margin="94,157,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
+        <Label Content="Precio promedio" HorizontalAlignment="Left" Margin="94,233,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
+        <Label Content="Agregar ingrediente" HorizontalAlignment="Left" Margin="213,34,0,0" VerticalAlignment="Top" FontFamily="Perpetua Bold" FontSize="24"/>
+        <Label x:Name="lbIdIngr" Content="" HorizontalAlignment="Left" Margin="94,309,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
+
     </Grid>
 </Window>
