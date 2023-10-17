@@ -93,14 +93,15 @@ insert into Ingrediente values (99,'Plátano macho', 15.00)
 --Queries para el proyecto standalone
 
 --Login
-select idUsuario from Usuario where idUsuario = '{}' and contrasena = '{}'
+select contrasena from Administrador where usuAdmin = '{}'
 
 --Ingrediente
 insert into Ingrediente values ({}, {}, '{}') --para alta
 delete from Ingrediente where idIngrediente = {} --para baja
-select * from Ingrediente where nombre like '{}' --búsqueda
+select * from Ingrediente where nombre like '%{}%' --búsqueda
+select * from Ingrediente where nombre like '%anz%'
 select * from Ingrediente --para ver todos
-update Ingrediente set precioProm = {} where idIngrediente = {} --para actualizar el precio
+update Ingrediente set precioPromPorKg = {} where idIngrediente = {} --para actualizar el precio
 
 --Nutrólogo
 insert into Nutriologo values ('{}', '{}', '{}') --para alta

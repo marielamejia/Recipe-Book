@@ -12,7 +12,7 @@
         <TextBox x:Name="txName" HorizontalAlignment="Left" Height="29" Margin="214,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" Background="#9FA4A9"/>
         <Label Content="Nombre del ingrediente" HorizontalAlignment="Left" Margin="44,122,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
         <Label Content="Información del ingrediente" HorizontalAlignment="Left" Margin="44,204,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
-        <TextBox x:Name="txInfo" HorizontalAlignment="Left" Height="169" Margin="44,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="279" Background="#9FA4A9"/>
         <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="419,399,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btBack_Click"/>
+        <DataGrid x:Name="DataGridBuscarIngrediente" HorizontalAlignment="Left" Height="218" Margin="44,255,0,0" VerticalAlignment="Top" Width="338"/>
     </Grid>
 </Window>

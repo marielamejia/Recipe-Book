@@ -8,7 +8,7 @@
         Title="ListIngredients" Height="542.8" Width="625.6" Background="#FF829949">
     <Grid>
         <Label Content="Lista de ingredientes" HorizontalAlignment="Left" Margin="203,33,0,0" VerticalAlignment="Top" FontFamily="Perpetua Bold" FontSize="24"/>
-        <TextBox x:Name="txInfo" HorizontalAlignment="Left" Height="313" Margin="45,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="310" Background="#9FA4A9"/>
         <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="439,384,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btBack_Click"/>
+        <DataGrid x:Name="dgListarIngredientes" HorizontalAlignment="Left" Height="337" Margin="104,118,0,0" VerticalAlignment="Top" Width="262"/>
     </Grid>
 </Window>

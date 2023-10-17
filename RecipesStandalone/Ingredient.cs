@@ -10,11 +10,11 @@ namespace RecipesStandalone
     class Ingredient
     {
         //defining the different attribute the object ingredient needs 
-        public Int16 ingredientId { get; set; }
 
         public static Int16 folio = 100; 
+        public Int16 ingredientId { get; set; }
         public String name { get; set; }
-        public int avgPrice { get; set; }
+        public Decimal avgPrice { get; set; }
 
         //constructors
         public Ingredient()
@@ -28,7 +28,7 @@ namespace RecipesStandalone
             folio++; 
         }
        
-        public Ingredient( String name, int avgPrice)
+        public Ingredient( String name, Decimal avgPrice)
         {
             this.ingredientId = folio;
             this.name = name;
@@ -54,34 +54,34 @@ namespace RecipesStandalone
             int res = 0;
             SqlConnection con;
             con = Conexion.agregarConexion();
-            SqlCommand cmd = new SqlCommand(String.Format(("delete from ingrediente where ingredientId ={0}"), ingredientId), con);
+            SqlCommand cmd = new SqlCommand(String.Format(("delete from Ingrediente where idIngrediente ={0}"), ingredientId), con);
             res = cmd.ExecuteNonQuery();
             con.Close();
             return res;
         }
-        public int modify(Ingredient i)
+        public int modify(Int16 clave, Decimal nuevoPrecio)
         {
             int res = 0;
             SqlConnection con = Conexion.agregarConexion();
-            SqlCommand cmd = new SqlCommand(String.Format("update ingrediente set avgPrice = {0} where ingredientId = {1}", i.avgPrice, i.ingredientId), con);
+            SqlCommand cmd = new SqlCommand(String.Format("update ingrediente set precioPromPorKg = {0} where idIngrediente = {1}", nuevoPrecio, clave), con);
             res = cmd.ExecuteNonQuery();
             con.Close();
             return res;
         }
 
-        public List<Ingredient> IngredientSearch()
+        public List<Ingredient> IngredientSearch(String name)
         {
             List<Ingredient> lis = new List<Ingredient>();
             Ingredient a;
             SqlConnection con = Conexion.agregarConexion();
-            SqlCommand cmd = new SqlCommand(String.Format("select ingredientId, name, avgPrice from ingrediente where name like '%{0}%'", name), con);
+            SqlCommand cmd = new SqlCommand(String.Format("select * from Ingrediente where nombre like '%{0}%'", name), con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 a = new Ingredient();
-                a.ingredientId = dr.GetInt16(0); //???? 
+                a.ingredientId = dr.GetInt16(0);
                 a.name = dr.GetString(1);
-                a.avgPrice = dr.GetInt32(2);
+                a.avgPrice = dr.GetDecimal(2);
                 lis.Add(a);
             }
             con.Close();
@@ -90,15 +90,16 @@ namespace RecipesStandalone
 
         public List<Ingredient> IngredientNames()
         {
-            List<Ingredient> lis = new List<Ingredient>();
             Ingredient a;
+            List<Ingredient> lis = new List<Ingredient>();
             SqlConnection con = Conexion.agregarConexion();
-            SqlCommand cmd = new SqlCommand(String.Format("select nombre* from ingrediente",  con);
+            SqlCommand cmd = new SqlCommand("select nombre from Ingrediente",  con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 a = new Ingredient();
-                a.name = dr.GetInt16(0);
+                a.name = dr.GetString(0);
+                lis.Add(a);
             }
             con.Close();
             return lis; 

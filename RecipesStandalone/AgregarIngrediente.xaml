@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AgregarIngrediente" Height="501" Width="800" Background="#FF829949">
     <Grid>
-        <Button x:Name ="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="448,413,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16"/>
+        <Button x:Name ="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="448,413,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btBack_Click_1"/>
         <Button x:Name="btHome" Content="Menú" HorizontalAlignment="Left" Margin="287,413,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16"/>
         <Button x:Name="btAdd" Content="Agregar" HorizontalAlignment="Left" Margin="448,309,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16"/>
         <TextBox x:Name="txName" HorizontalAlignment="Left" Height="57" Margin="263,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" Background="#9FA4A9"/>

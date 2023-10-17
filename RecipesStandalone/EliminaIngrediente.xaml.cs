@@ -37,6 +37,7 @@ namespace RecipesStandalone
             if (res > 0)
                 MessageBox.Show("Ingrediente eliminado");
             else
+                MessageBox.Show("Clave no válida");
         }
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ElegirIngNutri" Height="222" Width="396.5" Background="#FF9BB06B">
     <Grid>
-        <Button x:Name="BotonIngredientes" Content="Ingredientes" HorizontalAlignment="Left" Margin="86,72,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FFD8AE90"/>
+        <Button x:Name="BotonIngredientes" Content="Ingredientes" HorizontalAlignment="Left" Margin="86,72,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FFD8AE90" Click="BotonIngredientes_Click_1"/>
         <Label x:Name="EtiqEncabezado" Content="¿Qué deseas gestionar?" HorizontalAlignment="Left" Margin="98,19,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="SemiBold"/>
         <Button x:Name="BotonNutriologos" Content="Nutriólogos" HorizontalAlignment="Left" Margin="220,72,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FFD8AE90" Click="BotonNutriologos_Click"/>
         <Button x:Name="BotonSalir" Content="Salir" HorizontalAlignment="Left" Margin="318,161,0,0" VerticalAlignment="Top" Width="60" Click="BotonSalir_Click"/>
