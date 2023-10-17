@@ -40,5 +40,12 @@ namespace RecipesStandalone
             w.Show();
             this.Hide();
         }
+
+        private void btBack_Click_1(object sender, RoutedEventArgs e)
+        {
+            IngredientePrincip w = new IngredientePrincip();
+            w.Show();
+            this.Hide();
+        }
     }
 }

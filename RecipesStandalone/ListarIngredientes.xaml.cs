@@ -22,8 +22,8 @@ namespace RecipesStandalone
         public ListarIngredientes()
         {
             InitializeComponent();
-            Ingredient a = new Ingrdient(txName.Text);
-            txInfo.ItemsSource = a.IngredientNames();
+            Ingredient a = new Ingredient();
+            dgListarIngredientes.ItemsSource = a.IngredientNames();
         }
 
         private void btBack_Click(object sender, RoutedEventArgs e)

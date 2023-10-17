@@ -26,8 +26,8 @@ namespace RecipesStandalone
 
         private void btSearch_Click(object sender, RoutedEventArgs e)
         {
-            Ingredient a = new Ingrdient(txName.Text);
-            txInfo.ItemsSource = a.IngredientSearch();
+            Ingredient a = new Ingredient();
+            DataGridBuscarIngrediente.ItemsSource = a.IngredientSearch(txName.Text);
         }
 
         private void btBack_Click(object sender, RoutedEventArgs e)

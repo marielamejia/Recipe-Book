@@ -26,12 +26,12 @@ namespace RecipesStandalone
 
         private void btModify_Click(object sender, RoutedEventArgs e)
         {
-            Ingredient a = new Ingredient(txName.Text, Int16.Parse(txAvgPrice.Text);
-            int res = a.modificar(a);
+            Ingredient a = new Ingredient();
+            int res = a.modify(Int16.Parse(txID.Text), Decimal.Parse(txAvgPrice.Text));
             if (res > 0)
                 MessageBox.Show("Modificación exitosa");
             else
-                MessageBox.Show("No se pudo modificar, intente de nuevo más tarde");
+                MessageBox.Show("Clave no válida");
         }
 
         private void btBack_Click(object sender, RoutedEventArgs e)

@@ -61,7 +61,7 @@ namespace RecipesStandalone
 
         private void btExit_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow w = new MainWindow();
+            ElegirIngNutri w = new ElegirIngNutri();
             w.Show();
             this.Hide(); 
         }
