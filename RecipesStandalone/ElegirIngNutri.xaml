@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
         Title="ElegirIngNutri" Height="222" Width="396.5" Background="#FF9BB06B">
-    <Grid>
-        <Button x:Name="BotonIngredientes" Content="Ingredientes" HorizontalAlignment="Left" Margin="86,72,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FFD8AE90" Click="BotonIngredientes_Click_1"/>
-        <Label x:Name="EtiqEncabezado" Content="¿Qué deseas gestionar?" HorizontalAlignment="Left" Margin="98,19,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="SemiBold"/>
-        <Button x:Name="BotonNutriologos" Content="Nutriólogos" HorizontalAlignment="Left" Margin="220,72,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FFD8AE90" Click="BotonNutriologos_Click"/>
-        <Button x:Name="BotonSalir" Content="Salir" HorizontalAlignment="Left" Margin="318,161,0,0" VerticalAlignment="Top" Width="60" Click="BotonSalir_Click"/>
-        <Button x:Name="BotonCerrarSesion" Content="Cerrar sesión" HorizontalAlignment="Left" Margin="230,161,0,0" VerticalAlignment="Top" Width="80" Click="BotonCerrarSesion_Click"/>
-        <Image HorizontalAlignment="Left" Height="97" Margin="-9,94,0,0" VerticalAlignment="Top" Width="106" Source="IMG_5477.PNG"/>
 
+    <Grid Background="White">
+        <Button x:Name="BotonIngredientes" Content="Ingredientes" HorizontalAlignment="Left" Margin="88,111,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FF9BB06B" BorderBrush="#FF9BB06B"/>
+        <Button x:Name="BotonNutriologos" Content="Nutriólogos" HorizontalAlignment="Left" Margin="220,111,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FFE1A144" Click="BotonNutriologos_Click" BorderBrush="#FFE1A144"/>
+        <Button x:Name="BotonSalir" Content="Salir" HorizontalAlignment="Left" Margin="318,169,0,0" VerticalAlignment="Top" Width="60" Click="BotonSalir_Click" Background="Black" BorderBrush="Black" Foreground="White"/>
+        <Button x:Name="BotonCerrarSesion" Content="Cerrar sesión" HorizontalAlignment="Left" Margin="230,169,0,0" VerticalAlignment="Top" Width="80" Click="BotonCerrarSesion_Click" BorderBrush="Black" Background="Black" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="98" Margin="212,26,0,0" VerticalAlignment="Top" Width="106" Source="/IMG_5478.PNG"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="83,26,0,0" VerticalAlignment="Top" Width="100" Source="/IMG_5479.PNG"/>
     </Grid>
 </Window>
