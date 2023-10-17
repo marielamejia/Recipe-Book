@@ -105,6 +105,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BDnutricionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDnutricionDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BuscarIngrediente.xaml.cs">
       <DependentUpon>BuscarIngrediente.xaml</DependentUpon>
     </Compile>
@@ -165,6 +170,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="BDnutricionDataSet.xsc">
+      <DependentUpon>BDnutricionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDnutricionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDnutricionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDnutricionDataSet.xss">
+      <DependentUpon>BDnutricionDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
