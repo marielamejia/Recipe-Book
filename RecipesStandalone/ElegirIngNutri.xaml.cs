@@ -45,14 +45,10 @@ namespace RecipesStandalone
 
         private void BotonIngredientes_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void BotonIngredientes_Click_1(object sender, RoutedEventArgs e)
-        {
             IngredientePrincip wIng = new IngredientePrincip();
             wIng.Show();
             this.Hide();
         }
+
     }
 }
