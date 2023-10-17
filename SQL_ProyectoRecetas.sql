@@ -99,7 +99,6 @@ select contrasena from Administrador where usuAdmin = '{}'
 insert into Ingrediente values ({}, {}, '{}') --para alta
 delete from Ingrediente where idIngrediente = {} --para baja
 select * from Ingrediente where nombre like '%{}%' --búsqueda
-select * from Ingrediente where nombre like '%anz%'
 select * from Ingrediente --para ver todos
 update Ingrediente set precioPromPorKg = {} where idIngrediente = {} --para actualizar el precio
 
