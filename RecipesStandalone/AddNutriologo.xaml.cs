@@ -35,5 +35,24 @@ namespace RecipesStandalone
             w.Show();
             this.Hide();
         }
+
+        private void NombreText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void AgregarAd_Click(object sender, RoutedEventArgs e)
+        {
+            int res;
+            ClaseNutriologo n = new ClaseNutriologo(Int32.Parse(CedulaText.Text), NombreText.Text);
+            res = n.addNutriologo(n);
+            if (res > 0)
+            {
+                MessageBox.Show("Alta exitosa");
+            }
+            else
+                MessageBox.Show("No se pudo dar alta ");
+        }
+
     }
 }
