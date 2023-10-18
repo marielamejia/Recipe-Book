@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
         Title="ElliminarNutriologo" Height="450" Width="800">
-    <Grid Background="#FFFFED00">
+    <Grid Background="#FFE1A144">
         <Label Content="Eliminar Nutriólogo" HorizontalAlignment="Left" Margin="260,15,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="42,215,0,0" VerticalAlignment="Top" Height="50" Width="143" FontSize="20" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="55" Margin="230,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Background="#FF12B7AD"/>
-        <Button x:Name ="EliminarDel" Content="Eliminar" HorizontalAlignment="Left" Margin="575,275,0,0" VerticalAlignment="Top" Width="145" Background="#FFEBA5A5" Height="50" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name ="RegresarDel" Content="Regresar" HorizontalAlignment="Left" Margin="575,350,0,0" VerticalAlignment="Top" Width="145" Background="#FFEBA5A5" Height="51" FontWeight="Bold" FontSize="20"/>
+        <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="212,175,0,0" VerticalAlignment="Top" Height="50" Width="143" FontSize="24" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Height="55" Margin="405,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Background="White"/>
+        <Button x:Name ="EliminarDel" Content="Eliminar" HorizontalAlignment="Left" Margin="575,276,0,0" VerticalAlignment="Top" Width="145" Background="Black" Height="50" FontWeight="Bold" FontSize="20" BorderBrush="Black" Foreground="White"/>
+        <Button x:Name ="RegresarDel" Content="Regresar" HorizontalAlignment="Left" Margin="575,350,0,0" VerticalAlignment="Top" Width="145" Background="White" Height="51" FontWeight="Bold" FontSize="20" Foreground="Black" BorderBrush="White"/>
 
     </Grid>
 </Window>
