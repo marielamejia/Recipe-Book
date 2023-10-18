@@ -116,6 +116,7 @@
     <Compile Include="BuscarNutriologo.xaml.cs">
       <DependentUpon>BuscarNutriologo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ClaseNutriologo.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="EliminaIngrediente.xaml.cs">
       <DependentUpon>EliminaIngrediente.xaml</DependentUpon>
@@ -150,6 +151,7 @@
     <Compile Include="ModificarIngrediente.xaml.cs">
       <DependentUpon>ModificarIngrediente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Nutriologo.cs" />
     <Compile Include="Nutriologo.xaml.cs">
       <DependentUpon>Nutriologo.xaml</DependentUpon>
     </Compile>
