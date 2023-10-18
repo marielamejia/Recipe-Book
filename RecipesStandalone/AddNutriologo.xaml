@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
         Title="AddNutriologo" Height="450" Width="800">
-    <Grid Background="#FFFFED00">
+    <Grid Background="#FFE1A144">
         <Label Content="Agregar Nutriólogo" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Height="50" Width="120" FontSize="20"/>
-        <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="20,199,0,0" VerticalAlignment="Top" Width="118" Height="51" FontSize="20"/>
-        <TextBox x:Name ="NombreText" HorizontalAlignment="Left" Height="40" Margin="285,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" CaretBrush="#FF00E4FF" Background="#FF12B7AD"/>
-        <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="40" Margin="285,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" TextChanged="TextBox_TextChanged" Background="#FF12B7AD"/>
-        <Button x:Name ="AgregarAd" Content="Agregar" HorizontalAlignment="Left" Margin="650,240,0,0" VerticalAlignment="Top" Width="75" Background="#FFEBA5A5"/>
-        <Button x:Name ="RegresarAd" Content="Menú" HorizontalAlignment="Left" Margin="515,315,0,0" VerticalAlignment="Top" Width="75" Background="#FFEBA5A5"/>
-        <Button x:Name ="MenuAd" Content="Regresar" HorizontalAlignment="Left" Margin="665,315,0,0" VerticalAlignment="Top" Width="75" Background="#FFEBA5A5" Click="MenuAd_Click"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="72,145,0,0" VerticalAlignment="Top" Height="50" Width="120" FontSize="22" FontWeight="Bold"/>
+        <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="72,216,0,0" VerticalAlignment="Top" Width="159" Height="51" FontSize="22" FontWeight="Bold"/>
+        <TextBox x:Name ="NombreText" HorizontalAlignment="Left" Height="40" Margin="239,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" CaretBrush="#FF00E4FF" Background="White" BorderBrush="White"/>
+        <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TextChanged="TextBox_TextChanged" Background="White" BorderBrush="White" Margin="239,222,0,0"/>
+        <Button x:Name ="AgregarAd" Content="Agregar" HorizontalAlignment="Left" Margin="505,290,0,0" VerticalAlignment="Top" Width="113" Background="Black" Height="37" FontWeight="Bold" FontSize="14" BorderBrush="Black" Foreground="White"/>
+        <Button x:Name ="RegresarAd" Content="Menú" HorizontalAlignment="Left" Margin="652,378,0,0" VerticalAlignment="Top" Width="88" Background="White" Height="38" BorderBrush="White" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name ="MenuAd" Content="Regresar" HorizontalAlignment="Left" Margin="652,326,0,0" VerticalAlignment="Top" Width="88" Background="White" Click="MenuAd_Click" Height="38" Foreground="Black" BorderBrush="White" FontWeight="Bold" FontSize="14"/>
 
     </Grid>
 </Window>
