@@ -9,7 +9,7 @@
     <Grid Background="#FFFFED00">
         <Label Content="Eliminar Nutriólogo" HorizontalAlignment="Left" Margin="260,15,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
         <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="42,215,0,0" VerticalAlignment="Top" Height="50" Width="143" FontSize="20" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="55" Margin="230,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Background="#FF12B7AD" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="55" Margin="230,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Background="#FF12B7AD"/>
         <Button x:Name ="EliminarDel" Content="Eliminar" HorizontalAlignment="Left" Margin="575,275,0,0" VerticalAlignment="Top" Width="145" Background="#FFEBA5A5" Height="50" FontWeight="Bold" FontSize="20"/>
         <Button x:Name ="RegresarDel" Content="Regresar" HorizontalAlignment="Left" Margin="575,350,0,0" VerticalAlignment="Top" Width="145" Background="#FFEBA5A5" Height="51" FontWeight="Bold" FontSize="20"/>
 
