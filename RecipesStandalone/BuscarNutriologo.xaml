@@ -9,7 +9,7 @@
     <Grid Background="#FFE1A144">
         <Label Content="Lista de Nutriólogos" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
         <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="111,200,0,0" VerticalAlignment="Top" Width="173" Height="50" FontSize="24" FontWeight="Bold"/>
-        <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="46" Margin="307,202,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189" TextChanged="TextBox_TextChanged" Background="White"/>
+        <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="46" Margin="307,202,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189" Background="White"/>
         <Button x:Name ="RegresarBus" Content="Regresar" HorizontalAlignment="Left" Margin="593,325,0,0" VerticalAlignment="Top" Width="142" Background="White" FontSize="20" Click="RegresarBus_Click" Height="50" BorderBrush="White" FontWeight="Bold"/>
 
     </Grid>
