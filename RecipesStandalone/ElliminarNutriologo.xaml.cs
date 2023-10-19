@@ -23,5 +23,12 @@ namespace RecipesStandalone
         {
             InitializeComponent();
         }
+
+        private void RegresarDel_Click(object sender, RoutedEventArgs e)
+        {
+            Nutriologo w = new Nutriologo();
+            w.Show();
+            this.Hide();
+        }
     }
 }
