@@ -8,11 +8,11 @@
         Title="BuscarNutriologo" Height="450" Width="800">
     <Grid Background="#FFE1A144">
         <Label Content="Buscar Nutriólogo" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="143,182,0,0" VerticalAlignment="Top" Width="173" Height="51" FontSize="24" FontWeight="Bold"/>
-        <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="45" Margin="339,185,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189" TextChanged="TextBox_TextChanged" Background="White"/>
-        <Button x:Name ="BuscarBus" Content="Buscar" HorizontalAlignment="Left" Margin="545,251,0,0" VerticalAlignment="Top" Width="103" Background="Black" FontSize="20" Click="BuscarBus_Click" Foreground="White" BorderBrush="Black" Height="37" FontWeight="Bold"/>
-        <Button x:Name ="RegresarBus" Content="Regresar" HorizontalAlignment="Left" Margin="650,317,0,0" VerticalAlignment="Top" Width="95" Background="White" FontSize="20" Click="RegresarBus_Click" Height="41" BorderBrush="White" FontWeight="Bold"/>
-        <Button x:Name ="MenuBus" Content="Menú" HorizontalAlignment="Left" Margin="650,363,0,0" VerticalAlignment="Top" Width="95" Background="White" FontSize="20" Height="41" BorderBrush="White" FontWeight="Bold"/>
+        <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="111,200,0,0" VerticalAlignment="Top" Width="173" Height="50" FontSize="24" FontWeight="Bold"/>
+        <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="46" Margin="307,202,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189" TextChanged="TextBox_TextChanged" Background="White"/>
+        <Button x:Name ="BuscarBus" Content="Buscar" HorizontalAlignment="Left" Margin="549,138,0,0" VerticalAlignment="Top" Width="142" Background="Black" FontSize="20" Click="BuscarBus_Click" Foreground="White" BorderBrush="Black" Height="50" FontWeight="Bold"/>
+        <Button x:Name ="RegresarBus" Content="Regresar" HorizontalAlignment="Left" Margin="549,200,0,0" VerticalAlignment="Top" Width="142" Background="White" FontSize="20" Click="RegresarBus_Click" Height="50" BorderBrush="White" FontWeight="Bold"/>
+        <Button x:Name ="MenuBus" Content="Menú" HorizontalAlignment="Left" Margin="549,270,0,0" VerticalAlignment="Top" Width="142" Background="White" FontSize="20" Height="50" BorderBrush="White" FontWeight="Bold"/>
 
     </Grid>
 </Window>

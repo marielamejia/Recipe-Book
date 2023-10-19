@@ -12,9 +12,9 @@
         <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="74,237,0,0" VerticalAlignment="Top" Width="159" Height="51" FontSize="22" FontWeight="Bold"/>
         <TextBox x:Name ="NombreText" HorizontalAlignment="Left" Height="40" Margin="241,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" CaretBrush="#FF00E4FF" Background="White" BorderBrush="White"/>
         <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TextChanged="TextBox_TextChanged" Background="White" BorderBrush="White" Margin="241,243,0,0"/>
-        <Button x:Name ="AgregarAd" Content="Agregar" HorizontalAlignment="Left" Margin="590,160,0,0" VerticalAlignment="Top" Width="113" Background="Black" Height="40" FontWeight="Bold" FontSize="16" BorderBrush="Black" Foreground="White"/>
-        <Button x:Name ="RegresarAd" Content="Menú" HorizontalAlignment="Left" Margin="590,279,0,0" VerticalAlignment="Top" Width="113" Background="White" Height="40" BorderBrush="White" FontWeight="Bold" FontSize="16"/>
-        <Button x:Name ="MenuAd" Content="Regresar" HorizontalAlignment="Left" Margin="590,217,0,0" VerticalAlignment="Top" Width="113" Background="White" Click="MenuAd_Click" Height="40" Foreground="Black" BorderBrush="White" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name ="AgregarAd" Content="Agregar" HorizontalAlignment="Left" Margin="589,128,0,0" VerticalAlignment="Top" Width="130" Background="Black" Height="47" FontWeight="Bold" FontSize="20" BorderBrush="Black" Foreground="White"/>
+        <Button x:Name ="RegresarAd" Content="Menú" HorizontalAlignment="Left" Margin="589,266,0,0" VerticalAlignment="Top" Width="130" Background="White" Height="47" BorderBrush="White" FontWeight="Bold" FontSize="20"/>
+        <Button x:Name ="MenuAd" Content="Regresar" HorizontalAlignment="Left" Margin="589,0,0,0" VerticalAlignment="Center" Width="130" Background="White" Click="MenuAd_Click" Height="47" Foreground="Black" BorderBrush="White" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Window>
