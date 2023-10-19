@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -104,6 +105,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BDnutricionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDnutricionDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BuscarIngrediente.xaml.cs">
       <DependentUpon>BuscarIngrediente.xaml</DependentUpon>
     </Compile>
@@ -165,6 +171,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="BDnutricionDataSet.xsc">
+      <DependentUpon>BDnutricionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDnutricionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDnutricionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDnutricionDataSet.xss">
+      <DependentUpon>BDnutricionDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -176,6 +193,8 @@
   <ItemGroup>
     <Resource Include="ImagenNut.jpg" />
     <Resource Include="IMG_5477.PNG" />
+    <Resource Include="IMG_5478.PNG" />
+    <Resource Include="IMG_5479.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

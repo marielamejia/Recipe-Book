@@ -22,7 +22,7 @@ namespace RecipesStandalone
         public BuscarNutriologo()
         {
             InitializeComponent();
-            Nutriologo a = new Nutriologo();
+            ClaseNutriologo a = new ClaseNutriologo();
             BuscarNutriDG.ItemsSource = a.ListarNutriologos();
         }
 

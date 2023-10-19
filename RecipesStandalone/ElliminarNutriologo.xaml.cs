@@ -33,8 +33,8 @@ namespace RecipesStandalone
 
         private void EliminarDel_Click(object sender, RoutedEventArgs e)
         {
-            Nutriologo a = new Nutriologo();
-            int res = a.deleteNutriologo(Int16.Parse(txDelete.Text));
+            ClaseNutriologo a = new ClaseNutriologo();
+            int res = a.deleteNutriologo(txDelete.Text);
             if (res > 0)
                 MessageBox.Show("Nutriologo eliminado");
             else

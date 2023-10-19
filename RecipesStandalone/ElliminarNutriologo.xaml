@@ -9,9 +9,9 @@
     <Grid Background="#FFE1A144">
         <Label Content="Eliminar Nutriólogo" HorizontalAlignment="Left" Margin="260,15,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
         <Label Content="Cédula Profesional:" HorizontalAlignment="Left" Margin="58,175,0,0" VerticalAlignment="Top" Height="50" Width="240" FontSize="24" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="55" Margin="303,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="312" Background="White" FontSize="22"/>
+        <TextBox x:Name="txDelete" HorizontalAlignment="Left" Height="55" Margin="303,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="312" Background="White" FontSize="22"/>
         <Button x:Name ="EliminarDel" Content="Eliminar" HorizontalAlignment="Left" Margin="575,276,0,0" VerticalAlignment="Top" Width="145" Background="Black" Height="50" FontWeight="Bold" FontSize="20" BorderBrush="Black" Foreground="White" Click="EliminarDel_Click"/>
-        <Button x:Name ="RegresarDel" Content="Regresar" HorizontalAlignment="Left" Margin="575,341,0,0" VerticalAlignment="Top" Width="145" Background="White" Height="51" FontWeight="Bold" FontSize="20" Foreground="Black" BorderBrush="White"/>
+        <Button x:Name ="RegresarDel" Content="Regresar" HorizontalAlignment="Left" Margin="575,341,0,0" VerticalAlignment="Top" Width="145" Background="White" Height="51" FontWeight="Bold" FontSize="20" Foreground="Black" BorderBrush="White" Click="RegresarDel_Click"/>
 
     </Grid>
 </Window>
