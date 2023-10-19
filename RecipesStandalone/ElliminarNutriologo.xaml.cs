@@ -23,5 +23,22 @@ namespace RecipesStandalone
         {
             InitializeComponent();
         }
+
+        private void RegresarDel_Click(object sender, RoutedEventArgs e)
+        {
+            Nutriologo w = new Nutriologo();
+            w.Show();
+            this.Hide();
+        }
+
+        private void EliminarDel_Click(object sender, RoutedEventArgs e)
+        {
+            ClaseNutriologo a = new ClaseNutriologo();
+            int res = a.deleteNutriologo(txDelete.Text);
+            if (res > 0)
+                MessageBox.Show("Nutriologo eliminado");
+            else
+                MessageBox.Show("Cédula Profesional no válida");
+        }
     }
 }

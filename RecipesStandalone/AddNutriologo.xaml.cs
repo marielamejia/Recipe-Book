@@ -24,16 +24,23 @@ namespace RecipesStandalone
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        
 
         private void MenuAd_Click(object sender, RoutedEventArgs e)
         {
             Nutriologo w = new Nutriologo();
             w.Show();
             this.Hide();
+        }
+
+        private void AgregarAd_Click(object sender, RoutedEventArgs e)
+        {
+            ClaseNutriologo a = new ClaseNutriologo();
+            int res = a.addNutriologo(CedulaText.Text, NombreText.Text, ContraText.Text);
+            if (res > 0)
+                MessageBox.Show("Alta exitosa");
+            else
+                MessageBox.Show("Cédula ya registrada");
         }
     }
 }

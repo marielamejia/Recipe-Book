@@ -93,12 +93,14 @@ namespace RecipesStandalone
             Ingredient a;
             List<Ingredient> lis = new List<Ingredient>();
             SqlConnection con = Conexion.agregarConexion();
-            SqlCommand cmd = new SqlCommand("select nombre from Ingrediente",  con);
+            SqlCommand cmd = new SqlCommand("select * from Ingrediente",  con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 a = new Ingredient();
-                a.name = dr.GetString(0);
+                a.ingredientId = dr.GetInt16(0);
+                a.name = dr.GetString(1);
+                a.avgPrice = dr.GetDecimal(2);
                 lis.Add(a);
             }
             con.Close();
