@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
-        Title="DeleteIngredient" Height="376.863" Width="581.937" Background="#FF829949">
-    <Grid>
-        <Label Content="Eliminar ingrediente" HorizontalAlignment="Left" Margin="176,28,0,0" VerticalAlignment="Top" FontFamily="Perpetua Bold" FontSize="24"/>
-        <TextBox x:Name="txDelete" HorizontalAlignment="Left" Height="57" Margin="176,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141" Background="#9FA4A9"/>
-        <Label Content="Nombre ingrediente" HorizontalAlignment="Left" Margin="31,135,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
-        <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="381,245,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btBack_Click"/>
-        <Button x:Name="btDelete" Content="Eliminar" HorizontalAlignment="Left" Margin="381,129,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btDelete_Click"/>
+        Title="DeleteIngredient" Height="435" Width="800" Background="#FF829949">
+    <Grid Margin="0,0,0,-6">
+        <Label Content="Eliminar ingrediente" HorizontalAlignment="Left" Margin="262,28,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="24" Height="62" Width="352" FontWeight="Bold"/>
+        <TextBox x:Name="txDelete" HorizontalAlignment="Left" Height="61" Margin="240,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="305" Background="White" Foreground="Black" BorderBrush="White"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="105,174,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="20" Height="46" Width="105" FontWeight="Bold"/>
+        <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="577,308,0,0" VerticalAlignment="Top" Width="187" Background="White" Height="64" FontFamily="Segoe UI" FontSize="16" Click="btBack_Click" FontWeight="Bold" BorderBrush="White" Foreground="Black"/>
+        <Button x:Name="btDelete" Content="Eliminar" HorizontalAlignment="Left" Margin="577,213,0,0" VerticalAlignment="Top" Width="187" Background="Black" Height="64" FontFamily="Segoe UI" FontSize="18" Click="btDelete_Click" FontWeight="Bold" BorderBrush="Black" Foreground="White"/>
     </Grid>
 </Window>

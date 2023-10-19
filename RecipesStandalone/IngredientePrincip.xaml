@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
-        Title="Ingredientes" Height="542.8" Width="625.6" Background="#FF829949">
-    <Grid>
-        <Label Content="Ingredientes" HorizontalAlignment="Left" Margin="253,25,0,0" VerticalAlignment="Top" FontFamily="Perpetua Bold" FontSize="24" />
-        <Button x:Name ="btAdd" Content="Agregar" HorizontalAlignment="Left" Margin="69,92,0,0" VerticalAlignment="Top" Width="117" Background="#9FA4A9" Height="39" FontFamily="Perpetua" FontSize="16" Click="btAdd_Click"/>
-        <Button x:Name ="btDelete" Content="Eliminar" HorizontalAlignment="Left" Margin="69,171,0,0" VerticalAlignment="Top" Width="117" Background="#9FA4A9" Height="39" FontFamily="Perpetua" FontSize="16" Click="btDelete_Click"/>
-        <Button x:Name ="btSearch" Content="Buscar" HorizontalAlignment="Left" Margin="69,335,0,0" VerticalAlignment="Top" Width="117" Background="#9FA4A9" Height="39" FontFamily="Perpetua" FontSize="16" Click="btSearch_Click"/>
-        <Button x:Name ="btModify" Content="Modificar" HorizontalAlignment="Left" Margin="69,255,0,0" VerticalAlignment="Top" Width="117" Background="#9FA4A9" Height="39" FontFamily="Perpetua" FontSize="16" Click="btModify_Click"/>
-        <Button x:Name ="btList" Content="Listar ingredientes" HorizontalAlignment="Left" Margin="69,406,0,0" VerticalAlignment="Top" Width="117" Background="#9FA4A9" Height="39" FontFamily="Perpetua" FontSize="16" Click="btList_Click"/>
-        <Button x:Name ="btExit" Content="Salir" HorizontalAlignment="Left" Margin="444,406,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btExit_Click" />
-        <Image HorizontalAlignment="Left" Height="226" Margin="334,135,0,0" VerticalAlignment="Top" Width="251" Source="aguacate.jpeg"/>
+        Title="Ingredientes" Height="432" Width="798" Background="White">
+    <Grid Height="422" VerticalAlignment="Top">
+        <Label Content="Ingredientes" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="30" FontWeight="Bold" />
+        <Button x:Name ="btAdd" Content="Agregar" HorizontalAlignment="Left" Margin="111,84,0,0" VerticalAlignment="Top" Width="175" Background="#FF829949" Height="41" FontFamily="Segoe UI" FontSize="16" Click="btAdd_Click" FontWeight="Bold" BorderBrush="#FF829949"/>
+        <Button x:Name ="btDelete" Content="Eliminar" HorizontalAlignment="Left" Margin="111,145,0,0" VerticalAlignment="Top" Width="175" Background="#FF829949" Height="41" FontFamily="Segoe UI" FontSize="16" Click="btDelete_Click" FontWeight="Bold" BorderBrush="#FF829949"/>
+        <Button x:Name ="btSearch" Content="Buscar" HorizontalAlignment="Left" Margin="111,265,0,0" VerticalAlignment="Top" Width="175" Background="#FF829949" Height="40" FontFamily="Segoe UI" FontSize="16" Click="btSearch_Click" FontWeight="Bold" BorderBrush="#FF829949"/>
+        <Button x:Name ="btModify" Content="Modificar" HorizontalAlignment="Left" Margin="111,202,0,0" VerticalAlignment="Top" Width="175" Background="#FF829949" Height="42" FontFamily="Segoe UI" FontSize="16" Click="btModify_Click" FontWeight="Bold" BorderBrush="#FF829949"/>
+        <Button x:Name ="btList" Content="Listar ingredientes" HorizontalAlignment="Left" Margin="111,325,0,0" VerticalAlignment="Top" Width="175" Background="#FF829949" Height="45" FontFamily="Segoe UI" FontSize="16" Click="btList_Click" FontWeight="Bold" BorderBrush="#FF829949"/>
+        <Button x:Name ="btExit" Content="Salir" HorizontalAlignment="Left" Margin="615,329,0,0" VerticalAlignment="Top" Width="117" Background="Black" Height="39" FontFamily="Segoe UI" FontSize="20" Click="btExit_Click" FontWeight="Bold" Foreground="White" BorderBrush="Black" />
+        <Image HorizontalAlignment="Left" Height="230" Margin="485,94,0,0" VerticalAlignment="Top" Width="230" Source="/IMG_5479.PNG"/>
     </Grid>
 </Window>

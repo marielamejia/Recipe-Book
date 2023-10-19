@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
-        Title="ElegirIngNutri" Height="222" Width="396.5" Background="#FF9BB06B">
+        Title="ElegirIngNutri" Height="452" Width="808" Background="#FF9BB06B">
 
-    <Grid Background="White">
-        <Button x:Name="BotonIngredientes" Content="Ingredientes" HorizontalAlignment="Left" Margin="88,111,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FF9BB06B" BorderBrush="#FF9BB06B" Click="BotonIngredientes_Click"/>
-        <Button x:Name="BotonNutriologos" Content="Nutriólogos" HorizontalAlignment="Left" Margin="220,111,0,0" VerticalAlignment="Top" Width="90" Height="34" FontSize="14" Background="#FFE1A144" Click="BotonNutriologos_Click" BorderBrush="#FFE1A144"/>
-        <Button x:Name="BotonSalir" Content="Salir" HorizontalAlignment="Left" Margin="318,169,0,0" VerticalAlignment="Top" Width="60" Click="BotonSalir_Click" Background="Black" BorderBrush="Black" Foreground="White"/>
-        <Button x:Name="BotonCerrarSesion" Content="Cerrar sesión" HorizontalAlignment="Left" Margin="230,169,0,0" VerticalAlignment="Top" Width="80" Click="BotonCerrarSesion_Click" BorderBrush="Black" Background="Black" Foreground="White"/>
-        <Image HorizontalAlignment="Left" Height="98" Margin="212,26,0,0" VerticalAlignment="Top" Width="106" Source="/IMG_5478.PNG"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="83,26,0,0" VerticalAlignment="Top" Width="100" Source="/IMG_5479.PNG"/>
+    <Grid Background="White" Margin="0,0,0,-6">
+        <Button x:Name="BotonIngredientes" Content="Ingredientes" HorizontalAlignment="Left" Margin="183,226,0,0" VerticalAlignment="Top" Width="183" Height="62" FontSize="18" Background="#FF9BB06B" BorderBrush="#FF9BB06B" Click="BotonIngredientes_Click" FontWeight="Bold"/>
+        <Button x:Name="BotonNutriologos" Content="Nutriólogos" HorizontalAlignment="Left" Margin="451,226,0,0" VerticalAlignment="Top" Width="182" Height="62" FontSize="18" Background="#FFE1A144" Click="BotonNutriologos_Click" BorderBrush="#FFE1A144" FontWeight="Bold"/>
+        <Button x:Name="BotonSalir" Content="Salir" HorizontalAlignment="Left" Margin="649,338,0,0" VerticalAlignment="Top" Width="122" Click="BotonSalir_Click" Background="Black" BorderBrush="Black" Foreground="White" Height="54" FontSize="16"/>
+        <Button x:Name="BotonCerrarSesion" Content="Cerrar sesión" HorizontalAlignment="Left" Margin="471,338,0,0" VerticalAlignment="Top" Width="162" Click="BotonCerrarSesion_Click" BorderBrush="Black" Background="Black" Foreground="White" Height="54" FontSize="16"/>
+        <Image HorizontalAlignment="Left" Height="178" Margin="434,62,0,0" VerticalAlignment="Top" Width="215" Source="/IMG_5478.PNG"/>
+        <Image HorizontalAlignment="Left" Height="182" Margin="173,62,0,0" VerticalAlignment="Top" Width="203" Source="/IMG_5479.PNG"/>
     </Grid>
 </Window>

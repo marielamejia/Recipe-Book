@@ -6,17 +6,17 @@
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
         Title="Nutriólogo" Height="450" Width="800">
-    <Grid Background="#FFFFED00">
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="775*"/>
             <ColumnDefinition Width="18*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Nutriólogo" HorizontalAlignment="Left" Margin="300,15,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        <Button x:Name ="btAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="50,89,0,0" VerticalAlignment="Top" Width="115" Height="41" Click="Button_Click"/>
-        <Button x:Name ="Eliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="50,175,0,0" VerticalAlignment="Top" Width="115" Height="36" Click="Eliminar_Click"/>
-        <Button x:Name ="Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="50,250,0,0" VerticalAlignment="Top" Width="115" Height="40" Click="Buscar_Click"/>
-        <Button x:Name ="BotonVolver" Content="Volver" HorizontalAlignment="Left" Margin="630,325,0,0" VerticalAlignment="Top" Width="120" Height="50" Click="BotonVolver_Click" Background="#FFE80F0F" FontSize="20" FontWeight="Bold"/>
-        <Image HorizontalAlignment="Left" Height="140" Margin="550,95,0,0" VerticalAlignment="Top" Width="150" Source="ImagenNut.jpg"/>
+        <Button x:Name ="btAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="132,102,0,0" VerticalAlignment="Top" Width="132" Height="51" Click="Button_Click" BorderBrush="#FFE1A144" Background="#FFE1A144" FontWeight="Bold" FontSize="20"/>
+        <Button x:Name ="Eliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="132,274,0,0" VerticalAlignment="Top" Width="132" Height="52" Click="Eliminar_Click" FontWeight="Bold" BorderBrush="#FFE1A144" Background="#FFE1A144" FontSize="20"/>
+        <Button x:Name ="Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="131,186,0,0" VerticalAlignment="Top" Width="133" Height="52" Click="Buscar_Click" FontWeight="Bold" BorderBrush="#FFE1A144" Background="#FFE1A144" FontSize="20"/>
+        <Button x:Name ="BotonVolver" Content="Volver" HorizontalAlignment="Left" Margin="630,325,0,0" VerticalAlignment="Top" Width="120" Height="50" Click="BotonVolver_Click" Background="Black" FontSize="20" FontWeight="Bold" Foreground="White" BorderBrush="Black"/>
+        <Image HorizontalAlignment="Left" Height="200" Margin="407,102,0,0" VerticalAlignment="Top" Width="250" Source="/IMG_5478.PNG"/>
 
     </Grid>
 </Window>

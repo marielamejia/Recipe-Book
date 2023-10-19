@@ -22,9 +22,6 @@ namespace RecipesStandalone
         public BuscarNutriologo()
         {
             InitializeComponent();
-            ClaseNutriologo n = new ClaseNutriologo();
-            List<ClaseNutriologo> lista = n.NutriologoSearch();
-            DGBuscarNutriologo.ItemsSource = lista;
         }
 
         private void RegresarBus_Click(object sender, RoutedEventArgs e)
@@ -41,17 +38,6 @@ namespace RecipesStandalone
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
-        }
-
-        private void MenuBus_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DGBuscarNutriologo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           
 
         }
     }

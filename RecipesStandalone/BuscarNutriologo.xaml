@@ -6,10 +6,13 @@
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
         Title="BuscarNutriologo" Height="450" Width="800">
-    <Grid Background="#FFFFED00">
+    <Grid Background="#FFE1A144">
         <Label Content="Buscar Nutriólogo" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        <Button x:Name ="RegresarBus" Content="Regresar" HorizontalAlignment="Left" Margin="550,350,0,0" VerticalAlignment="Top" Width="75" Background="#FFEBA5A5" FontSize="20" Click="RegresarBus_Click"/>
-        <DataGrid x:Name="DGBuscarNutriologo" HorizontalAlignment="Left" Height="100" Margin="350,145,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="DGBuscarNutriologo_SelectionChanged"/>
+        <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="111,200,0,0" VerticalAlignment="Top" Width="173" Height="50" FontSize="24" FontWeight="Bold"/>
+        <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="46" Margin="307,202,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189" TextChanged="TextBox_TextChanged" Background="White"/>
+        <Button x:Name ="BuscarBus" Content="Buscar" HorizontalAlignment="Left" Margin="549,138,0,0" VerticalAlignment="Top" Width="142" Background="Black" FontSize="20" Click="BuscarBus_Click" Foreground="White" BorderBrush="Black" Height="50" FontWeight="Bold"/>
+        <Button x:Name ="RegresarBus" Content="Regresar" HorizontalAlignment="Left" Margin="549,200,0,0" VerticalAlignment="Top" Width="142" Background="White" FontSize="20" Click="RegresarBus_Click" Height="50" BorderBrush="White" FontWeight="Bold"/>
+        <Button x:Name ="MenuBus" Content="Menú" HorizontalAlignment="Left" Margin="549,270,0,0" VerticalAlignment="Top" Width="142" Background="White" FontSize="20" Height="50" BorderBrush="White" FontWeight="Bold"/>
 
     </Grid>
 </Window>
