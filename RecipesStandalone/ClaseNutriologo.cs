@@ -9,64 +9,52 @@ namespace RecipesStandalone
 {
     class ClaseNutriologo
     {
-        //Atributos 
-        public static Int32 cedula = 100;
-        public Int32 nutriologoID { get; set; }
-        public String nombre { get; set; }
+        //Atributos
+        private String cedula { get; set; }
+        private String nombre { get; set; }
+        private String contrasena { get; set; }
 
 
         // Constructores 
         public ClaseNutriologo()
         {
         }
-        public ClaseNutriologo(String nombre)
-        {
-            this.nutriologoID = cedula;
-            this.nombre = nombre;
-            cedula++;
-        }
-
-        public ClaseNutriologo(int nutriologoID, string nombre)
-        {
-            this.nutriologoID = nutriologoID;
-            this.nombre = nombre;
-        }
+        
 
         //Métodos y funciones 
-        public int addNutriologo(ClaseNutriologo n)
+        public int addNutriologo(String cedula, String nombre, String contra)
         {
             int res = 0;
             SqlConnection cnn = Conexion.agregarConexion();
-            SqlCommand cmd;
-            
-            cmd = new SqlCommand(String.Format("insert into Nutriologo(nombre, cedula) values {0},'{1}')",
-                n.nombre, n.nutriologoID), cnn);
+            string query = $"insert into Nutriologo values ('{cedula}', '{nombre}', '{contra}')";
+            SqlCommand cmd = new SqlCommand(query, cnn);
             res = cmd.ExecuteNonQuery();
             cnn.Close();
             return res;
         }
-        public int deleteNutriologo(int nutriologoID)
+        public int deleteNutriologo(String cedula)
         {
             int res = 0;
             SqlConnection cnn;
             cnn = Conexion.agregarConexion();
-            SqlCommand cmd = new SqlCommand(String.Format(("delete from Nutriologo where cedula ={0}"), nutriologoID), cnn);
+            SqlCommand cmd = new SqlCommand(String.Format(("delete from Nutriologo where cedula ='{0}'"), cedula), cnn);
             res = cmd.ExecuteNonQuery();
             cnn.Close();
             return res;
         }
-        public List<ClaseNutriologo> NutriologoSearch()
+        public List<ClaseNutriologo> ListarNutriologos()
         {
             List<ClaseNutriologo> lis = new List<ClaseNutriologo>();
             ClaseNutriologo n;
             SqlConnection cnn = Conexion.agregarConexion();
-            SqlCommand cmd = new SqlCommand(String.Format("select * from nutriologo", nombre), cnn);
+            SqlCommand cmd = new SqlCommand(String.Format("select * from nutriologo"), cnn);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 n = new ClaseNutriologo();
-                n.nutriologoID = dr.GetInt16(0); //???? 
+                n.cedula = dr.GetString(0);
                 n.nombre = dr.GetString(1);
+                n.contrasena = dr.GetString(2);
                 lis.Add(n);
             }
             cnn.Close();
