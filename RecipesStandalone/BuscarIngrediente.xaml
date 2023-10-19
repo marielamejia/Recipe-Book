@@ -9,7 +9,7 @@
     <Grid Margin="0,0,0,-6">
         <Label Content="Buscar ingrediente" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="24" FontWeight="Bold"/>
         <Button x:Name="btSearch" Content="Buscar" HorizontalAlignment="Left" Margin="598,111,0,0" VerticalAlignment="Top" Width="118" Background="Black" Height="39" FontFamily="Segoe UI" FontSize="16" Click="btSearch_Click" FontWeight="Bold" BorderBrush="Black" Foreground="White"/>
-        <TextBox x:Name="txName" HorizontalAlignment="Left" Height="39" Margin="277,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="268" Background="White" BorderBrush="White"/>
+        <TextBox x:Name="txName" HorizontalAlignment="Left" Height="39" Margin="277,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="268" Background="White" BorderBrush="White" FontSize="18"/>
         <Label Content="Nombre del ingrediente" HorizontalAlignment="Left" Margin="44,111,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="18" FontWeight="Bold"/>
         <Label Content="Información del ingrediente" HorizontalAlignment="Left" Margin="44,180,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="18" FontWeight="Bold"/>
         <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="599,291,0,0" VerticalAlignment="Top" Width="117" Background="White" Height="38" FontFamily="Segoe UI" FontSize="16" Click="btBack_Click" FontWeight="Bold" Foreground="Black" BorderBrush="White"/>

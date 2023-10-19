@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipesStandalone"
         mc:Ignorable="d"
-        Title="ModifyIngredient" Height="542.8" Width="625.6" Background="#FF829949">
+        Title="ModifyIngredient" Height="433" Width="801" Background="#FF829949">
     <Grid>
-        <Label Content="Modificar ingrediente" HorizontalAlignment="Left" Margin="190,42,0,0" VerticalAlignment="Top" FontFamily="Perpetua Bold" FontSize="24"/>
-        <TextBox x:Name="txID" HorizontalAlignment="Left" Height="41" Margin="213,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" Background="#9FA4A9"/>
-        <TextBox x:Name="txAvgPrice" HorizontalAlignment="Left" Height="41" Margin="213,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" Background="#9FA4A9"/>
-        <Label Content="ID del ingrediente" HorizontalAlignment="Left" Margin="52,143,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
-        <Label Content="Nuevo precio promedio" HorizontalAlignment="Left" Margin="52,232,0,0" VerticalAlignment="Top" FontFamily="Perpetua" FontSize="16"/>
-        <Button x:Name="btModify" Content="Modificar" HorizontalAlignment="Left" Margin="434,304,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btModify_Click"/>
-        <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="434,405,0,0" VerticalAlignment="Top" Width="117" Background="#B98389" Height="39" FontFamily="Perpetua" FontSize="16" Click="btBack_Click"/>
+        <Label Content="Modificar ingrediente" HorizontalAlignment="Left" Margin="243,30,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="30" Height="64" Width="321" FontWeight="Bold"/>
+        <TextBox x:Name="txID" HorizontalAlignment="Left" Height="46" Margin="283,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" Background="White" BorderBrush="White" FontSize="18"/>
+        <TextBox x:Name="txAvgPrice" HorizontalAlignment="Left" Height="46" Margin="283,254,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" Background="White" BorderBrush="White" FontSize="18"/>
+        <Label Content="ID del ingrediente" HorizontalAlignment="Left" Margin="52,155,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="24" Height="49" Width="226" FontWeight="Bold"/>
+        <Label Content="Nuevo precio" HorizontalAlignment="Left" Margin="52,254,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="24" Height="46" Width="208" FontWeight="Bold"/>
+        <Button x:Name="btModify" Content="Modificar" HorizontalAlignment="Left" Margin="586,234,0,0" VerticalAlignment="Top" Width="168" Background="Black" Height="52" FontFamily="Segoe UI" FontSize="16" Click="btModify_Click" FontWeight="Bold" BorderBrush="Black" Foreground="White"/>
+        <Button x:Name="btBack" Content="Regresar" HorizontalAlignment="Left" Margin="586,312,0,0" VerticalAlignment="Top" Width="168" Background="White" Height="52" FontFamily="Segoe UI" FontSize="16" Click="btBack_Click" FontWeight="Bold" Foreground="Black" BorderBrush="White"/>
     </Grid>
 </Window>

@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="AddNutriologo" Height="450" Width="800">
     <Grid Background="#FFE1A144">
-        <Label Content="Agregar Nutriólogo" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Label Content="Agregar Nutriólogo" HorizontalAlignment="Left" Margin="250,17,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="74,166,0,0" VerticalAlignment="Top" Height="50" Width="120" FontSize="22" FontWeight="Bold"/>
         <Label Content="Cédula Prof." HorizontalAlignment="Left" Margin="74,237,0,0" VerticalAlignment="Top" Width="159" Height="51" FontSize="22" FontWeight="Bold"/>
-        <TextBox x:Name ="NombreText" HorizontalAlignment="Left" Height="40" Margin="241,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" CaretBrush="#FF00E4FF" Background="White" BorderBrush="White"/>
-        <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TextChanged="TextBox_TextChanged" Background="White" BorderBrush="White" Margin="241,243,0,0"/>
+        <TextBox x:Name ="NombreText" HorizontalAlignment="Left" Height="40" Margin="241,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" CaretBrush="#FF00E4FF" Background="White" BorderBrush="White" FontSize="18"/>
+        <TextBox x:Name ="CedulaText" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TextChanged="TextBox_TextChanged" Background="White" BorderBrush="White" Margin="241,243,0,0" FontSize="18"/>
         <Button x:Name ="AgregarAd" Content="Agregar" HorizontalAlignment="Left" Margin="589,128,0,0" VerticalAlignment="Top" Width="130" Background="Black" Height="47" FontWeight="Bold" FontSize="20" BorderBrush="Black" Foreground="White"/>
         <Button x:Name ="RegresarAd" Content="Menú" HorizontalAlignment="Left" Margin="589,266,0,0" VerticalAlignment="Top" Width="130" Background="White" Height="47" BorderBrush="White" FontWeight="Bold" FontSize="20"/>
         <Button x:Name ="MenuAd" Content="Regresar" HorizontalAlignment="Left" Margin="589,0,0,0" VerticalAlignment="Center" Width="130" Background="White" Click="MenuAd_Click" Height="47" Foreground="Black" BorderBrush="White" FontWeight="Bold" FontSize="20"/>
