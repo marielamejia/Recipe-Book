@@ -3,3 +3,7 @@ RecipesStandalone/.vs/
 RecipesStandalone/bin/
 RecipesStandalone/obj/
 RecipesStandalone/Conexion.cs
+RecipesWeb/.vs/
+RecipesWeb/bin/
+RecipesWeb/obj/
+RecipesWeb/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1/.signature.p7s
