@@ -11,7 +11,7 @@ namespace RecipesWeb
 {
 
 
-    public partial class index
+    public partial class nutriologoLogin
     {
     }
 }
