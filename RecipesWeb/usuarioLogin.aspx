@@ -76,6 +76,12 @@
                 <br />
             </div>
             <asp:Button ID="btnLoginUsu" margin="12px" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Login" Width="140px" display="inline-block"  BorderColor="White" OnClick="btnLoginUsu_Click" />
+            <br />
+            <br />
+            <asp:Button ID="btnCreaUsu" margin="12px" runat="server" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Crear cuenta" Width="140px" display="inline-block"  BorderColor="White" OnClick="btnCreaUsu_Click" />
+            <br />
+            <br />
+            <asp:Label ID="lbResp" runat="server" ForeColor="#FF6A6A"></asp:Label>    
         </div>
     </div>
     </form>

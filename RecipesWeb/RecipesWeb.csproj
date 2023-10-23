@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CrearReceta.aspx" />
+    <Content Include="crearUsu.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="ListaSuper.aspx" />
     <Content Include="nutriologoAgregaRecetas.aspx" />
@@ -75,6 +76,7 @@
     <Content Include="PlanesDiarios.aspx" />
     <Content Include="RecetasUsuario.aspx" />
     <Content Include="usuarioLogin.aspx" />
+    <Content Include="usuarioPrincipal.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +87,13 @@
     </Compile>
     <Compile Include="CrearReceta.aspx.designer.cs">
       <DependentUpon>CrearReceta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="crearUsu.aspx.cs">
+      <DependentUpon>crearUsu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="crearUsu.aspx.designer.cs">
+      <DependentUpon>crearUsu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -135,6 +144,13 @@
     </Compile>
     <Compile Include="usuarioLogin.aspx.designer.cs">
       <DependentUpon>usuarioLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usuarioPrincipal.aspx.cs">
+      <DependentUpon>usuarioPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuarioPrincipal.aspx.designer.cs">
+      <DependentUpon>usuarioPrincipal.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
