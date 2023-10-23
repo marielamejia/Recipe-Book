@@ -70,8 +70,10 @@
     <Content Include="CrearReceta.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="ListaSuper.aspx" />
+    <Content Include="nutriologoLogin.aspx" />
     <Content Include="PlanesDiarios.aspx" />
     <Content Include="RecetasUsuario.aspx" />
+    <Content Include="usuarioLogin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +98,13 @@
     <Compile Include="ListaSuper.aspx.designer.cs">
       <DependentUpon>ListaSuper.aspx</DependentUpon>
     </Compile>
+    <Compile Include="nutriologoLogin.aspx.cs">
+      <DependentUpon>nutriologoLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nutriologoLogin.aspx.designer.cs">
+      <DependentUpon>nutriologoLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PlanesDiarios.aspx.cs">
       <DependentUpon>PlanesDiarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +119,13 @@
     </Compile>
     <Compile Include="RecetasUsuario.aspx.designer.cs">
       <DependentUpon>RecetasUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usuarioLogin.aspx.cs">
+      <DependentUpon>usuarioLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuarioLogin.aspx.designer.cs">
+      <DependentUpon>usuarioLogin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
