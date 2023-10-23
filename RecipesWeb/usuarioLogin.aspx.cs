@@ -20,10 +20,31 @@ namespace RecipesWeb
             SqlConnection con = Conexion.agregarConexion();
             if (con != null)
             {
-                String query = String.Format("select ");
+                String query = String.Format("select nombre from usuario where email='{0}' and contrasena='{1}'", txtUsu.Text, txtContra.Text);
                 SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    rd.Read();
+                    Session["nombre"] = rd;
+                    con.Close();
+                    Response.Redirect("usuarioPrincipal.aspx");
+                }
+                else
+                {
+                    lbResp.Text = "mail o password incorrecto";
+                    con.Close();
+                }
             }
-            
+            else
+            {
+                lbResp.Text = "no hubo conexión";
+            }
+        }
+
+        protected void btnCreaUsu_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("crearUsu.aspx");
         }
     }
 }
