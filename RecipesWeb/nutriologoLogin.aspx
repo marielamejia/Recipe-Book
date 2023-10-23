@@ -67,7 +67,7 @@
         <h1>Nutriólogos</h1>
         <div class="login-form">
             <div class="input-group">
-                <label for="usuario">Usuario:</label>
+                <label for="usuario">Cédula:</label>
                 <asp:TextBox ID="txtUsu" runat="server"></asp:TextBox>
             </div>
             <div class="input-group">
