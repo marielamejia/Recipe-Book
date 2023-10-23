@@ -78,6 +78,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion.cs" />
     <Compile Include="CrearReceta.aspx.cs">
       <DependentUpon>CrearReceta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

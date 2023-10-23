@@ -64,10 +64,10 @@
     <div class="header">
     </div>
     <div class="container">
-        <h1>Nutriólogos</h1>
+        <h1>Usuarios</h1>
         <div class="login-form">
             <div class="input-group">
-                <label for="usuario">Usuario:</label>
+                <label for="usuario">Email:</label>
                 <asp:TextBox ID="txtUsu" runat="server"></asp:TextBox>
             </div>
             <div class="input-group">
