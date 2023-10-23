@@ -10,9 +10,9 @@ namespace RecipesStandalone
     class ClaseNutriologo
     {
         //Atributos
-        private String cedula { get; set; }
-        private String nombre { get; set; }
-        private String contrasena { get; set; }
+        public String cedula { get; set; }
+        public String nombre { get; set; }
+        public String contrasena { get; set; }
 
 
         // Constructores 
@@ -47,7 +47,7 @@ namespace RecipesStandalone
             List<ClaseNutriologo> lis = new List<ClaseNutriologo>();
             ClaseNutriologo n;
             SqlConnection cnn = Conexion.agregarConexion();
-            SqlCommand cmd = new SqlCommand(String.Format("select * from nutriologo"), cnn);
+            SqlCommand cmd = new SqlCommand(String.Format("select * from Nutriologo"), cnn);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
