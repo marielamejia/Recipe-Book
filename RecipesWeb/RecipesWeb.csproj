@@ -70,6 +70,7 @@
     <Content Include="CrearReceta.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="ListaSuper.aspx" />
+    <Content Include="nutriologoAgregaRecetas.aspx" />
     <Content Include="nutriologoLogin.aspx" />
     <Content Include="PlanesDiarios.aspx" />
     <Content Include="RecetasUsuario.aspx" />
@@ -97,6 +98,13 @@
     </Compile>
     <Compile Include="ListaSuper.aspx.designer.cs">
       <DependentUpon>ListaSuper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nutriologoAgregaRecetas.aspx.cs">
+      <DependentUpon>nutriologoAgregaRecetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nutriologoAgregaRecetas.aspx.designer.cs">
+      <DependentUpon>nutriologoAgregaRecetas.aspx</DependentUpon>
     </Compile>
     <Compile Include="nutriologoLogin.aspx.cs">
       <DependentUpon>nutriologoLogin.aspx</DependentUpon>

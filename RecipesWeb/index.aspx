@@ -28,45 +28,23 @@
         }
 
         .buttons {
-            margin-top: 20px;
+            margin-top: 22px;
         }
 
-        .btn-nutriologo {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 18px;
-            background-color: #829949;
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .btn-usuario {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 18px;
-            background-color: #e1a144;
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .btn-nutriologo:hover, .btn-usuario:hover {
+        .btnNutriologo:hover, .btnUsuario:hover {
             background-color: #000000;
         }
     </style>
     </head>
         <body>
+            <form id="form1" runat="server">
         <div class="container">
             <h1>Bienvenido a Nutrini</h1>
-        <div class="buttons">
-            <a href="login-nutriologo.html" class="btn-nutriologo">Nutriólogo</a>
-            <a href="login-usuario.html" class="btn-usuario">Usuario</a>
+            <div class="buttons">
+                <asp:Button ID="btnNutriologo" margin="12px" runat="server" BackColor="#829949" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Nutriólogo" Width="140px" display="inline-block"  OnClick="btnNutriologo_Click" BorderColor="White" />
+                <asp:Button ID="btnUsuario" margin="12px" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Usuario" Width="140px" display="inline-block"  OnClick="btnUsuario_Click" BorderColor="White"  />
+            </div>
         </div>
-        </div>
+            </form>
 </body>
 </html>

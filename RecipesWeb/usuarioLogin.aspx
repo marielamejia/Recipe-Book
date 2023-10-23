@@ -36,7 +36,7 @@
         .login-form {
             width: 300px;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 7px;
             background-color: #ffffff;
         }
 
@@ -70,21 +70,24 @@
     
 </head>
 <body>
+    <form id="form1" runat="server">
     <div class="header">
     </div>
     <div class="container">
-        <h1>Usuarios</h1>
+        <h1>Nutriólogos</h1>
         <div class="login-form">
             <div class="input-group">
                 <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario"/>
+                <asp:TextBox ID="txtUsu" runat="server"></asp:TextBox>
             </div>
             <div class="input-group">
                 <label for="contrasena">Contraseña:</label>
-                <input type="password" id="contrasena" name="contrasena"/>
+                <asp:TextBox ID="txtContra" runat="server"></asp:TextBox>
+                <br />
             </div>
-            <button class="login-button">Login</button>
+            <asp:Button ID="btnLoginUsu" margin="12px" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Login" Width="140px" display="inline-block"  BorderColor="White" OnClick="btnLoginUsu_Click" />
         </div>
     </div>
+    </form>
 </body>
 </html>

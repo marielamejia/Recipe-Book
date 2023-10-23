@@ -11,7 +11,7 @@ namespace RecipesWeb
 {
 
 
-    public partial class usuarioLogin
+    public partial class nutriologoAgregaRecetas
     {
 
         /// <summary>
@@ -24,30 +24,12 @@ namespace RecipesWeb
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control txtUsu.
+        /// Control TextBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsu;
-
-        /// <summary>
-        /// Control txtContra.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContra;
-
-        /// <summary>
-        /// Control btnLoginUsu.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLoginUsu;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
     }
 }
