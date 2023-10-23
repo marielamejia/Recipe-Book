@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InicioUsuario.aspx.cs" Inherits="RecipesWeb.InicioUsuario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecetasUsuario.aspx.cs" Inherits="RecipesWeb.RecetasUsuario" %>
 
 <!DOCTYPE html>
 

@@ -10,7 +10,7 @@
 
 namespace RecipesWeb
 {
-    public partial class InicioNutriologo
+    public partial class RecetasUsuario
     {
 
         /// <summary>

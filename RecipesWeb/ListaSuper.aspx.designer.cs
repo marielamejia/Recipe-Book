@@ -10,7 +10,7 @@
 
 namespace RecipesWeb
 {
-    public partial class InicioUsuario
+    public partial class ListaSuper
     {
 
         /// <summary>
