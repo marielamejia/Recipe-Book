@@ -67,10 +67,66 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CrearReceta.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="ListaSuper.aspx" />
+    <Content Include="nutriologoLogin.aspx" />
+    <Content Include="PlanesDiarios.aspx" />
+    <Content Include="RecetasUsuario.aspx" />
+    <Content Include="usuarioLogin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrearReceta.aspx.cs">
+      <DependentUpon>CrearReceta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearReceta.aspx.designer.cs">
+      <DependentUpon>CrearReceta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaSuper.aspx.cs">
+      <DependentUpon>ListaSuper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaSuper.aspx.designer.cs">
+      <DependentUpon>ListaSuper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nutriologoLogin.aspx.cs">
+      <DependentUpon>nutriologoLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nutriologoLogin.aspx.designer.cs">
+      <DependentUpon>nutriologoLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PlanesDiarios.aspx.cs">
+      <DependentUpon>PlanesDiarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlanesDiarios.aspx.designer.cs">
+      <DependentUpon>PlanesDiarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecetasUsuario.aspx.cs">
+      <DependentUpon>RecetasUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecetasUsuario.aspx.designer.cs">
+      <DependentUpon>RecetasUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usuarioLogin.aspx.cs">
+      <DependentUpon>usuarioLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuarioLogin.aspx.designer.cs">
+      <DependentUpon>usuarioLogin.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
