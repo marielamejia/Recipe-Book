@@ -55,18 +55,8 @@
             padding: 10px;
             border: 1px solid #000000;
             border-radius: 5px;
-        }
-         .login-button {
-            background-color: #e1a144;
-            color: #ffffff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-         }   
+        }   
     </style>
-
     
 </head>
 <body>
