@@ -67,12 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CrearReceta.aspx" />
     <Content Include="crearUsu.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="ListaSuper.aspx" />
     <Content Include="nutriologoAgregaRecetas.aspx" />
     <Content Include="nutriologoLogin.aspx" />
+    <Content Include="nutriologoModificaRecetas.aspx" />
+    <Content Include="nutriologoPrincipal.aspx" />
     <Content Include="PlanesDiarios.aspx" />
     <Content Include="RecetasUsuario.aspx" />
     <Content Include="usuarioLogin.aspx" />
@@ -81,13 +82,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="CrearReceta.aspx.cs">
-      <DependentUpon>CrearReceta.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CrearReceta.aspx.designer.cs">
-      <DependentUpon>CrearReceta.aspx</DependentUpon>
-    </Compile>
     <Compile Include="crearUsu.aspx.cs">
       <DependentUpon>crearUsu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -122,6 +116,20 @@
     </Compile>
     <Compile Include="nutriologoLogin.aspx.designer.cs">
       <DependentUpon>nutriologoLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nutriologoModificaRecetas.aspx.cs">
+      <DependentUpon>nutriologoModificaRecetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nutriologoModificaRecetas.aspx.designer.cs">
+      <DependentUpon>nutriologoModificaRecetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nutriologoPrincipal.aspx.cs">
+      <DependentUpon>nutriologoPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nutriologoPrincipal.aspx.designer.cs">
+      <DependentUpon>nutriologoPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="PlanesDiarios.aspx.cs">
       <DependentUpon>PlanesDiarios.aspx</DependentUpon>

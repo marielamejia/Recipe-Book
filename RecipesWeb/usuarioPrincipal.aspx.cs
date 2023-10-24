@@ -16,7 +16,7 @@ namespace RecipesWeb
         }
         protected void btnUsuario_Click(object sender, EventArgs e)
         {
-            R
+            
         }
         protected void btnLista_Click(object sender, EventArgs e)
         {

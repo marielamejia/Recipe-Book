@@ -16,7 +16,7 @@ namespace RecipesWeb
 
         protected void btnLoginNutri_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("nutriologoPrincipal.aspx");
         }
 
     }
