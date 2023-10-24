@@ -13,5 +13,22 @@ namespace RecipesWeb
         {
 
         }
+
+        protected void btnUsuario_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("usuarioPrincipal.aspx");
+        }
+        protected void btnLista_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ListaSuper.aspx");
+        }
+        protected void btnRecetas_Click(object sender, EventArgs e)
+        {
+            
+        }
+        protected void btnPlan_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PlanesDiarios.aspx");
+        }
     }
 }
