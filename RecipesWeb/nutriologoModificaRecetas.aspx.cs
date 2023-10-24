@@ -13,5 +13,18 @@ namespace RecipesWeb
         {
 
         }
+
+        protected void btnCuenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("nutriologoPrincipal.aspx");
+        }
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("nutriologoAgregaRecetas.aspx");
+        }
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
