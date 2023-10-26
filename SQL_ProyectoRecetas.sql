@@ -89,6 +89,11 @@ insert into Ingrediente values (97,'Papaya', 20.00)
 insert into Ingrediente values (98,'Piña', 15.00)
 insert into Ingrediente values (99,'Plátano macho', 15.00)
 
+--Alta de un Nutriólogo de prueba
+insert into Nutriologo values ('123', 'nutri', 'nutri')
+--Alta de un Usuario de prueba
+insert into Usuario values (123, 'usuario@gmail.com', 'usuario', 'usuario')
+
 
 --Queries para el proyecto standalone
 
