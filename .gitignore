@@ -7,3 +7,4 @@ RecipesWeb/.vs/
 RecipesWeb/bin/
 RecipesWeb/obj/
 RecipesWeb/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1/.signature.p7s
+RecipesWeb/Conexion.cs
