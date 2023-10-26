@@ -24,22 +24,22 @@ namespace RecipesWeb
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control txtUsu.
+        /// Control txCedula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsu;
+        protected global::System.Web.UI.WebControls.TextBox txCedula;
 
         /// <summary>
-        /// Control txtContra.
+        /// Control txContra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContra;
+        protected global::System.Web.UI.WebControls.TextBox txContra;
 
         /// <summary>
         /// Control btnLoginNutri.
