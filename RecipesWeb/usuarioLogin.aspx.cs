@@ -26,13 +26,15 @@ namespace RecipesWeb
                 if (rd.HasRows)
                 {
                     rd.Read();
-                    Session["id"] = rd;
+                    Session["id"] = rd.GetInt16(0);
+                    rd.Close();
                     con.Close();
                     Response.Redirect("usuarioPrincipal.aspx");
                 }
                 else
                 {
                     lbResp.Text = "mail o password incorrecto";
+                    rd.Close();
                     con.Close();
                 }
             }
