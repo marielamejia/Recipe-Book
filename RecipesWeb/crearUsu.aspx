@@ -73,14 +73,14 @@
             </div>
             <div class="input-group">
                 <label for="Email">Email:</label>
-                <asp:TextBox ID="txtUsu" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtMail" runat="server"></asp:TextBox>
             </div>
             <div class="input-group">
                 <label for="contrasena">Contraseña:</label>
-                <asp:TextBox ID="txtContra" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtContra" runat="server" CssClass="textbox" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
                 <br />
             </div>
-            <asp:Button ID="btnCreaU" margin="12px" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Crear cuenta" Width="140px" display="inline-block"  BorderColor="White" />
+            <asp:Button ID="btnCreaU" margin="12px" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Crear cuenta" Width="140px" display="inline-block"  BorderColor="White" OnClick="btnCreaU_Click" />
             <br />
             <br />
             <asp:Label ID="lbResp" runat="server" ForeColor="#FF6A6A"></asp:Label>    
