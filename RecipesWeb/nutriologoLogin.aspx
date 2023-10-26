@@ -72,7 +72,7 @@
             </div>
             <div class="input-group">
                 <label for="contrasena">Contraseña:</label>
-                <asp:TextBox ID="txContra" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txContra" runat="server" CssClass="textbox" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
                 <br />
             </div>
             <asp:Button ID="btnLoginNutri" margin="12px" runat="server" BackColor="#829949" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Login" Width="140px" display="inline-block"  BorderColor="White" OnClick="btnLoginNutri_Click" />

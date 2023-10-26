@@ -49,7 +49,6 @@ namespace RecipesWeb
             else
             {
                 lbResp.Text = "no hubo conexión";
-                con.Close();
             }
         }
 
