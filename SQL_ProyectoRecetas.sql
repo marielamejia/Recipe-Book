@@ -41,8 +41,8 @@ create table RecetaIngrediente(
 
 create table Usuario(
 	idUsuario smallint not null primary key,
-	correo varchar(50),
 	nombre varchar(50),
+	correo varchar(50) unique,
 	contrasena varchar(20))
 
 create table PlanDia(
@@ -92,7 +92,7 @@ insert into Ingrediente values (99,'Plátano macho', 15.00)
 --Alta de un Nutriólogo de prueba
 insert into Nutriologo values ('123', 'nutri', 'nutri')
 --Alta de un Usuario de prueba
-insert into Usuario values (123, 'usuario@gmail.com', 'usuario', 'usuario')
+insert into Usuario values (1, 'usuario', 'usuario@gmail.com', 'usuario')
 
 
 --Queries para el proyecto standalone
