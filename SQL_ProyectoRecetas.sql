@@ -1,7 +1,7 @@
 create database BDnutricion
 use BDnutricion
 
---Creación de tablas
+--Creaciï¿½n de tablas
 
 create table Administrador(
 	usuAdmin varchar(20) not null primary key,
@@ -72,7 +72,7 @@ insert into Administrador values('Admin', 'Admin')
 --Registro de algunos ingredientes
 insert into Ingrediente values (82,'Aceite', 23.00)
 insert into Ingrediente values (83,'Arroz', 20.00)
-insert into Ingrediente values (84,'Azúcar' , 22.00)
+insert into Ingrediente values (84,'Azï¿½car' , 22.00)
 insert into Ingrediente values (85,'Harina', 16.00)
 insert into Ingrediente values (86,'Frijol bayo', 15.00)
 insert into Ingrediente values (87,'Frijol negro', 30.00)
@@ -80,16 +80,16 @@ insert into Ingrediente values (88,'Huevo', 35.00)
 insert into Ingrediente values (89,'Carne molida de res', 110.00)
 insert into Ingrediente values (90,'Bistec de res', 150.00)
 insert into Ingrediente values (91,'Aguacate', 60.00)
-insert into Ingrediente values (92,'Limón', 20.00)
+insert into Ingrediente values (92,'Limï¿½n', 20.00)
 insert into Ingrediente values (93,'Guayaba', 30.00)
 insert into Ingrediente values (94,'Manzana Golden', 30.00)
 insert into Ingrediente values (95,'Manzana roja', 40.00)
 insert into Ingrediente values (96,'Naranja', 10.00)
 insert into Ingrediente values (97,'Papaya', 20.00)
-insert into Ingrediente values (98,'Piña', 15.00)
-insert into Ingrediente values (99,'Plátano macho', 15.00)
+insert into Ingrediente values (98,'Piï¿½a', 15.00)
+insert into Ingrediente values (99,'Plï¿½tano macho', 15.00)
 
---Alta de un Nutriólogo de prueba
+--Alta de un Nutriï¿½logo de prueba
 insert into Nutriologo values ('123', 'nutri', 'nutri')
 --Alta de un Usuario de prueba
 insert into Usuario values (1, 'usuario', 'usuario@gmail.com', 'usuario')
@@ -103,11 +103,11 @@ select contrasena from Administrador where usuAdmin = '{}'
 --Ingrediente
 insert into Ingrediente values ({}, {}, '{}') --para alta
 delete from Ingrediente where idIngrediente = {} --para baja
-select * from Ingrediente where nombre like '%{}%' --búsqueda
+select * from Ingrediente where nombre like '%{}%' --bï¿½squeda
 select * from Ingrediente --para ver todos
 update Ingrediente set precioPromPorKg = {} where idIngrediente = {} --para actualizar el precio
 
---Nutrólogo
+--Nutrï¿½logo
 insert into Nutriologo values ('{}', '{}', '{}') --para alta
 delete from Nutriologo where cedula = '{}' --para baja
 select * from Nutriologo --para ver todos
@@ -116,7 +116,7 @@ select * from Nutriologo --para ver todos
 --Queries para el proyecto web
 
 --Login
-select Nutriologo.contrasena from Nutriologo where cedula = '{}' --no olvidar guardar cédula en el Session
+select Nutriologo.contrasena from Nutriologo where cedula = '{}' --no olvidar guardar cï¿½dula en el Session
 select Usuario.contrasena, idUsuario from Usuario where correo = '{}' --no olvidar guardar el id en el Session
 select idLista from ListaSuper where idUsuario = {Session["idUsuario"]} --tras el login de usuario
 
@@ -125,7 +125,7 @@ select idLista from ListaSuper where idUsuario = {Session["idUsuario"]} --tras e
 select idReceta,nombre from Receta
 --para el buscador (no olvides resetear filtros tras buscar):
 select Receta.idReceta,Receta.nombre from Receta where nombre like '{%nombreBuscado%}'
---para filtrar por etiquetas (se recorren los renglones del grid y si el query regresa tupla se añade al nuevo grid):
+--para filtrar por etiquetas (se recorren los renglones del grid y si el query regresa tupla se aï¿½ade al nuevo grid):
 select * from RecetaEtiqueta where idReceta = {idReceta} and etiqueta like '{etiquetaBuscada}'
 --para mostrar la receta (en el lado derecho):
 select instrucciones from Receta where idReceta = {idReceta} --para instrucciones
@@ -133,23 +133,23 @@ select etiqueta from RecetaEtiqueta where idReceta = {idReceta} --para las etiqu
 select Ingrediente.nombre, RecetaIngrediente.numPiezas from RecetaIngrediente inner join Ingrediente 
 	on RecetaIngrediente.idIngrediente = Ingrediente.idIngrediente where idReceta = {idReceta} 
 	--para listar ingredientes en un grid (el id va invisible)
---para añadir la receta a un plan semanal:
+--para aï¿½adir la receta a un plan semanal:
 select idPlan, nombre from PlanDia where idUsuario = {Session["idUsuario"]} --para llenar una dropdownlist
-insert into RecetaPlan values ({idReceta},{idPlan}) --para agregar, si hay error es porque ya estab añadida
+insert into RecetaPlan values ({idReceta},{idPlan}) --para agregar, si hay error es porque ya estab aï¿½adida
 
 --Planes Diarios
 --para mostrar los planes activos (grid):
 select idPlan, nombre from PlanDiario where idUsuario = {Session["idUsuario"]}
---para listar las recetas de un plan al picarle en el botón del respectivo renglón:
+--para listar las recetas de un plan al picarle en el botï¿½n del respectivo renglï¿½n:
 select Receta.idReceta,Receta.nombre from Receta inner join RecetaPlan on Receta.idReceta = RecetaPlan.idReceta
 	where RecetaPlan.idPlan = {idPlan} --(vaciar en otro grid)
---para mostrar la receta (al picarle en el botón del respectivo renglón):
+--para mostrar la receta (al picarle en el botï¿½n del respectivo renglï¿½n):
 select instrucciones from Receta where idReceta = {idReceta} --para instrucciones
 select etiqueta from RecetaEtiqueta where idReceta = {idReceta} --para las etiquetas
 select Ingrediente.nombre, RecetaIngrediente.numPiezas from RecetaIngrediente inner join Ingrediente 
 	on RecetaIngrediente.idIngrediente = Ingrediente.idIngrediente where idReceta = {idReceta} 
 	--para listar ingredientes (en un tercer grid, el id va invisible)
---para añadir los ingredientes a la lista al picarle en el botón de su respectivo renglón:
+--para aï¿½adir los ingredientes a la lista al picarle en el botï¿½n de su respectivo renglï¿½n:
 select numPiezas from IngredienteListaSuper where idLista = {"Session["idLista"]"} and idIngrediente = {idIngrediente}
 	--para saber si ya estaba:
 update IngredienteListaSuper set numPiezas = {piezasAnteriores + piezasReceta} 
@@ -161,33 +161,56 @@ insert into IngredienteListaSuper values ({Session["idLista"]},{idIngrediente},{
 select Ingrediente,idIngrediente, Ingrediente.nombre, Ingrediente.PrecioPromPorKilo, IngredienteLista.numPiezas
 	from Ingrediente inner join IngredienteLista on Ingrediente.idIngrediente = IngredienteLista.idIngrediente
 	where idLista = {idLista}
---para eliminar ingredientes (al picarle al botón de su respectivo renglón):
+--para eliminar ingredientes (al picarle al botï¿½n de su respectivo renglï¿½n):
 delete from IngredienteLista where idLista = {Session["idLista"]} and idIngrediente = {idIngrediente}
---para limpiar la lista (en algún botón):
+--para limpiar la lista (en algï¿½n botï¿½n):
 delete from IngredienteLista where idLista = {Session["idLista"]}
 
---Nutriólogo
+--Nutriï¿½logo
 --mostrar recetas (en un gridview):
 select Receta.idReceta,Receta.nombre from Receta inner join RegistroReceta on Receta.idReceta = RegistroReceta.idReceta
 	where RegristroReceta.cedula = '{Session["cedula"]}'
---para mostrar la receta (al picarle en el botón del respectivo renglón):
+--para mostrar la receta (al picarle en el botï¿½n del respectivo renglï¿½n):
 select instrucciones from Receta where idReceta = {idReceta} --para instrucciones
 select etiqueta from RecetaEtiqueta where idReceta = {idReceta} --para las etiquetas
 select Ingrediente.nombre, RecetaIngrediente.numPiezas from RecetaIngrediente inner join Ingrediente 
 	on RecetaIngrediente.idIngrediente = Ingrediente.idIngrediente where idReceta = {idReceta} 
 	--para listar ingredientes (en un tercer grid, el id va invisible)
---Crear una nueva receta (va en otra página distinta a la de mostrar)
---para mostrar los ingredientes con los que trabajar (en un grid con el id invisible y columna de botón para agregar):
+--Crear una nueva receta (va en otra pï¿½gina distinta a la de mostrar)
+--para mostrar los ingredientes con los que trabajar (en un grid con el id invisible y columna de botï¿½n para agregar):
 select idIngrediente,nombre from Ingrediente
-	--al dar click en el botón de agregar el renglón debe copiarse en un segundo grid casi igual pero que en vez de 
-	--botón para agregar tenga un campo en blanco para que se escriba la cantidad (se ingresa en piezas, no en gramos)
+	--al dar click en el botï¿½n de agregar el renglï¿½n debe copiarse en un segundo grid casi igual pero que en vez de 
+	--botï¿½n para agregar tenga un campo en blanco para que se escriba la cantidad (se ingresa en piezas, no en gramos)
 --para llenar el checkboxlist con las etiquetas:
 select distinct etiqueta from RecetaEtiqueta
---para el alta de la receta (habrá que pensar bien en cómo se genera el ID):
+--para el alta de la receta (habrï¿½ que pensar bien en cï¿½mo se genera el ID):
 insert into Receta values ({idReceta}, '{nombre}', '{instrucciones}')
 insert into RegistroReceta values ({idReceta},{idRegistro},'{Session["cedula"]') 
 	--maybe el id del registro puede ser el mismo que el de la etiqueta??
 insert into RecetaEtiqueta values ({idReceta},'{etiqueta}') 
-	--se va recorriendo el checkboxlist y si está seleccionada se hace la inserción
+	--se va recorriendo el checkboxlist y si estï¿½ seleccionada se hace la inserciï¿½n
 insert into RecetaIngrediente ({idReceta},{idIngrediente},{cantidad})
-	--se irá recorriendo el grid de ingredientes seleccionados para esta parte
+	--se irï¿½ recorriendo el grid de ingredientes seleccionados para esta parte
+
+--Registro de un nutriologo
+INSERT INTO Nutriologo VALUES(1, 'nutriAdmin', 'contra') 
+--Registro de algunas recetas
+INSERT INTO Receta VALUES(1, 'Receta base', 'Utilizada para dar de alta a las etiquetas')
+INSERT INTO Receta VALUES(2, 'Huevos balanceados', 'Revolver huevos y cocer en un sarten. AcompaÃ±ar con arroz y aguacate')
+--Conectar receta con nutriologo
+INSERT INTO RegistroReceta VALUES (2, 100, 1)
+--Conectar receta con ingredientes
+INSERT INTO RecetaIngrediente VALUES (2, 83, 1)
+INSERT INTO RecetaIngrediente VALUES (2, 88, 2)
+INSERT INTO RecetaIngrediente VALUES (2, 91, 1)
+--Registro de algunas etiquetas
+INSERT INTO RecetaEtiqueta VALUES(1,'Gluten-free')
+INSERT INTO RecetaEtiqueta VALUES(1,'Obesidad')
+INSERT INTO RecetaEtiqueta VALUES(1,'Diabetes')
+INSERT INTO RecetaEtiqueta VALUES(1,'HipertensiÃ³n')
+
+--Queries para el registro
+SELECT distinct etiqueta FROM RecetaEtiqueta
+SELECT idIngrediente, nombre FROM Ingrediente
+
+SELECT COUNT(DISTINCT idReceta) FROM Receta
