@@ -36,43 +36,63 @@ namespace RecipesWeb
         protected void btnSubirReceta_Click(object sender, EventArgs e)
         {
             SqlConnection con = Conexion.agregarConexion();
-            String queryCount = String.Format("SELECT COUNT(DISTINCT idReceta) FROM Receta");
-            SqlCommand cmdCount = new SqlCommand(queryCount, con);
-            int idNuevo = (int)cmdCount.ExecuteScalar() + 1;
-            cmdCount.ExecuteReader().Close();
-
-            String queryRegistro = String.Format("INSERT INTO Receta VALUES({0}, '{1}', '{2}')", idNuevo, txtNombreReceta.Text, txtInstrucciones.Text);
-            SqlCommand cmdRegistro = new SqlCommand(queryRegistro, con);
-            cmdRegistro.ExecuteReader();
-            cmdRegistro.ExecuteReader().Close();
-
-            String queryReceta = String.Format("INSERT INTO RegistroReceta VALUES({0}, {1}, {2})", idNuevo, 100 + idNuevo, (string)Session["cedula"]);
-            SqlCommand cmdReceta = new SqlCommand(queryReceta, con);
-            cmdReceta.ExecuteReader();
-            cmdReceta.ExecuteReader().Close();
-
             if (con != null)
             {
+                String queryCount = String.Format("SELECT COUNT(DISTINCT idReceta) FROM Receta");
+                SqlCommand cmdCount = new SqlCommand(queryCount, con);
+                int idNuevo = (int)cmdCount.ExecuteScalar() + 1;
+                cmdCount.ExecuteReader().Close();
+
+                String queryRegistro = String.Format("INSERT INTO Receta VALUES({0}, '{1}', '{2}')", idNuevo, txtNombreReceta.Text, txtInstrucciones.Text);
+                SqlCommand cmdRegistro = new SqlCommand(queryRegistro, con);
+                cmdRegistro.ExecuteNonQuery();
+
+                String queryReceta = String.Format("INSERT INTO RegistroReceta VALUES({0}, {1}, {2})", idNuevo, 100 + idNuevo, (string)Session["cedula"]);
+                SqlCommand cmdReceta = new SqlCommand(queryReceta, con);
+                cmdReceta.ExecuteNonQuery();
+
                 foreach (ListItem item in chkEtiquetas.Items)
                 {
                     if (item.Selected)
                     {
-                        int etiquetaId = int.Parse(item.Value);
-                        String queryEtiqueta = String.Format("INSERT INTO RecetaEtiqueta VALUES({0}, {1})", idNuevo, etiquetaId);
+                        String etiquetaId = item.Value.ToString();
+                        String queryEtiqueta = String.Format("INSERT INTO RecetaEtiqueta VALUES({0}, '{1}')", idNuevo, etiquetaId);
                         SqlCommand cmdEtiqueta = new SqlCommand(queryEtiqueta, con);
-                        cmdEtiqueta.ExecuteReader();
+                        cmdEtiqueta.ExecuteNonQuery();
                     }
                 }
                 foreach (ListItem item in lstIngredientesAgregados.Items)
                 {
                     int ingredienteId = int.Parse(item.Value);
-                    String queryIngrediente = String.Format("INSERT INTO RecetaIngrediente VALUES({0}, {1})", idNuevo, ingredienteId);
-                    SqlCommand cmdIngrediente = new SqlCommand(queryIngrediente, con);
-                    cmdIngrediente.ExecuteReader();
+                    String queryExistencia = String.Format("SELECT numPiezas FROM RecetaIngrediente WHERE idReceta ={0} AND idIngrediente ={1}", idNuevo, ingredienteId);
+                    SqlCommand cmdExistencia = new SqlCommand(queryExistencia, con);
+                    var result = cmdExistencia.ExecuteScalar();
+                    if (result != null)
+                    {
+                        float numPiezas = 0;
+                        if (float.TryParse(result.ToString(), out numPiezas))
+                        {
+                            numPiezas++; // Aumenta en 1
+                            string queryActualizar = string.Format("UPDATE RecetaIngrediente SET numPiezas = {0} WHERE idReceta = {1} AND idIngrediente = {2}", numPiezas, idNuevo, ingredienteId);
+                            SqlCommand cmdActualizar = new SqlCommand(queryActualizar, con);
+                            cmdActualizar.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        // No existe, agrega una nueva instancia
+                        string queryInsertar = String.Format("INSERT INTO RecetaIngrediente VALUES ({0}, {1}, {2})",idNuevo, ingredienteId, 1);
+                        SqlCommand cmdInsertar = new SqlCommand(queryInsertar, con);
+                        cmdInsertar.ExecuteNonQuery();
+                    }
                 }
+                con.Close();
             }
-            con.Close();
+            txtNombreReceta.Text = "";
+            txtInstrucciones.Text = "Se agregó la receta";
+            lstIngredientesAgregados.Items.Clear();
         }
+
         protected void btnAgregarIngrediente_Click(object sender, EventArgs e)
         {
             lstIngredientesAgregados.Items.Add(ddlIngredientes.SelectedItem);
