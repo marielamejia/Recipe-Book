@@ -39,7 +39,7 @@
         <body>
             <form id="form1" runat="server">
         <div class="container">
-            <h1>Bienvenido a Nutrini</h1>
+            <h1>Bienvenido a FlavorFlow</h1>
             <div class="buttons">
                 <asp:Button ID="btnNutriologo" margin="12px" runat="server" BackColor="#829949" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Nutriólogo" Width="140px" display="inline-block"  OnClick="btnNutriologo_Click" BorderColor="White" />
                 <asp:Button ID="btnUsuario" margin="12px" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Usuario" Width="140px" display="inline-block"  OnClick="btnUsuario_Click" BorderColor="White"  />
