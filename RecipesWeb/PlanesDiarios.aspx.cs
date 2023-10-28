@@ -108,5 +108,19 @@ namespace RecipesWeb
                 con.Close();
             }
         }
+
+        protected void gvRecetasDelPlan_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Detalles")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                string idReceta = gvRecetasDelPlan.DataKeys[index]["idReceta"].ToString();
+                // Guardamos en sesion para la pagina detallada de la receta
+                Session["idReceta"] = idReceta;
+
+                // Luego, puedes realizar cualquier otra lógica necesaria, como redireccionar a una página de detalles.
+                Response.Redirect("VisualizarReceta.aspx");
+            }
+        }
     }
 }
