@@ -47,8 +47,8 @@
     <form id="form1" runat="server">
         <div>
             <div class="header">
-            </div>
             <h1>Recetas</h1>
+            </div>
         </div>
         <br />
         <asp:TextBox ID="txBuscador" runat="server" Width="499px" BorderColor="Black" BorderWidth="2" Height="24px" style="margin-top: 0px"></asp:TextBox>
