@@ -29,5 +29,15 @@ namespace RecipesWeb
         {
 
         }
+
+        protected void btCrearPlan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btAgregarAListaSuper_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

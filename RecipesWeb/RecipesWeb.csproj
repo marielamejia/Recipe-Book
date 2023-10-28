@@ -78,6 +78,7 @@
     <Content Include="RecetasUsuario.aspx" />
     <Content Include="usuarioLogin.aspx" />
     <Content Include="usuarioPrincipal.aspx" />
+    <Content Include="VisualizarReceta.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="usuarioPrincipal.aspx.designer.cs">
       <DependentUpon>usuarioPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizarReceta.aspx.cs">
+      <DependentUpon>VisualizarReceta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisualizarReceta.aspx.designer.cs">
+      <DependentUpon>VisualizarReceta.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

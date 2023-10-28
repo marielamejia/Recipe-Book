@@ -30,5 +30,15 @@ namespace RecipesWeb
         {
             Response.Redirect("PlanesDiarios.aspx");
         }
+
+        protected void gvBuscarRecetas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CheckBoxList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

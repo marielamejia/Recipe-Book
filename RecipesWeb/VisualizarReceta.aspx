@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecetasUsuario.aspx.cs" Inherits="RecipesWeb.RecetasUsuario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VisualizarReceta.aspx.cs" Inherits="RecipesWeb.VisualizarReceta" %>
 
 <!DOCTYPE html>
 
@@ -44,11 +44,37 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
         <div>
             <div class="header">
             </div>
-            <h1>Recetas</h1>
+            <h1>Receta</h1>
+            <br />
+            <strong>Nombre:</strong><br />
+            <asp:Label ID="lbNombre" runat="server"></asp:Label>
+            <br />
+            <br />
+            <br />
+            <strong>Ingredientes:</strong><br />
+            <br />
+        <asp:GridView ID="gvBuscarRecetas1" runat="server" OnSelectedIndexChanged="gvBuscarRecetas_SelectedIndexChanged">
+            <Columns>
+                <asp:BoundField DataField="idReceta" HeaderText="id" ReadOnly="True" SortExpression="idReceta" Visible="False" />
+                <asp:BoundField DataField="nombre" HeaderText="Nombre" ReadOnly="True" SortExpression="nombre" />
+                <asp:BoundField DataField="numPiezas" HeaderText="Piezas" ReadOnly="True" SortExpression="numPiezas" />
+                <asp:BoundField DataField="precioPromPorKg " HeaderText="Precio promedio [Kg]" ReadOnly="True" SortExpression="precioPromPorKg " />
+            </Columns>
+        </asp:GridView>
+            <br />
+            <br />
+            <strong>Etiquetas:</strong><asp:BulletedList ID="listaEtiquetas" runat="server" EnableTheming="True">
+            </asp:BulletedList>
+            <br />
+            <br />
+            <br />
+            <strong>Instrucciones:</strong><br />
+            <asp:Label ID="lbInstrucciones" runat="server"></asp:Label>
+            <br />
            <footer>
             <div class="button-container">
                 <asp:Button ID="btnUsuario" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Perfil" Width="140px" OnClick="btnUsuario_Click" />
@@ -57,23 +83,15 @@
                 <asp:Button ID="btnPlan" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Plan" Width="140px" OnClick="btnPlan_Click" />
             </div>
            </footer>
+            <br />
+            <strong>Agregar a un plan: </strong>
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+            </asp:DropDownList>
+            <asp:Button ID="Button1" runat="server" Height="42px" OnClick="Button1_Click" Text="Agregar" Width="133px" />
+            <br />
+        <div>
         </div>
-        <br />
-        <asp:TextBox ID="txBuscador" runat="server" Width="956px" BorderColor="Black" BorderWidth="2" Height="48px" style="margin-top: 0px"></asp:TextBox>
-        <asp:Button ID="btBuscar" runat="server" Height="50px" Text="Buscar" Visible="False" Width="120px" OnClick="btBuscar_Click" />
-        <br />
-        <br />
-        <asp:CheckBoxList ID="cbFiltros" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" OnSelectedIndexChanged="CheckBoxList1_SelectedIndexChanged">
-        </asp:CheckBoxList>
-        <br />
-        <asp:GridView ID="gvBuscarRecetas" runat="server" OnSelectedIndexChanged="gvBuscarRecetas_SelectedIndexChanged">
-            <Columns>
-                <asp:BoundField DataField="idReceta" HeaderText="id" ReadOnly="True" SortExpression="idReceta" Visible="False" />
-                <asp:BoundField DataField="nombre" HeaderText="Nombre" ReadOnly="True" SortExpression="nombre" />
-                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Mostrar" ShowHeader="True" Text="ver" />
-            </Columns>
-        </asp:GridView>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
     </form>
 </body>
 </html>
