@@ -12,7 +12,10 @@ namespace RecipesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                llenarPlanes();
+            }
         }
         protected void btnUsuario_Click(object sender, EventArgs e)
         {
@@ -65,7 +68,7 @@ namespace RecipesWeb
 
         }
 
-        protected void gvMostrarPlanes_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -80,13 +83,13 @@ namespace RecipesWeb
             SqlConnection con = Conexion.agregarConexion();
             if (con != null)
             {
-                String query = String.Format("SELECT  FROM Receta INNER JOIN RegistroReceta ON Receta.idReceta = RegistroReceta.idReceta WHERE RegistroReceta.cedulaNutriologo={0}", Session["cedula"]);
+                String query = String.Format("SELECT nombre, idPlan FROM PlanDia WHERE idUsuario={0}", Session["id"]);
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader rd = cmd.ExecuteReader();
-                gvMostrarPlanes.DataSource = rd;
-                gvMostrarPlanes.DataBind();
-                rd.Close();
-                con.Close();
+                ddPlanes.DataSource = rd;
+                ddPlanes.DataTextField = "nombre";
+                ddPlanes.DataValueField = "idPlan";
+                ddPlanes.DataBind();
             }
         }
     }

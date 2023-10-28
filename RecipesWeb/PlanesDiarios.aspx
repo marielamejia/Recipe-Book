@@ -66,13 +66,9 @@
             <asp:TextBox ID="txCrearPlan" runat="server"></asp:TextBox>
 &nbsp;<asp:Button ID="btCrearPlan" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" CssClass="button" OnClick="btCrearPlan_Click" Text="Crear" />
             <br />
-        <asp:GridView ID="gvMostrarPlanes" runat="server" OnSelectedIndexChanged="gvMostrarPlanes_SelectedIndexChanged">
-            <Columns>
-                <asp:BoundField DataField="idPlan" HeaderText="id" ReadOnly="True" SortExpression="idPlan" Visible="False" />
-                <asp:BoundField DataField="nombre" HeaderText="Plan" ReadOnly="True" SortExpression="nombre" />
-                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Desplegar" ShowHeader="True" Text="..." />
-            </Columns>
-        </asp:GridView>
+            <h3>Tus Planes</h3>
+            <asp:DropDownList ID="ddPlanes" runat="server" OnSelectedIndexChanged="ddPlanes_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
             <br />
             <br />
             <strong>Recetas del plan:</strong><br />
