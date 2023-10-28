@@ -48,8 +48,15 @@
         <div>
             <div class="header">
             </div>
-            <h1>Planes</h1>
-           <footer>
+            <h2>Planes</h2>
+             <asp:DropDownList ID="ddlPlanes" runat="server" AutoPostBack="true"></asp:DropDownList>
+             <br />
+            <br />
+            <asp:Button ID="btnMostrarPlan" runat="server" Text="Mostrar Plan" margin="12px" BackColor="#e1a144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Width="180px" display="inline-block"  BorderColor="White" OnClick="btnMostrarPlan_Click" />
+            <br />
+            <br />
+            <asp:Button ID="btnAgregarPlan" runat="server" Text="Agregar Plan" margin="12px" BackColor="#e1a144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Width="180px" display="inline-block"  BorderColor="White" OnClick="btnAgregarPlan_Click" />
+            <footer>
             <div class="button-container">
                 <asp:Button ID="btnUsuario" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Perfil" Width="140px" OnClick="btnUsuario_Click" />
                 <asp:Button ID="btnLista" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Super" Width="140px" OnClick="btnLista_Click" />
