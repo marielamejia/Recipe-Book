@@ -51,11 +51,7 @@
             <h1>Lista de Super</h1>
             <p>Consulta tu lista de super: </p>
             <p>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-            </p>
+                &nbsp;</p>
            <footer>
             <div class="button-container">
                 <asp:Button ID="btnUsuario" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Perfil" Width="140px" OnClick="btnUsuario_Click" />
@@ -69,7 +65,11 @@
       <asp:GridView ID="gVListaSuper" runat="server" Height="303px" Width="540px" CssClass="centered-gridview" style="margin: 0 auto; text-align: center;" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" OnSelectedIndexChanged="gVListaSuperr_SelectedIndexChanged">
           <AlternatingRowStyle BackColor="PaleGoldenrod" />
           <Columns>
-              <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Eliminar" ShowHeader="True" Text="Eliminar ingrediente" />
+              <asp:BoundField DataField="Ingrediente.idIngrediente" HeaderText="id" ReadOnly="True" SortExpression="Ingrediente.idIngrediente" Visible="False" />
+              <asp:BoundField DataField="Ingrediente.nombre" HeaderText="Nombre" ReadOnly="True" SortExpression="Ingrediente.nombre" />
+              <asp:BoundField DataField="IngredienteListaSuper.precioPromPorKg" HeaderText="Precio" ReadOnly="True" SortExpression="IngredienteListaSuper.precioPromPorKg" />
+              <asp:BoundField DataField="IngredienteListaSuper.numPiezas" HeaderText="Piezas" ReadOnly="True" SortExpression="IngredienteListaSuper.numPiezas" />
+              <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Eliminar" ShowHeader="True" Text="x" />
           </Columns>
           <FooterStyle BackColor="Tan" />
           <HeaderStyle BackColor="Tan" Font-Bold="True" />
@@ -84,7 +84,8 @@
         <p>
             &nbsp;</p>
         <p>
-            &nbsp;</p>
+            <asp:Button ID="btLimpiar" runat="server" OnClick="btLimpiar_Click" Text="Limpiar lista" Width="199px" />
+        </p>
 
     </form>
 </body>

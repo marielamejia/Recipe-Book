@@ -14,11 +14,11 @@ namespace RecipesWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection con = Conexion.agregarConexion();
-            String query = String.Format("SELECT * from IngredienteListaSuper");
+            string query = $"select Ingrediente.idIngrediente, Ingrediente.nombre, Ingrediente.precioPromPorKg, IngredienteListaSuper.numPiezas from Ingrediente inner join IngredienteListaSuper on Ingrediente.idIngrediente = IngredienteListaSuper.idIngrediente where idLista = {Session["idLista"]}";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader rd = cmd.ExecuteReader();
-            gVListaSuper.DataSource = rd; 
-            gVListaSuper.DataBind();  
+            gVListaSuper.DataSource = rd;
+            gVListaSuper.DataBind();
             rd.Close();
             con.Close();
         }
@@ -41,15 +41,21 @@ namespace RecipesWeb
 
         protected void gVListaSuperr_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextBox1.Text = gVListaSuper.SelectedRow.Cells[0].Text.ToString();
-            TextBox2.Text = gVListaSuper.SelectedRow.Cells[0].Text.ToString();
-            TextBox3.Text = gVListaSuper.SelectedRow.Cells[0].Text.ToString();
-            TextBox4.Text = gVListaSuper.SelectedRow.Cells[0].Text.ToString();
+            SqlConnection con = Conexion.agregarConexion();
+            string query = $"delete from IngredienteListaSuper where idPlan = {Session["idLista"]} and idIngrediente = {gVListaSuper.SelectedRow.Cells[0]}";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            gVListaSuper.DeleteRow(gVListaSuper.SelectedIndex);
         }
 
-        protected void btEliminarTodo_Click(object sender, EventArgs e)
+        protected void btLimpiar_Click(object sender, EventArgs e)
         {
-            gVListaSuper.DataSource = null; 
+            SqlConnection con = Conexion.agregarConexion();
+            string query = $"delete from IngredienteListaSuper where idPlan = {Session["idLista"]}";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+            con.Close(); gVListaSuper.DataSource = null;
             gVListaSuper.DataBind();
         }
     }
