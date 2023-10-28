@@ -42,22 +42,22 @@ namespace RecipesWeb
         protected global::System.Web.UI.WebControls.Button btCrearPlan;
 
         /// <summary>
-        /// gvBuscarRecetas control.
+        /// gvMostrarPlanes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvBuscarRecetas;
+        protected global::System.Web.UI.WebControls.GridView gvMostrarPlanes;
 
         /// <summary>
-        /// gvBuscarRecetas1 control.
+        /// gvRecetasDelPlan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvBuscarRecetas1;
+        protected global::System.Web.UI.WebControls.GridView gvRecetasDelPlan;
 
         /// <summary>
         /// btAgregarAListaSuper control.

@@ -54,9 +54,9 @@
             <asp:TextBox ID="txCrearPlan" runat="server"></asp:TextBox>
 &nbsp;<asp:Button ID="btCrearPlan" runat="server" Height="35px" OnClick="btCrearPlan_Click" Text="Crear" Width="89px" />
             <br />
-        <asp:GridView ID="gvBuscarRecetas" runat="server" OnSelectedIndexChanged="gvBuscarRecetas_SelectedIndexChanged">
+        <asp:GridView ID="gvMostrarPlanes" runat="server" OnSelectedIndexChanged="gvMostrarPlanes_SelectedIndexChanged">
             <Columns>
-                <asp:BoundField DataField="idReceta" HeaderText="id" ReadOnly="True" SortExpression="idPlan" Visible="False" />
+                <asp:BoundField DataField="idPlan" HeaderText="id" ReadOnly="True" SortExpression="idPlan" Visible="False" />
                 <asp:BoundField DataField="nombre" HeaderText="Plan" ReadOnly="True" SortExpression="nombre" />
                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Desplegar" ShowHeader="True" Text="..." />
             </Columns>
@@ -64,11 +64,11 @@
             <br />
             <br />
             <strong>Recetas del plan:</strong><br />
-        <asp:GridView ID="gvBuscarRecetas1" runat="server" OnSelectedIndexChanged="gvBuscarRecetas_SelectedIndexChanged">
+        <asp:GridView ID="gvRecetasDelPlan" runat="server" OnSelectedIndexChanged="gvRecetasDelPlan_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="idReceta" HeaderText="id" ReadOnly="True" SortExpression="idReceta" Visible="False" />
                 <asp:BoundField DataField="nombre" HeaderText="Receta" ReadOnly="True" SortExpression="nombre" />
-                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Mostrar" ShowHeader="True" Text="ver" />
+                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Detalles" ShowHeader="True" Text="ver" />
             </Columns>
         </asp:GridView>
             <br />

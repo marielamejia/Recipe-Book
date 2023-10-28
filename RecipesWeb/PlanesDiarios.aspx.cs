@@ -39,5 +39,15 @@ namespace RecipesWeb
         {
 
         }
+
+        protected void gvMostrarPlanes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gvRecetasDelPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
