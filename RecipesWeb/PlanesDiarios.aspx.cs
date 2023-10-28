@@ -27,6 +27,14 @@ namespace RecipesWeb
         }
         protected void btnPlan_Click(object sender, EventArgs e)
         {
+            //esta pag
+        }
+        protected void btnMostrarPlan_Click(object sender, EventArgs e)
+        {
+            
+        }
+        protected void btnAgregarPlan_Click(object sender, EventArgs e)
+        {
 
         }
 

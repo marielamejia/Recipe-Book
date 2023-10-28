@@ -24,6 +24,42 @@ namespace RecipesWeb
         protected global::System.Web.UI.HtmlControls.HtmlForm form;
 
         /// <summary>
+        /// ddRecetas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddRecetas;
+
+        /// <summary>
+        /// lbEliminar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbEliminar;
+
+        /// <summary>
+        /// gvReceta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvReceta;
+
+        /// <summary>
+        /// btnEliminarReceta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminarReceta;
+
+        /// <summary>
         /// btnCuenta control.
         /// </summary>
         /// <remarks>

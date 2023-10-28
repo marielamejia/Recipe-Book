@@ -48,7 +48,7 @@
         <div>
             <div class="header">
             </div>
-            <h1>Planes</h1>
+            <h2>Planes</h2>
             <br />
             Nuevo Plan:
             <asp:TextBox ID="txCrearPlan" runat="server"></asp:TextBox>

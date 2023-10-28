@@ -91,7 +91,7 @@
             <div class="button-container">
                  <asp:Button ID="btnCuenta" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Cuenta" Width="140px" OnClick="btnCuenta_Click" />
                  <asp:Button ID="btnAgregar" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Agregar" Width="140px" OnClick="btnAgregar_Click" />
-                 <asp:Button ID="btnModificar" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Modificar" Width="140px" OnClick="btnModificar_Click" />
+                 <asp:Button ID="btnModificar" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Eliminar" Width="140px" OnClick="btnModificar_Click" />
            </div>
 </footer> 
     </form>
