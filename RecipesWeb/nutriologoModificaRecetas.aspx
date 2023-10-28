@@ -54,6 +54,13 @@
            align-items: center;
            justify-content: center;
        }
+       .parr {
+        font-size: 16px;
+        text-align: justify;
+        margin: 0 40px;
+        line-height: 1.6;
+        color: #333;
+    }
    </style>
 </head>
 <body>
@@ -61,19 +68,38 @@
         <div>
             <div class="header">
             </div>
-            <h1>Eliminar</h1>
+            <h2>Eliminar</h2>
             <asp:DropDownList ID="ddRecetas" runat="server" OnSelectedIndexChanged="ddRecetas_SelectedIndexChanged" AutoPostBack="true">
             </asp:DropDownList>
             <br />
             <br />
-            <asp:Label ID="lbEliminar" runat="server" Text=""  Font-Size="16px" ForeColor="#DA593C"></asp:Label>
+            <label id="labelid" style="font-weight: bold;">idReceta:</label>
+            <asp:Label ID="lbId" runat="server" Text="" Font-Size="16px">
+            </asp:Label>
             <br />
-            <div style="display: flex; justify-content: center; align-items: center;">
-            <asp:GridView ID="gvReceta" runat="server"></asp:GridView>
-            </div>            
+            <label id="labelNombre" style="font-weight: bold;">Nombre:</label>
+            <asp:Label ID="lbNombre" runat="server" Text="" Font-Size="16px">
+            </asp:Label>
+            <br />
+             <br />
+            <label id="labelInstrucciones" style="font-weight: bold;">Instrucciones:</label>
+            <div id="parrafoTexto" runat="server" class="parr"></div>
+            <br />
+            <br />
+            <label id="labelEtiquetas" style="font-weight: bold;">Etiquetas:</label>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <label id="labelIngredientes" style="font-weight: bold;">Ingredientes:</label>
+            <br />
+            <br />
+            <asp:ListBox ID="lstEtiquetas" runat="server" SelectionMode="Multiple" style="width: 200px"></asp:ListBox>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <asp:ListBox ID="lstIngredientes" runat="server" SelectionMode="Multiple" style="width: 200px"></asp:ListBox>
+            <br />
             <br />
             <br />
             <asp:Button ID="btnEliminarReceta" runat="server" Text="Eliminar receta" margin="12px" BackColor="#829949" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Width="180px" display="inline-block" BorderColor="White" OnClick="btnEliminarReceta_Click" />
+            <br />
+            <asp:Label ID="lbEliminar" runat="server" Text=""  Font-Size="16px" ForeColor="#DA593C"></asp:Label>
             </div>
             <footer>
                 <div class="button-container">

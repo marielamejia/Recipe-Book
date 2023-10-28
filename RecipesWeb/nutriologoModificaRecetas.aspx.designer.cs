@@ -33,22 +33,49 @@ namespace RecipesWeb
         protected global::System.Web.UI.WebControls.DropDownList ddRecetas;
 
         /// <summary>
-        /// lbEliminar control.
+        /// lbId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbEliminar;
+        protected global::System.Web.UI.WebControls.Label lbId;
 
         /// <summary>
-        /// gvReceta control.
+        /// lbNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvReceta;
+        protected global::System.Web.UI.WebControls.Label lbNombre;
+
+        /// <summary>
+        /// parrafoTexto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl parrafoTexto;
+
+        /// <summary>
+        /// lstEtiquetas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstEtiquetas;
+
+        /// <summary>
+        /// lstIngredientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstIngredientes;
 
         /// <summary>
         /// btnEliminarReceta control.
@@ -58,6 +85,15 @@ namespace RecipesWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEliminarReceta;
+
+        /// <summary>
+        /// lbEliminar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbEliminar;
 
         /// <summary>
         /// btnCuenta control.
