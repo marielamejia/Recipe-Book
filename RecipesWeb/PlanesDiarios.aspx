@@ -86,9 +86,10 @@
             </asp:DropDownList>
             <br />
             <h3>Tus recetas</h3>
-        <asp:GridView ID="gvRecetasDelPlan" runat="server" OnSelectedIndexChanged="gvRecetasDelPlan_SelectedIndexChanged" CssClass="centrarGV" OnRowCommand="gvRecetasDelPlan_RowCommand">
+        <asp:GridView ID="gvRecetasDelPlan" runat="server" OnSelectedIndexChanged="gvRecetasDelPlan_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="idReceta"  CssClass="centrarGV" OnRowCommand="gvRecetasDelPlan_RowCommand">
             <Columns>
                 <asp:BoundField DataField="idReceta" HeaderText="id" ReadOnly="True" SortExpression="idReceta" Visible="False" />
+                <asp:BoundField DataField="nombre" HeaderText="Nombre" ReadOnly="True" SortExpression="nombre" />
                 <asp:ButtonField ButtonType="Button" CommandName="Detalles" HeaderText="Detalles" ShowHeader="True" Text="ver" />
             </Columns>
             <FooterStyle BackColor="Tan" />
