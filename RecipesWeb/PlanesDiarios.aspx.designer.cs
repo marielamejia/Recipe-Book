@@ -24,31 +24,49 @@ namespace RecipesWeb
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// ddlPlanes control.
+        /// txCrearPlan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPlanes;
+        protected global::System.Web.UI.WebControls.TextBox txCrearPlan;
 
         /// <summary>
-        /// btnMostrarPlan control.
+        /// btCrearPlan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMostrarPlan;
+        protected global::System.Web.UI.WebControls.Button btCrearPlan;
 
         /// <summary>
-        /// btnAgregarPlan control.
+        /// gvMostrarPlanes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarPlan;
+        protected global::System.Web.UI.WebControls.GridView gvMostrarPlanes;
+
+        /// <summary>
+        /// gvRecetasDelPlan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvRecetasDelPlan;
+
+        /// <summary>
+        /// btAgregarAListaSuper control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btAgregarAListaSuper;
 
         /// <summary>
         /// btnUsuario control.

@@ -49,14 +49,32 @@
             <div class="header">
             </div>
             <h2>Planes</h2>
-             <asp:DropDownList ID="ddlPlanes" runat="server" AutoPostBack="true"></asp:DropDownList>
-             <br />
             <br />
-            <asp:Button ID="btnMostrarPlan" runat="server" Text="Mostrar Plan" margin="12px" BackColor="#e1a144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Width="180px" display="inline-block"  BorderColor="White" OnClick="btnMostrarPlan_Click" />
+            Nuevo Plan:
+            <asp:TextBox ID="txCrearPlan" runat="server"></asp:TextBox>
+&nbsp;<asp:Button ID="btCrearPlan" runat="server" Height="35px" OnClick="btCrearPlan_Click" Text="Crear" Width="89px" />
+            <br />
+        <asp:GridView ID="gvMostrarPlanes" runat="server" OnSelectedIndexChanged="gvMostrarPlanes_SelectedIndexChanged">
+            <Columns>
+                <asp:BoundField DataField="idPlan" HeaderText="id" ReadOnly="True" SortExpression="idPlan" Visible="False" />
+                <asp:BoundField DataField="nombre" HeaderText="Plan" ReadOnly="True" SortExpression="nombre" />
+                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Desplegar" ShowHeader="True" Text="..." />
+            </Columns>
+        </asp:GridView>
             <br />
             <br />
-            <asp:Button ID="btnAgregarPlan" runat="server" Text="Agregar Plan" margin="12px" BackColor="#e1a144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Width="180px" display="inline-block"  BorderColor="White" OnClick="btnAgregarPlan_Click" />
-            <footer>
+            <strong>Recetas del plan:</strong><br />
+        <asp:GridView ID="gvRecetasDelPlan" runat="server" OnSelectedIndexChanged="gvRecetasDelPlan_SelectedIndexChanged">
+            <Columns>
+                <asp:BoundField DataField="idReceta" HeaderText="id" ReadOnly="True" SortExpression="idReceta" Visible="False" />
+                <asp:BoundField DataField="nombre" HeaderText="Receta" ReadOnly="True" SortExpression="nombre" />
+                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Detalles" ShowHeader="True" Text="ver" />
+            </Columns>
+        </asp:GridView>
+            <br />
+            <asp:Button ID="btAgregarAListaSuper" runat="server" OnClick="btAgregarAListaSuper_Click" Text="Agregar ingredientes de las recetas a la lista de súper" Width="712px" />
+            <br />
+           <footer>
             <div class="button-container">
                 <asp:Button ID="btnUsuario" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Perfil" Width="140px" OnClick="btnUsuario_Click" />
                 <asp:Button ID="btnLista" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Super" Width="140px" OnClick="btnLista_Click" />
@@ -64,6 +82,8 @@
                 <asp:Button ID="btnPlan" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Plan" Width="140px" OnClick="btnPlan_Click" />
             </div>
            </footer>
+        <div>
+        </div>
         </div>
     </form>
 </body>
