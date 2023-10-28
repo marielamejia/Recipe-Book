@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -35,12 +36,28 @@ namespace RecipesWeb
         }
         protected void btnAgregarPlan_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btCrearPlan_Click(object sender, EventArgs e)
         {
-
+            SqlConnection con = Conexion.agregarConexion();
+            if (con != null)
+            {
+                string query = "SELECT Isnull(max(idPlan),0) FROM PlanDia";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                int id = 0;
+                while (rd.Read())
+                {
+                    id = rd.GetInt16(0) + new Random().Next(1, 5);
+                }
+                rd.Close();
+                query = String.Format("INSERT INTO PlanDia VALUES ({0}, '{1}', {2})", id, txCrearPlan.Text, Int16.Parse(Session["id"].ToString()));
+                cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+            }
+            con.Close();
         }
 
         protected void btAgregarAListaSuper_Click(object sender, EventArgs e)
@@ -56,6 +73,21 @@ namespace RecipesWeb
         protected void gvRecetasDelPlan_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void llenarPlanes()
+        {
+            SqlConnection con = Conexion.agregarConexion();
+            if (con != null)
+            {
+                String query = String.Format("SELECT  FROM Receta INNER JOIN RegistroReceta ON Receta.idReceta = RegistroReceta.idReceta WHERE RegistroReceta.cedulaNutriologo={0}", Session["cedula"]);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                gvMostrarPlanes.DataSource = rd;
+                gvMostrarPlanes.DataBind();
+                rd.Close();
+                con.Close();
+            }
         }
     }
 }

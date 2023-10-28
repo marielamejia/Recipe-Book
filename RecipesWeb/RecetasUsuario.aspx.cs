@@ -30,7 +30,10 @@ namespace RecipesWeb
         {
             Response.Redirect("PlanesDiarios.aspx");
         }
+        protected void btBuscar_Click(object sender, EventArgs e)
+        {
 
+        }
         protected void gvBuscarRecetas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
