@@ -61,7 +61,19 @@
         <div>
             <div class="header">
             </div>
-            <h1>Modificar</h1>
+            <h1>Eliminar</h1>
+            <asp:DropDownList ID="ddRecetas" runat="server" OnSelectedIndexChanged="ddRecetas_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
+            <br />
+            <br />
+            <asp:Label ID="lbEliminar" runat="server" Text=""  Font-Size="16px" ForeColor="#DA593C"></asp:Label>
+            <br />
+            <div style="display: flex; justify-content: center; align-items: center;">
+            <asp:GridView ID="gvReceta" runat="server"></asp:GridView>
+            </div>            
+            <br />
+            <br />
+            <asp:Button ID="btnEliminarReceta" runat="server" Text="Eliminar receta" margin="12px" BackColor="#829949" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Width="180px" display="inline-block" BorderColor="White" OnClick="btnEliminarReceta_Click" />
             </div>
             <footer>
                 <div class="button-container">
