@@ -29,9 +29,18 @@ namespace RecipesWeb
                 query = $"insert into Usuario values ({id}, '{txtNom.Text}', '{txtMail.Text}', '{txtContra.Text}')";
                 cmd = new SqlCommand(query, con);
                 if (cmd.ExecuteNonQuery() > 0)
+                {
+                    query = $"insert into ListaSuper values ({id}, 0, {id})";
+                    cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
                     Response.Redirect("usuarioLogin.aspx");
+                }
                 else
+                {
+                    con.Close();
                     lbResp.Text = "Alta fallida";
+                }
             }
         }
     }

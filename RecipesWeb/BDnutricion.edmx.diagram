@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="742f965dd9874b9e8668df8654054e42" Name="Diagram1">
+        <EntityTypeShape EntityType="BDnutricionModel.Administrador" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.Ingrediente" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.IngredienteListaSuper" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.ListaSuper" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.Nutriologo" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.PlanDia" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.Receta" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.RecetaEtiqueta" Width="1.5" PointX="2.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.RecetaIngrediente" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.RegistroReceta" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDnutricionModel.Usuario" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="BDnutricionModel.FK__Ingredien__idIng__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="BDnutricionModel.FK__RecetaIng__idIng__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="BDnutricionModel.FK__Ingredien__idLis__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="BDnutricionModel.FK__ListaSupe__idUsu__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="BDnutricionModel.FK__RegistroR__cedul__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="BDnutricionModel.FK__PlanDia__idUsuar__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="BDnutricionModel.FK__RecetaIng__idRec__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="BDnutricionModel.FK__RegistroR__idRec__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="BDnutricionModel.RecetaPlan" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

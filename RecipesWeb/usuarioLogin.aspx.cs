@@ -27,6 +27,7 @@ namespace RecipesWeb
                 {
                     rd.Read();
                     Session["id"] = rd.GetInt16(0);
+                    Session["idLista"] = rd.GetInt16(0);
                     rd.Close();
                     con.Close();
                     Response.Redirect("usuarioPrincipal.aspx");

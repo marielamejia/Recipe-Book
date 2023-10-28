@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +75,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BDnutricion.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BDnutricion.Context.cs</LastGenOutput>
+      <DependentUpon>BDnutricion.edmx</DependentUpon>
+    </Content>
+    <Content Include="BDnutricion.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDnutricion.edmx</DependentUpon>
+      <LastGenOutput>BDnutricion.cs</LastGenOutput>
+    </Content>
     <Content Include="crearUsu.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="ListaSuper.aspx" />
@@ -82,6 +100,24 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDnutricion.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDnutricion.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDnutricion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDnutricion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDnutricion.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="crearUsu.aspx.cs">
       <DependentUpon>crearUsu.aspx</DependentUpon>
@@ -97,12 +133,25 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ingrediente.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IngredienteListaSuper.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+    </Compile>
     <Compile Include="ListaSuper.aspx.cs">
       <DependentUpon>ListaSuper.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ListaSuper.aspx.designer.cs">
       <DependentUpon>ListaSuper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaSuper.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nutriologo.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
     </Compile>
     <Compile Include="nutriologoAgregaRecetas.aspx.cs">
       <DependentUpon>nutriologoAgregaRecetas.aspx</DependentUpon>
@@ -132,6 +181,9 @@
     <Compile Include="nutriologoPrincipal.aspx.designer.cs">
       <DependentUpon>nutriologoPrincipal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PlanDia.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+    </Compile>
     <Compile Include="PlanesDiarios.aspx.cs">
       <DependentUpon>PlanesDiarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,12 +192,27 @@
       <DependentUpon>PlanesDiarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receta.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecetaEtiqueta.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecetaIngrediente.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+    </Compile>
     <Compile Include="RecetasUsuario.aspx.cs">
       <DependentUpon>RecetasUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="RecetasUsuario.aspx.designer.cs">
       <DependentUpon>RecetasUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroReceta.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>BDnutricion.tt</DependentUpon>
     </Compile>
     <Compile Include="usuarioLogin.aspx.cs">
       <DependentUpon>usuarioLogin.aspx</DependentUpon>
@@ -170,6 +237,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="BDnutricion.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BDnutricion.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="BDnutricion.edmx.diagram">
+      <DependentUpon>BDnutricion.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -177,6 +251,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

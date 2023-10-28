@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BDnutricionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="usuAdmin" />
+          </Key>
+          <Property Name="usuAdmin" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="contrasena" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Ingrediente">
+          <Key>
+            <PropertyRef Name="idIngrediente" />
+          </Key>
+          <Property Name="idIngrediente" Type="smallint" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="precioPromPorKg" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="IngredienteListaSuper">
+          <Key>
+            <PropertyRef Name="idIngrediente" />
+            <PropertyRef Name="idLista" />
+          </Key>
+          <Property Name="idIngrediente" Type="smallint" Nullable="false" />
+          <Property Name="idLista" Type="smallint" Nullable="false" />
+          <Property Name="numPiezas" Type="decimal" Precision="4" Scale="2" />
+        </EntityType>
+        <EntityType Name="ListaSuper">
+          <Key>
+            <PropertyRef Name="idLista" />
+          </Key>
+          <Property Name="idLista" Type="smallint" Nullable="false" />
+          <Property Name="numItems" Type="smallint" />
+          <Property Name="idUsuario" Type="smallint" />
+        </EntityType>
+        <EntityType Name="Nutriologo">
+          <Key>
+            <PropertyRef Name="cedula" />
+          </Key>
+          <Property Name="cedula" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="contrasena" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="PlanDia">
+          <Key>
+            <PropertyRef Name="idPlan" />
+          </Key>
+          <Property Name="idPlan" Type="smallint" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" />
+          <Property Name="idUsuario" Type="smallint" />
+        </EntityType>
+        <EntityType Name="Receta">
+          <Key>
+            <PropertyRef Name="idReceta" />
+          </Key>
+          <Property Name="idReceta" Type="smallint" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="instrucciones" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="RecetaEtiqueta">
+          <Key>
+            <PropertyRef Name="idReceta" />
+            <PropertyRef Name="etiqueta" />
+          </Key>
+          <Property Name="idReceta" Type="smallint" Nullable="false" />
+          <Property Name="etiqueta" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RecetaIngrediente">
+          <Key>
+            <PropertyRef Name="idReceta" />
+            <PropertyRef Name="idIngrediente" />
+          </Key>
+          <Property Name="idReceta" Type="smallint" Nullable="false" />
+          <Property Name="idIngrediente" Type="smallint" Nullable="false" />
+          <Property Name="numPiezas" Type="decimal" Precision="4" Scale="2" />
+        </EntityType>
+        <EntityType Name="RecetaPlan">
+          <Key>
+            <PropertyRef Name="idReceta" />
+            <PropertyRef Name="idPlan" />
+          </Key>
+          <Property Name="idReceta" Type="smallint" Nullable="false" />
+          <Property Name="idPlan" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RegistroReceta">
+          <Key>
+            <PropertyRef Name="idReceta" />
+            <PropertyRef Name="idRegistro" />
+          </Key>
+          <Property Name="idReceta" Type="smallint" Nullable="false" />
+          <Property Name="idRegistro" Type="smallint" Nullable="false" />
+          <Property Name="cedulaNutriologo" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="smallint" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="contrasena" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__Ingredien__idIng__5441852A">
+          <End Role="Ingrediente" Type="Self.Ingrediente" Multiplicity="1" />
+          <End Role="IngredienteListaSuper" Type="Self.IngredienteListaSuper" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingrediente">
+              <PropertyRef Name="idIngrediente" />
+            </Principal>
+            <Dependent Role="IngredienteListaSuper">
+              <PropertyRef Name="idIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ingredien__idLis__5535A963">
+          <End Role="ListaSuper" Type="Self.ListaSuper" Multiplicity="1" />
+          <End Role="IngredienteListaSuper" Type="Self.IngredienteListaSuper" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListaSuper">
+              <PropertyRef Name="idLista" />
+            </Principal>
+            <Dependent Role="IngredienteListaSuper">
+              <PropertyRef Name="idLista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ListaSupe__idUsu__5165187F">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="ListaSuper" Type="Self.ListaSuper" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="ListaSuper">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlanDia__idUsuar__4AB81AF0">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="PlanDia" Type="Self.PlanDia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="PlanDia">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RecetaIng__idIng__44FF419A">
+          <End Role="Ingrediente" Type="Self.Ingrediente" Multiplicity="1" />
+          <End Role="RecetaIngrediente" Type="Self.RecetaIngrediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingrediente">
+              <PropertyRef Name="idIngrediente" />
+            </Principal>
+            <Dependent Role="RecetaIngrediente">
+              <PropertyRef Name="idIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RecetaIng__idRec__440B1D61">
+          <End Role="Receta" Type="Self.Receta" Multiplicity="1" />
+          <End Role="RecetaIngrediente" Type="Self.RecetaIngrediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receta">
+              <PropertyRef Name="idReceta" />
+            </Principal>
+            <Dependent Role="RecetaIngrediente">
+              <PropertyRef Name="idReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RecetaPla__idPla__4E88ABD4">
+          <End Role="PlanDia" Type="Self.PlanDia" Multiplicity="1" />
+          <End Role="RecetaPlan" Type="Self.RecetaPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlanDia">
+              <PropertyRef Name="idPlan" />
+            </Principal>
+            <Dependent Role="RecetaPlan">
+              <PropertyRef Name="idPlan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RecetaPla__idRec__4D94879B">
+          <End Role="Receta" Type="Self.Receta" Multiplicity="1" />
+          <End Role="RecetaPlan" Type="Self.RecetaPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receta">
+              <PropertyRef Name="idReceta" />
+            </Principal>
+            <Dependent Role="RecetaPlan">
+              <PropertyRef Name="idReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegistroR__cedul__3F466844">
+          <End Role="Nutriologo" Type="Self.Nutriologo" Multiplicity="0..1" />
+          <End Role="RegistroReceta" Type="Self.RegistroReceta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutriologo">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="RegistroReceta">
+              <PropertyRef Name="cedulaNutriologo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegistroR__idRec__3E52440B">
+          <End Role="Receta" Type="Self.Receta" Multiplicity="1" />
+          <End Role="RegistroReceta" Type="Self.RegistroReceta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receta">
+              <PropertyRef Name="idReceta" />
+            </Principal>
+            <Dependent Role="RegistroReceta">
+              <PropertyRef Name="idReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDnutricionModelStoreContainer">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingrediente" EntityType="Self.Ingrediente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IngredienteListaSuper" EntityType="Self.IngredienteListaSuper" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListaSuper" EntityType="Self.ListaSuper" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nutriologo" EntityType="Self.Nutriologo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlanDia" EntityType="Self.PlanDia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Receta" EntityType="Self.Receta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecetaEtiqueta" EntityType="Self.RecetaEtiqueta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecetaIngrediente" EntityType="Self.RecetaIngrediente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecetaPlan" EntityType="Self.RecetaPlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegistroReceta" EntityType="Self.RegistroReceta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Ingredien__idIng__5441852A" Association="Self.FK__Ingredien__idIng__5441852A">
+            <End Role="Ingrediente" EntitySet="Ingrediente" />
+            <End Role="IngredienteListaSuper" EntitySet="IngredienteListaSuper" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ingredien__idLis__5535A963" Association="Self.FK__Ingredien__idLis__5535A963">
+            <End Role="ListaSuper" EntitySet="ListaSuper" />
+            <End Role="IngredienteListaSuper" EntitySet="IngredienteListaSuper" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ListaSupe__idUsu__5165187F" Association="Self.FK__ListaSupe__idUsu__5165187F">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ListaSuper" EntitySet="ListaSuper" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlanDia__idUsuar__4AB81AF0" Association="Self.FK__PlanDia__idUsuar__4AB81AF0">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="PlanDia" EntitySet="PlanDia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RecetaIng__idIng__44FF419A" Association="Self.FK__RecetaIng__idIng__44FF419A">
+            <End Role="Ingrediente" EntitySet="Ingrediente" />
+            <End Role="RecetaIngrediente" EntitySet="RecetaIngrediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RecetaIng__idRec__440B1D61" Association="Self.FK__RecetaIng__idRec__440B1D61">
+            <End Role="Receta" EntitySet="Receta" />
+            <End Role="RecetaIngrediente" EntitySet="RecetaIngrediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RecetaPla__idPla__4E88ABD4" Association="Self.FK__RecetaPla__idPla__4E88ABD4">
+            <End Role="PlanDia" EntitySet="PlanDia" />
+            <End Role="RecetaPlan" EntitySet="RecetaPlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RecetaPla__idRec__4D94879B" Association="Self.FK__RecetaPla__idRec__4D94879B">
+            <End Role="Receta" EntitySet="Receta" />
+            <End Role="RecetaPlan" EntitySet="RecetaPlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegistroR__cedul__3F466844" Association="Self.FK__RegistroR__cedul__3F466844">
+            <End Role="Nutriologo" EntitySet="Nutriologo" />
+            <End Role="RegistroReceta" EntitySet="RegistroReceta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegistroR__idRec__3E52440B" Association="Self.FK__RegistroR__idRec__3E52440B">
+            <End Role="Receta" EntitySet="Receta" />
+            <End Role="RegistroReceta" EntitySet="RegistroReceta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDnutricionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="usuAdmin" />
+          </Key>
+          <Property Name="usuAdmin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Ingrediente">
+          <Key>
+            <PropertyRef Name="idIngrediente" />
+          </Key>
+          <Property Name="idIngrediente" Type="Int16" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="precioPromPorKg" Type="Decimal" Precision="5" Scale="2" />
+          <NavigationProperty Name="IngredienteListaSuper" Relationship="Self.FK__Ingredien__idIng__5441852A" FromRole="Ingrediente" ToRole="IngredienteListaSuper" />
+          <NavigationProperty Name="RecetaIngrediente" Relationship="Self.FK__RecetaIng__idIng__44FF419A" FromRole="Ingrediente" ToRole="RecetaIngrediente" />
+        </EntityType>
+        <EntityType Name="IngredienteListaSuper">
+          <Key>
+            <PropertyRef Name="idIngrediente" />
+            <PropertyRef Name="idLista" />
+          </Key>
+          <Property Name="idIngrediente" Type="Int16" Nullable="false" />
+          <Property Name="idLista" Type="Int16" Nullable="false" />
+          <Property Name="numPiezas" Type="Decimal" Precision="4" Scale="2" />
+          <NavigationProperty Name="Ingrediente" Relationship="Self.FK__Ingredien__idIng__5441852A" FromRole="IngredienteListaSuper" ToRole="Ingrediente" />
+          <NavigationProperty Name="ListaSuper" Relationship="Self.FK__Ingredien__idLis__5535A963" FromRole="IngredienteListaSuper" ToRole="ListaSuper" />
+        </EntityType>
+        <EntityType Name="ListaSuper">
+          <Key>
+            <PropertyRef Name="idLista" />
+          </Key>
+          <Property Name="idLista" Type="Int16" Nullable="false" />
+          <Property Name="numItems" Type="Int16" />
+          <Property Name="idUsuario" Type="Int16" />
+          <NavigationProperty Name="IngredienteListaSuper" Relationship="Self.FK__Ingredien__idLis__5535A963" FromRole="ListaSuper" ToRole="IngredienteListaSuper" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__ListaSupe__idUsu__5165187F" FromRole="ListaSuper" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Nutriologo">
+          <Key>
+            <PropertyRef Name="cedula" />
+          </Key>
+          <Property Name="cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RegistroReceta" Relationship="Self.FK__RegistroR__cedul__3F466844" FromRole="Nutriologo" ToRole="RegistroReceta" />
+        </EntityType>
+        <EntityType Name="PlanDia">
+          <Key>
+            <PropertyRef Name="idPlan" />
+          </Key>
+          <Property Name="idPlan" Type="Int16" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="idUsuario" Type="Int16" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__PlanDia__idUsuar__4AB81AF0" FromRole="PlanDia" ToRole="Usuario" />
+          <NavigationProperty Name="Receta" Relationship="Self.RecetaPlan" FromRole="PlanDia" ToRole="Receta" />
+        </EntityType>
+        <EntityType Name="Receta">
+          <Key>
+            <PropertyRef Name="idReceta" />
+          </Key>
+          <Property Name="idReceta" Type="Int16" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="instrucciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RecetaIngrediente" Relationship="Self.FK__RecetaIng__idRec__440B1D61" FromRole="Receta" ToRole="RecetaIngrediente" />
+          <NavigationProperty Name="RegistroReceta" Relationship="Self.FK__RegistroR__idRec__3E52440B" FromRole="Receta" ToRole="RegistroReceta" />
+          <NavigationProperty Name="PlanDia" Relationship="Self.RecetaPlan" FromRole="Receta" ToRole="PlanDia" />
+        </EntityType>
+        <EntityType Name="RecetaEtiqueta">
+          <Key>
+            <PropertyRef Name="idReceta" />
+            <PropertyRef Name="etiqueta" />
+          </Key>
+          <Property Name="idReceta" Type="Int16" Nullable="false" />
+          <Property Name="etiqueta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RecetaIngrediente">
+          <Key>
+            <PropertyRef Name="idReceta" />
+            <PropertyRef Name="idIngrediente" />
+          </Key>
+          <Property Name="idReceta" Type="Int16" Nullable="false" />
+          <Property Name="idIngrediente" Type="Int16" Nullable="false" />
+          <Property Name="numPiezas" Type="Decimal" Precision="4" Scale="2" />
+          <NavigationProperty Name="Ingrediente" Relationship="Self.FK__RecetaIng__idIng__44FF419A" FromRole="RecetaIngrediente" ToRole="Ingrediente" />
+          <NavigationProperty Name="Receta" Relationship="Self.FK__RecetaIng__idRec__440B1D61" FromRole="RecetaIngrediente" ToRole="Receta" />
+        </EntityType>
+        <EntityType Name="RegistroReceta">
+          <Key>
+            <PropertyRef Name="idReceta" />
+            <PropertyRef Name="idRegistro" />
+          </Key>
+          <Property Name="idReceta" Type="Int16" Nullable="false" />
+          <Property Name="idRegistro" Type="Int16" Nullable="false" />
+          <Property Name="cedulaNutriologo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Nutriologo" Relationship="Self.FK__RegistroR__cedul__3F466844" FromRole="RegistroReceta" ToRole="Nutriologo" />
+          <NavigationProperty Name="Receta" Relationship="Self.FK__RegistroR__idRec__3E52440B" FromRole="RegistroReceta" ToRole="Receta" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int16" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ListaSuper" Relationship="Self.FK__ListaSupe__idUsu__5165187F" FromRole="Usuario" ToRole="ListaSuper" />
+          <NavigationProperty Name="PlanDia" Relationship="Self.FK__PlanDia__idUsuar__4AB81AF0" FromRole="Usuario" ToRole="PlanDia" />
+        </EntityType>
+        <Association Name="FK__Ingredien__idIng__5441852A">
+          <End Role="Ingrediente" Type="Self.Ingrediente" Multiplicity="1" />
+          <End Role="IngredienteListaSuper" Type="Self.IngredienteListaSuper" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingrediente">
+              <PropertyRef Name="idIngrediente" />
+            </Principal>
+            <Dependent Role="IngredienteListaSuper">
+              <PropertyRef Name="idIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RecetaIng__idIng__44FF419A">
+          <End Role="Ingrediente" Type="Self.Ingrediente" Multiplicity="1" />
+          <End Role="RecetaIngrediente" Type="Self.RecetaIngrediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingrediente">
+              <PropertyRef Name="idIngrediente" />
+            </Principal>
+            <Dependent Role="RecetaIngrediente">
+              <PropertyRef Name="idIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ingredien__idLis__5535A963">
+          <End Role="ListaSuper" Type="Self.ListaSuper" Multiplicity="1" />
+          <End Role="IngredienteListaSuper" Type="Self.IngredienteListaSuper" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListaSuper">
+              <PropertyRef Name="idLista" />
+            </Principal>
+            <Dependent Role="IngredienteListaSuper">
+              <PropertyRef Name="idLista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ListaSupe__idUsu__5165187F">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="ListaSuper" Type="Self.ListaSuper" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="ListaSuper">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegistroR__cedul__3F466844">
+          <End Role="Nutriologo" Type="Self.Nutriologo" Multiplicity="0..1" />
+          <End Role="RegistroReceta" Type="Self.RegistroReceta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nutriologo">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="RegistroReceta">
+              <PropertyRef Name="cedulaNutriologo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlanDia__idUsuar__4AB81AF0">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="PlanDia" Type="Self.PlanDia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="PlanDia">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RecetaIng__idRec__440B1D61">
+          <End Role="Receta" Type="Self.Receta" Multiplicity="1" />
+          <End Role="RecetaIngrediente" Type="Self.RecetaIngrediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receta">
+              <PropertyRef Name="idReceta" />
+            </Principal>
+            <Dependent Role="RecetaIngrediente">
+              <PropertyRef Name="idReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegistroR__idRec__3E52440B">
+          <End Role="Receta" Type="Self.Receta" Multiplicity="1" />
+          <End Role="RegistroReceta" Type="Self.RegistroReceta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Receta">
+              <PropertyRef Name="idReceta" />
+            </Principal>
+            <Dependent Role="RegistroReceta">
+              <PropertyRef Name="idReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RecetaPlan">
+          <End Role="PlanDia" Type="Self.PlanDia" Multiplicity="*" />
+          <End Role="Receta" Type="Self.Receta" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="BDnutricionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" />
+          <EntitySet Name="Ingrediente" EntityType="Self.Ingrediente" />
+          <EntitySet Name="IngredienteListaSuper" EntityType="Self.IngredienteListaSuper" />
+          <EntitySet Name="ListaSuper" EntityType="Self.ListaSuper" />
+          <EntitySet Name="Nutriologo" EntityType="Self.Nutriologo" />
+          <EntitySet Name="PlanDia" EntityType="Self.PlanDia" />
+          <EntitySet Name="Receta" EntityType="Self.Receta" />
+          <EntitySet Name="RecetaEtiqueta" EntityType="Self.RecetaEtiqueta" />
+          <EntitySet Name="RecetaIngrediente" EntityType="Self.RecetaIngrediente" />
+          <EntitySet Name="RegistroReceta" EntityType="Self.RegistroReceta" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Ingredien__idIng__5441852A" Association="Self.FK__Ingredien__idIng__5441852A">
+            <End Role="Ingrediente" EntitySet="Ingrediente" />
+            <End Role="IngredienteListaSuper" EntitySet="IngredienteListaSuper" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RecetaIng__idIng__44FF419A" Association="Self.FK__RecetaIng__idIng__44FF419A">
+            <End Role="Ingrediente" EntitySet="Ingrediente" />
+            <End Role="RecetaIngrediente" EntitySet="RecetaIngrediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ingredien__idLis__5535A963" Association="Self.FK__Ingredien__idLis__5535A963">
+            <End Role="ListaSuper" EntitySet="ListaSuper" />
+            <End Role="IngredienteListaSuper" EntitySet="IngredienteListaSuper" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ListaSupe__idUsu__5165187F" Association="Self.FK__ListaSupe__idUsu__5165187F">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ListaSuper" EntitySet="ListaSuper" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegistroR__cedul__3F466844" Association="Self.FK__RegistroR__cedul__3F466844">
+            <End Role="Nutriologo" EntitySet="Nutriologo" />
+            <End Role="RegistroReceta" EntitySet="RegistroReceta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlanDia__idUsuar__4AB81AF0" Association="Self.FK__PlanDia__idUsuar__4AB81AF0">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="PlanDia" EntitySet="PlanDia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RecetaIng__idRec__440B1D61" Association="Self.FK__RecetaIng__idRec__440B1D61">
+            <End Role="Receta" EntitySet="Receta" />
+            <End Role="RecetaIngrediente" EntitySet="RecetaIngrediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegistroR__idRec__3E52440B" Association="Self.FK__RegistroR__idRec__3E52440B">
+            <End Role="Receta" EntitySet="Receta" />
+            <End Role="RegistroReceta" EntitySet="RegistroReceta" />
+          </AssociationSet>
+          <AssociationSet Name="RecetaPlan" Association="Self.RecetaPlan">
+            <End Role="PlanDia" EntitySet="PlanDia" />
+            <End Role="Receta" EntitySet="Receta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDnutricionModelStoreContainer" CdmEntityContainer="BDnutricionEntities">
+          <EntitySetMapping Name="Administrador">
+            <EntityTypeMapping TypeName="BDnutricionModel.Administrador">
+              <MappingFragment StoreEntitySet="Administrador">
+                <ScalarProperty Name="usuAdmin" ColumnName="usuAdmin" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingrediente">
+            <EntityTypeMapping TypeName="BDnutricionModel.Ingrediente">
+              <MappingFragment StoreEntitySet="Ingrediente">
+                <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="precioPromPorKg" ColumnName="precioPromPorKg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IngredienteListaSuper">
+            <EntityTypeMapping TypeName="BDnutricionModel.IngredienteListaSuper">
+              <MappingFragment StoreEntitySet="IngredienteListaSuper">
+                <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
+                <ScalarProperty Name="idLista" ColumnName="idLista" />
+                <ScalarProperty Name="numPiezas" ColumnName="numPiezas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListaSuper">
+            <EntityTypeMapping TypeName="BDnutricionModel.ListaSuper">
+              <MappingFragment StoreEntitySet="ListaSuper">
+                <ScalarProperty Name="idLista" ColumnName="idLista" />
+                <ScalarProperty Name="numItems" ColumnName="numItems" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nutriologo">
+            <EntityTypeMapping TypeName="BDnutricionModel.Nutriologo">
+              <MappingFragment StoreEntitySet="Nutriologo">
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanDia">
+            <EntityTypeMapping TypeName="BDnutricionModel.PlanDia">
+              <MappingFragment StoreEntitySet="PlanDia">
+                <ScalarProperty Name="idPlan" ColumnName="idPlan" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receta">
+            <EntityTypeMapping TypeName="BDnutricionModel.Receta">
+              <MappingFragment StoreEntitySet="Receta">
+                <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="instrucciones" ColumnName="instrucciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecetaEtiqueta">
+            <EntityTypeMapping TypeName="BDnutricionModel.RecetaEtiqueta">
+              <MappingFragment StoreEntitySet="RecetaEtiqueta">
+                <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+                <ScalarProperty Name="etiqueta" ColumnName="etiqueta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecetaIngrediente">
+            <EntityTypeMapping TypeName="BDnutricionModel.RecetaIngrediente">
+              <MappingFragment StoreEntitySet="RecetaIngrediente">
+                <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+                <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
+                <ScalarProperty Name="numPiezas" ColumnName="numPiezas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegistroReceta">
+            <EntityTypeMapping TypeName="BDnutricionModel.RegistroReceta">
+              <MappingFragment StoreEntitySet="RegistroReceta">
+                <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+                <ScalarProperty Name="idRegistro" ColumnName="idRegistro" />
+                <ScalarProperty Name="cedulaNutriologo" ColumnName="cedulaNutriologo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="BDnutricionModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="RecetaPlan" TypeName="BDnutricionModel.RecetaPlan" StoreEntitySet="RecetaPlan">
+            <EndProperty Name="PlanDia">
+              <ScalarProperty Name="idPlan" ColumnName="idPlan" />
+            </EndProperty>
+            <EndProperty Name="Receta">
+              <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -49,6 +49,9 @@
             <div class="header">
             </div>
             <h1>Lista de Super</h1>
+            <p>Consulta tu lista de super: </p>
+            <p>
+                &nbsp;</p>
            <footer>
             <div class="button-container">
                 <asp:Button ID="btnUsuario" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Perfil" Width="140px" OnClick="btnUsuario_Click" />
@@ -58,6 +61,32 @@
             </div>
            </footer>
         </div>
+         
+      <asp:GridView ID="gVListaSuper" runat="server" Height="303px" Width="540px" CssClass="centered-gridview" style="margin: 0 auto; text-align: center;" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" OnSelectedIndexChanged="gVListaSuperr_SelectedIndexChanged">
+          <AlternatingRowStyle BackColor="PaleGoldenrod" />
+          <Columns>
+              <asp:BoundField DataField="Ingrediente.idIngrediente" HeaderText="id" ReadOnly="True" SortExpression="Ingrediente.idIngrediente" Visible="False" />
+              <asp:BoundField DataField="Ingrediente.nombre" HeaderText="Nombre" ReadOnly="True" SortExpression="Ingrediente.nombre" />
+              <asp:BoundField DataField="IngredienteListaSuper.precioPromPorKg" HeaderText="Precio" ReadOnly="True" SortExpression="IngredienteListaSuper.precioPromPorKg" />
+              <asp:BoundField DataField="IngredienteListaSuper.numPiezas" HeaderText="Piezas" ReadOnly="True" SortExpression="IngredienteListaSuper.numPiezas" />
+              <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Eliminar" ShowHeader="True" Text="x" />
+          </Columns>
+          <FooterStyle BackColor="Tan" />
+          <HeaderStyle BackColor="Tan" Font-Bold="True" />
+          <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+          <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+          <SortedAscendingCellStyle BackColor="#FAFAE7" />
+          <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+          <SortedDescendingCellStyle BackColor="#E1DB9C" />
+          <SortedDescendingHeaderStyle BackColor="#C2A47B" />
+</asp:GridView>
+
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Button ID="btLimpiar" runat="server" OnClick="btLimpiar_Click" Text="Limpiar lista" Width="199px" />
+        </p>
+
     </form>
 </body>
 </html>
