@@ -70,7 +70,6 @@
           <AlternatingRowStyle BackColor="PaleGoldenrod" />
           <Columns>
               <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Eliminar" ShowHeader="True" Text="Eliminar ingrediente" />
-              <asp:BoundField DataField="pruebaa" HeaderText="Prueba" SortExpression="pruebaa" />
           </Columns>
           <FooterStyle BackColor="Tan" />
           <HeaderStyle BackColor="Tan" Font-Bold="True" />
@@ -82,12 +81,10 @@
           <SortedDescendingHeaderStyle BackColor="#C2A47B" />
 </asp:GridView>
 
-        <br />
-        <br />
         <p>
-        <asp:Button ID="btEliminarTodo" runat="server" OnClick="btEliminarTodo_Click" Text="Eliminar todo" style="position: absolute; bottom: 205px; right: 22px;" />
-
-        </p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
 
     </form>
 </body>
