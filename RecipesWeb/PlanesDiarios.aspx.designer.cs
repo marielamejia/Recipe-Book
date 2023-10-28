@@ -42,13 +42,13 @@ namespace RecipesWeb
         protected global::System.Web.UI.WebControls.Button btCrearPlan;
 
         /// <summary>
-        /// ddPlanes control.
+        /// ddPlan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddPlanes;
+        protected global::System.Web.UI.WebControls.DropDownList ddPlan;
 
         /// <summary>
         /// gvRecetasDelPlan control.

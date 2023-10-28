@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,6 +17,7 @@ namespace RecipesWeb
             {
                 llenarPlanes();
             }
+            
         }
         protected void btnUsuario_Click(object sender, EventArgs e)
         {
@@ -70,7 +72,19 @@ namespace RecipesWeb
 
         protected void ddPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SqlConnection con = Conexion.agregarConexion();
+            if (con != null)
+            { 
+                String var = ddPlan.SelectedValue;
+                string query = String.Format("SELECT Receta.nombre, RecetaPlan.idReceta FROM Receta JOIN RecetaPlan ON Receta.idReceta = RecetaPlan.idReceta WHERE RecetaPlan.idPlan ={0}", Int16.Parse(var));
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                gvRecetasDelPlan.DataSource = rd;
+                gvRecetasDelPlan.DataBind();
+                rd.Close();
+                con.Close();
 
+            }
         }
 
         protected void gvRecetasDelPlan_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,10 +100,12 @@ namespace RecipesWeb
                 String query = String.Format("SELECT nombre, idPlan FROM PlanDia WHERE idUsuario={0}", Session["id"]);
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader rd = cmd.ExecuteReader();
-                ddPlanes.DataSource = rd;
-                ddPlanes.DataTextField = "nombre";
-                ddPlanes.DataValueField = "idPlan";
-                ddPlanes.DataBind();
+                ddPlan.DataSource = rd;
+                ddPlan.DataTextField = "nombre";
+                ddPlan.DataValueField = "idPlan";
+                ddPlan.DataBind();
+                rd.Close();
+                con.Close();
             }
         }
     }

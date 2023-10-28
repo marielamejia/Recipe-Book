@@ -53,6 +53,21 @@
             align-items: center;
             justify-content: center;
         }
+        .button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .centrarGV {
+        margin: 0 auto;
+    }
     </style>
 </head>
 <body>
@@ -66,21 +81,27 @@
             <asp:TextBox ID="txCrearPlan" runat="server"></asp:TextBox>
 &nbsp;<asp:Button ID="btCrearPlan" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" CssClass="button" OnClick="btCrearPlan_Click" Text="Crear" />
             <br />
-            <h3>Tus Planes</h3>
-            <asp:DropDownList ID="ddPlanes" runat="server" OnSelectedIndexChanged="ddPlanes_SelectedIndexChanged" AutoPostBack="true">
+            <h3>Tus planes</h3>
+            <asp:DropDownList ID="ddPlan" runat="server" OnSelectedIndexChanged="ddPlanes_SelectedIndexChanged" AutoPostBack="true">
             </asp:DropDownList>
             <br />
-            <br />
-            <strong>Recetas del plan:</strong><br />
-        <asp:GridView ID="gvRecetasDelPlan" runat="server" OnSelectedIndexChanged="gvRecetasDelPlan_SelectedIndexChanged">
+            <h3>Tus recetas</h3>
+        <asp:GridView ID="gvRecetasDelPlan" runat="server" OnSelectedIndexChanged="gvRecetasDelPlan_SelectedIndexChanged" CssClass="centrarGV">
             <Columns>
                 <asp:BoundField DataField="idReceta" HeaderText="id" ReadOnly="True" SortExpression="idReceta" Visible="False" />
-                <asp:BoundField DataField="nombre" HeaderText="Receta" ReadOnly="True" SortExpression="nombre" />
                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Detalles" ShowHeader="True" Text="ver" />
             </Columns>
+            <FooterStyle BackColor="Tan" />
+            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+            <SortedAscendingCellStyle BackColor="#FAFAE7" />
+            <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+            <SortedDescendingCellStyle BackColor="#E1DB9C" />
+            <SortedDescendingHeaderStyle BackColor="#C2A47B" />
         </asp:GridView>
             <br />
-            <asp:Button ID="btAgregarAListaSuper" runat="server" OnClick="btAgregarAListaSuper_Click" Text="Agregar ingredientes de las recetas a la lista de súper" Width="712px" />
+            <asp:Button ID="btAgregarAListaSuper" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" CssClass="button" OnClick="btAgregarAListaSuper_Click" Text="Agregar a Super" Width="712px" />
             <br />
            <footer>
             <div class="button-container">
