@@ -41,6 +41,18 @@
             align-items: center;
             justify-content: center;
         }
+        .button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +89,7 @@
             <asp:Label ID="lbCuantos" runat="server"></asp:Label>
         </p>
         <p>
-            <asp:Button ID="btLimpiar" runat="server" OnClick="btLimpiar_Click" Text="Limpiar lista" Width="199px" />
+            <asp:Button ID="btLimpiar" runat="server" BackColor="#E1A144" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" CssClass="button"  font="sans-serif" OnClick="btLimpiar_Click" Text="Limpiar lista" Width="199px" />
         </p>
 
     </form>

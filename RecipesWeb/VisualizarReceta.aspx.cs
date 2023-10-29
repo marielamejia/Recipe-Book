@@ -119,5 +119,28 @@ namespace RecipesWeb
         {
             Response.Redirect("RecetasUsuario.aspx");
         }
+        protected void btnUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnLista_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void btnRecetas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnPlan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gvBuscarRecetas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

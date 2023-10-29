@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,7 +13,11 @@ namespace RecipesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                llenarPlanes();
+            }
+            
         }
 
         protected void btnMostrarPlan_Click(object sender, EventArgs e)
@@ -20,12 +26,28 @@ namespace RecipesWeb
         }
         protected void btnAgregarPlan_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btCrearPlan_Click(object sender, EventArgs e)
         {
-
+            SqlConnection con = Conexion.agregarConexion();
+            if (con != null)
+            {
+                string query = "SELECT Isnull(max(idPlan),0) FROM PlanDia";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                int id = 0;
+                while (rd.Read())
+                {
+                    id = rd.GetInt16(0) + new Random().Next(1, 5);
+                }
+                rd.Close();
+                query = String.Format("INSERT INTO PlanDia VALUES ({0}, '{1}', {2})", id, txCrearPlan.Text, Int16.Parse(Session["id"].ToString()));
+                cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+            }
+            con.Close();
         }
 
         protected void btAgregarAListaSuper_Click(object sender, EventArgs e)
@@ -33,9 +55,21 @@ namespace RecipesWeb
 
         }
 
-        protected void gvMostrarPlanes_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SqlConnection con = Conexion.agregarConexion();
+            if (con != null)
+            { 
+                String var = ddPlan.SelectedValue;
+                string query = String.Format("SELECT Receta.nombre, RecetaPlan.idReceta FROM Receta JOIN RecetaPlan ON Receta.idReceta = RecetaPlan.idReceta WHERE RecetaPlan.idPlan ={0}", Int16.Parse(var));
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                gvRecetasDelPlan.DataSource = rd;
+                gvRecetasDelPlan.DataBind();
+                rd.Close();
+                con.Close();
 
+            }
         }
 
         protected void gvRecetasDelPlan_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,6 +92,36 @@ namespace RecipesWeb
         protected void btnPlan_Click(object sender, EventArgs e)
         {
             Response.Redirect("PlanesDiarios.aspx");
+
+        protected void llenarPlanes()
+        {
+            SqlConnection con = Conexion.agregarConexion();
+            if (con != null)
+            {
+                String query = String.Format("SELECT nombre, idPlan FROM PlanDia WHERE idUsuario={0}", Session["id"]);
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader rd = cmd.ExecuteReader();
+                ddPlan.DataSource = rd;
+                ddPlan.DataTextField = "nombre";
+                ddPlan.DataValueField = "idPlan";
+                ddPlan.DataBind();
+                rd.Close();
+                con.Close();
+            }
+        }
+
+        protected void gvRecetasDelPlan_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Detalles")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                string idReceta = gvRecetasDelPlan.DataKeys[index]["idReceta"].ToString();
+                // Guardamos en sesion para la pagina detallada de la receta
+                Session["idReceta"] = idReceta;
+
+                // Luego, puedes realizar cualquier otra lógica necesaria, como redireccionar a una página de detalles.
+                Response.Redirect("VisualizarReceta.aspx");
+            }
         }
     }
 }
