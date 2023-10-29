@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace RecipesStandalone
 {
+    //Clase que contiene toda la funcionalidad de las ventanas de nutriólogo
     class ClaseNutriologo
     {
-        //Atributos
+        //Atributos iguales a los campos de la tabla de Nutriólogo de la base de datos
         public String cedula { get; set; }
         public String nombre { get; set; }
         public String contrasena { get; set; }
@@ -22,7 +23,7 @@ namespace RecipesStandalone
         
 
         //Métodos y funciones 
-        public int addNutriologo(String cedula, String nombre, String contra)
+        public int addNutriologo(String cedula, String nombre, String contra) //recibe todos los atributos del nutriólogo a ergistrar
         {
             int res = 0;
             SqlConnection cnn = Conexion.agregarConexion();
@@ -32,7 +33,7 @@ namespace RecipesStandalone
             cnn.Close();
             return res;
         }
-        public int deleteNutriologo(String cedula)
+        public int deleteNutriologo(String cedula) //recibe la cédula del nutriólogo a eliminar
         {
             int res = 0;
             SqlConnection cnn;
@@ -42,7 +43,7 @@ namespace RecipesStandalone
             cnn.Close();
             return res;
         }
-        public List<ClaseNutriologo> ListarNutriologos()
+        public List<ClaseNutriologo> ListarNutriologos() //construye una lista con todos los nutriólogos en la base
         {
             List<ClaseNutriologo> lis = new List<ClaseNutriologo>();
             ClaseNutriologo n;

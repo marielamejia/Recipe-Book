@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace RecipesStandalone
 {
+    //Clase que contiene toda la funcionalidad de las ventanas de ingredientes
+     
     class Ingredient
     {
-        //defining the different attribute the object ingredient needs 
-
+        
+        //los atributos son iguales a los campos de la tabla Ingrediente de la base de datos
         public static Int16 folio = 100; 
         public Int16 ingredientId { get; set; }
         public String name { get; set; }
         public Decimal avgPrice { get; set; }
 
-        //constructors
+        //constructores
         public Ingredient()
         {
 
@@ -39,6 +41,7 @@ namespace RecipesStandalone
         //metodos y funciones
         public int addIngredient(Ingredient i)
         {
+            //se realiza un insert con todos los parámetros del ingrediente
             int res = 0;
             SqlConnection con;
             SqlCommand cmd;
@@ -49,7 +52,7 @@ namespace RecipesStandalone
             con.Close();
             return res;
         }
-        public int deleteIngredient(int ingredientId)
+        public int deleteIngredient(int ingredientId) //query de delete, según el id recibido
         {
             int res = 0;
             SqlConnection con;
@@ -59,7 +62,7 @@ namespace RecipesStandalone
             con.Close();
             return res;
         }
-        public int modify(Int16 clave, Decimal nuevoPrecio)
+        public int modify(Int16 clave, Decimal nuevoPrecio) //se reciben la clavev del ingrediente a modificar y el nuevo precio
         {
             int res = 0;
             SqlConnection con = Conexion.agregarConexion();
@@ -69,7 +72,7 @@ namespace RecipesStandalone
             return res;
         }
 
-        public List<Ingredient> IngredientSearch(String name)
+        public List<Ingredient> IngredientSearch(String name) //devuelve una lista de objetos co todos los ingredientes de la base
         {
             List<Ingredient> lis = new List<Ingredient>();
             Ingredient a;
@@ -88,7 +91,7 @@ namespace RecipesStandalone
             return lis;
         }
 
-        public List<Ingredient> IngredientNames()
+        public List<Ingredient> IngredientNames() //devuelve una lista con los nombres de todos los ingredientes de la base
         {
             Ingredient a;
             List<Ingredient> lis = new List<Ingredient>();
