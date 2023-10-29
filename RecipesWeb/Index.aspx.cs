@@ -14,11 +14,13 @@ namespace RecipesWeb
 
         }
 
+        //para enviar a la ventana de login de usuario
         protected void btnUsuario_Click(object sender, EventArgs e)
         {
             Response.Redirect("usuarioLogin.aspx");
         }
 
+        //para enviar a la ventana de login de nutriólogo
         protected void btnNutriologo_Click(object sender, EventArgs e)
         {
             Response.Redirect("nutriologoLogin.aspx");

@@ -55,18 +55,21 @@ namespace RecipesWeb
                 con.Close();
             }
         }
-        protected void btAgregarIngsALista_Click(object sender, EventArgs e)
+
+        //para añadir la receta a un plan
+        protected void btAgregarRceta_Click(object sender, EventArgs e)
         {
-            if (ddPlanes.Items.Count > 0)
+            if (ddPlanes.Items.Count > 0) //se comprueba que haya planes
             {
                 SqlConnection con = Conexion.agregarConexion();
                 string query = $"insert into RecetaPlan values({Session["idReceta"]},{ddPlanes.SelectedValue})";
                 SqlCommand cmd = new SqlCommand(query, con);
-                if (cmd.ExecuteNonQuery() > 0)
-                {
+                //se intenta la inserción
+                try {
+                    cmd.ExecuteNonQuery();
                     lbMsg.Text = "Receta agregada al plan";
                 }
-                else
+                catch (Exception) //si hay error es porque ya estaba esta receta en el plan seleccionado
                 {
                     lbMsg.Text = "La receta ya se encontraba en este plan";
                 }
@@ -76,6 +79,7 @@ namespace RecipesWeb
                 lbMsg.Text = "Primero debes elegir un Plan. Si no hay ninguno, créalo desde la sección Plan";
             }
         }
+
         //para añadir los ingredientes de la receta a la lista de super del usuario:
         protected void btAddIngsALista_Click(object sender, EventArgs e)
         {
@@ -83,6 +87,7 @@ namespace RecipesWeb
             SqlCommand cmd;
             SqlDataReader rd;
             string query;
+            //se guardan en dos listas paralelas los ingredientes de la receta y su respectiva cantidad
             query = $"select Ingrediente.idIngrediente, numPiezas from Ingrediente inner join RecetaIngrediente on Ingrediente.idIngrediente = RecetaIngrediente.idIngrediente where idReceta = {Session["idReceta"]}";
             cmd = new SqlCommand(query, con);
             rd = cmd.ExecuteReader();
@@ -94,6 +99,7 @@ namespace RecipesWeb
                 piezasIng.Add(rd.GetDecimal(1));
             }
             rd.Close();
+            //se busca, si existe, la cantidad ya guardada en la lista de cada ingrediente
             Decimal piezasPrevias;
             for (int i = 0; i < IDs.Count; i++)
             {

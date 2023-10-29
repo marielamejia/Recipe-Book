@@ -79,7 +79,7 @@
             <strong>&nbsp;Guardar en un plan: </strong>
             <asp:DropDownList ID="ddPlanes" runat="server" AutoPostBack="True">
             </asp:DropDownList>
-            <asp:Button ID="btAgregarIngsALista" runat="server" Height="36px" Text="Agregar" Width="133px" OnClick="btAgregarIngsALista_Click" />
+            <asp:Button ID="btAgregarRceta" runat="server" Height="36px" Text="Agregar" Width="133px" OnClick="btAgregarRceta_Click" />
             &nbsp;&nbsp;&nbsp;
             <br />
             <br />
