@@ -89,16 +89,63 @@ insert into Ingrediente values (97,'Papaya', 20.00)
 insert into Ingrediente values (98,'Pi�a', 15.00)
 insert into Ingrediente values (99,'Pl�tano macho', 15.00)
 
---Alta de un Nutri�logo de prueba
-insert into Nutriologo values ('123', 'nutri', 'nutri')
+--PRUEBAS ES IMPORTANTE DAR DE ALTA EN ORDEN (POR TABLA)
 --Alta de un Usuario de prueba
-insert into Usuario values (1, 'usuario', 'usuario@gmail.com', 'usuario')
-
-
+INSERT INTO Usuario VALUES (1, 'usuario', 'usuario@gmail.com', 'usuario')
+--Registro de un nutriologo
+INSERT INTO Nutriologo VALUES(1, 'nutriAdmin', 'contrasena') 
+--Registro de algunas recetas
+INSERT INTO Receta VALUES(1, 'Receta base', 'Utilizada para dar de alta a las etiquetas')
+INSERT INTO Receta VALUES(2, 'Huevos balanceados', 'Revolver 2 huevos y cocer en un sarten. Acompañar con 200 gramos de arroz y medio aguacate. Calorías: 476-516 kcal. Proteínas totales: 18-20g. Grasas totales: 22-26g. Carbohidratos: 51-60 gramos')
+INSERT INTO Receta VALUES(3, 'Jugo amanecer', 'Exprimir 2 naranjas en la licuadora y agregar un pedazo de papaya. Para una consistencia más pesada agregar más papaya, para una consistencia más ligera, agregar agua. Calorías: 210-270 kcal. Proteínas: 5-6 gramos. Grasas: menos de 1 gramo. Carbohidratos: 50-65 gramos. Fibra: 10-13 gramos')
+INSERT INTO Receta VALUES(4,'Ensalada de fruta','Cortar una guayaba y dos manzanas en trozos pequeños. Revuelve en un plato hondo, como aderezo podria usar yogurt o miel. Calorías: 227-250 kcal. Proteínas: 3-4 gramos. Grasas: menos de 1 gramo. Carbohidratos: 59-67 gramos. Fibra: 11-15 gramos')
+--Conectar receta con nutriologo
+INSERT INTO RegistroReceta VALUES (2, 100, 1)
+INSERT INTO RegistroReceta VALUES (3, 101, 1)
+INSERT INTO RegistroReceta VALUES (4, 102, 1)
+--Conectar receta con ingredientes
+INSERT INTO RecetaIngrediente VALUES (2, 83, 1)
+INSERT INTO RecetaIngrediente VALUES (2, 88, 2)
+INSERT INTO RecetaIngrediente VALUES (2, 91, 1)
+INSERT INTO RecetaIngrediente VALUES (3, 97, 1)
+INSERT INTO RecetaIngrediente VALUES (3, 96, 2)
+INSERT INTO RecetaIngrediente VALUES (4, 93, 1)
+INSERT INTO RecetaIngrediente VALUES (4, 94, 2)
+--Registro de algunas etiquetas
+INSERT INTO RecetaEtiqueta VALUES(1,'Obesidad')
+INSERT INTO RecetaEtiqueta VALUES(1,'Diabetes')
+INSERT INTO RecetaEtiqueta VALUES(1,'Hipertensión')
+--Registro de algunas etiquetas en recetas
+INSERT INTO RecetaEtiqueta VALUES(2,'Diabetes')
+INSERT INTO RecetaEtiqueta VALUES(2,'Obesidad')
+INSERT INTO RecetaEtiqueta VALUES(3,'Hipertensión')
+INSERT INTO RecetaEtiqueta VALUES(4,'Obesidad')
+INSERT INTO RecetaEtiqueta VALUES(4,'Diabetes')
+--Registro de algunos Planes con usuarios
+INSERT INTO PlanDia VALUES(1, 'Lunes', 1)
+INSERT INTO PlanDia VALUES(2, 'Martes', 1)
+INSERT INTO PlanDia VALUES(3, 'Miercoles', 1)
+--Registro de planes con recetas
+INSERT INTO RecetaPlan VALUES(2, 1)
+INSERT INTO RecetaPlan VALUES(3, 1)
+INSERT INTO RecetaPlan VALUES(3, 2)
+INSERT INTO RecetaPlan VALUES(4, 2)
+INSERT INTO RecetaPlan VALUES(2, 3)
+--Registro de lista de super con usuario
+INSERT INTO ListaSuper VALUES(1, 5, 1)
+--Registro de ingredientes en lista
+INSERT INTO IngredienteListaSuper VALUES(94, 1, 2)
+INSERT INTO IngredienteListaSuper VALUES(97, 1, 1)
+INSERT INTO IngredienteListaSuper VALUES(83, 1, 1)
 --Queries para el proyecto standalone
-
 --Login
 select contrasena from Administrador where usuAdmin = '{}'
+
+--Queries para el registro
+SELECT distinct etiqueta FROM RecetaEtiqueta
+SELECT idIngrediente, nombre FROM Ingrediente
+
+SELECT COUNT(DISTINCT idReceta) FROM Receta
 
 --Ingrediente
 insert into Ingrediente values ({}, {}, '{}') --para alta
@@ -113,7 +160,7 @@ delete from Nutriologo where cedula = '{}' --para baja
 select * from Nutriologo --para ver todos
 
 
---Queries para el proyecto web
+--QUERIES PARA EL PROYECTO (NO EJECUTAR)
 
 --Login
 select Nutriologo.contrasena from Nutriologo where cedula = '{}' --no olvidar guardar c�dula en el Session
@@ -192,25 +239,3 @@ insert into RecetaEtiqueta values ({idReceta},'{etiqueta}')
 insert into RecetaIngrediente ({idReceta},{idIngrediente},{cantidad})
 	--se ir� recorriendo el grid de ingredientes seleccionados para esta parte
 
---Registro de un nutriologo
-INSERT INTO Nutriologo VALUES(1, 'nutriAdmin', 'contra') 
---Registro de algunas recetas
-INSERT INTO Receta VALUES(1, 'Receta base', 'Utilizada para dar de alta a las etiquetas')
-INSERT INTO Receta VALUES(2, 'Huevos balanceados', 'Revolver huevos y cocer en un sarten. Acompañar con arroz y aguacate')
---Conectar receta con nutriologo
-INSERT INTO RegistroReceta VALUES (2, 100, 1)
---Conectar receta con ingredientes
-INSERT INTO RecetaIngrediente VALUES (2, 83, 1)
-INSERT INTO RecetaIngrediente VALUES (2, 88, 2)
-INSERT INTO RecetaIngrediente VALUES (2, 91, 1)
---Registro de algunas etiquetas
-INSERT INTO RecetaEtiqueta VALUES(1,'Gluten-free')
-INSERT INTO RecetaEtiqueta VALUES(1,'Obesidad')
-INSERT INTO RecetaEtiqueta VALUES(1,'Diabetes')
-INSERT INTO RecetaEtiqueta VALUES(1,'Hipertensión')
-
---Queries para el registro
-SELECT distinct etiqueta FROM RecetaEtiqueta
-SELECT idIngrediente, nombre FROM Ingrediente
-
-SELECT COUNT(DISTINCT idReceta) FROM Receta
