@@ -10,4 +10,32 @@ The standalone app is used for the management (insertion, modification and delet
 
 # How to use
 
-Clone project to visual studios. Download SQL Query Documment. Execute queries indicated by the comments. Have fun trying out the functionality. 
+1. Open SQL Managment studio and download the file SQL_ProyectoRecetas.sql
+2. Execute all the queries as indicated by the comments on the file
+3. Open visual studio (microsoft) and clone the repository with the repository link (make sure to remember the path)
+4. Once the repository is cloned, close visual studio and find the folder in your machine
+5. There will be to big folders inside "RecipesWeb" and "RecipesStandalone"
+6. Open the folder of the application you would like to use
+7. Open the .sln of that folder
+8. It should open in visual studio. Within the solution establish a new data source (the data base you created in step 2)
+9. This way, should get a Data Source String
+10. Create a class called "Conexion" It should say "Conexion.cs"
+11. Add the following method WITH YOUR OWN DATA SOURCE
+    
+ public static SqlConnection agregarConexion()
+        {
+            SqlConnection cnn;
+            try
+            {
+                cnn = new SqlConnection("Data Source=");
+                cnn.Open();
+                //MessageBox.Show("conectado");
+            }
+            catch (Exception ex)
+            {
+                cnn = null;
+            }
+            return cnn;
+        }
+        
+12. Execute the program and have fun testing it out!
