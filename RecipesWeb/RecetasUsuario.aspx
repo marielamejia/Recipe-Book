@@ -58,9 +58,9 @@
         <asp:CheckBoxList ID="cbFiltros" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" OnSelectedIndexChanged="cbFiltros_SelectedIndexChanged">
         </asp:CheckBoxList>
         <br />
-        <asp:GridView ID="gvBuscarRecetas" runat="server" OnSelectedIndexChanged="gvBuscarRecetas_SelectedIndexChanged" AutoGenerateColumns="False">
+        <asp:GridView ID="gvBuscarRecetas" runat="server" OnSelectedIndexChanged="gvBuscarRecetas_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="id">
             <Columns>
-                <asp:BoundField DataField="idReceta" HeaderText="id" ReadOnly="True" SortExpression="idReceta" Visible="False" />
+                <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" Visible="False" />
                 <asp:BoundField DataField="nombre" HeaderText="Nombre" ReadOnly="True" SortExpression="nombre" />
                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Mostrar" ShowHeader="True" Text="ver" />
             </Columns>

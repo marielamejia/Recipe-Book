@@ -12,23 +12,56 @@ namespace RecipesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             if (!IsPostBack)
             {
-                //cargar filtros
+                //se cargan todas las etiquetas existentes en los checkbox
                 SqlConnection con = Conexion.agregarConexion();
                 string query = $"select distinct etiqueta from RecetaEtiqueta";
                 SqlCommand cmd = new SqlCommand(query, con);
-                SqlDataReader rd = cmd.ExecuteReader();
-                cbFiltros.DataSource = rd;
+                cbFiltros.DataSource = cmd.ExecuteReader();
                 cbFiltros.DataTextField = "etiqueta";
                 cbFiltros.DataBind();
-                rd.Close();
                 con.Close();
+                //llenado del grid, aparecerán todas las recetas
+                llenaGrid();
             }
-            llenaGrid();
         }
 
+        //botón para visualizar con detalle una determinada receta
+        protected void gvBuscarRecetas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["idReceta"] = gvBuscarRecetas.SelectedValue; //se guarda el id de la receta seleccionada
+            Response.Redirect("VisualizarReceta.aspx");
+        }
+
+        protected void cbFiltros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            llenaGrid(); //se actualizan el grid
+        }
+
+        protected void btBuscar_Click(object sender, EventArgs e)
+        {
+            llenaGrid(); //se actualizan el grid
+        }
+
+        //método para mostrar recetas que coincidan con el nombre en la barra de búsqueda y cumplan todos los filtros seleccionados
+        private void llenaGrid()
+        {
+            SqlConnection con = Conexion.agregarConexion();
+            //se seleccionan las recetas con nombre similar a lo que esté escrito en la barra de búsqueda
+            string query = $"SELECT DISTINCT Receta.idReceta as id, nombre from Receta inner join RecetaEtiqueta on Receta.idReceta = RecetaEtiqueta.idReceta where nombre like '%{txBuscador.Text}%'";
+            //se añaden restricciones al query para cada filtro seleccionado
+            for (int i = 0; i < cbFiltros.Items.Count; i++)
+                if (cbFiltros.Items[i].Selected)
+                    query += $" and etiqueta = '{cbFiltros.Items[i].Text}'";
+            //llenado del grid
+            SqlCommand cmd = new SqlCommand(query, con);
+            gvBuscarRecetas.DataSource = cmd.ExecuteReader();
+            gvBuscarRecetas.DataBind();
+            con.Close();
+        }
+
+        //Botones del footer para navegar entre páginas del usuario
         protected void btnUsuario_Click(object sender, EventArgs e)
         {
             Response.Redirect("usuarioPrincipal.aspx");
@@ -39,40 +72,11 @@ namespace RecipesWeb
         }
         protected void btnRecetas_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("RecetasUsuario.aspx");
         }
         protected void btnPlan_Click(object sender, EventArgs e)
         {
             Response.Redirect("PlanesDiarios.aspx");
-        }
-
-        protected void gvBuscarRecetas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Session["idReceta"] = gvBuscarRecetas.SelectedRow.Cells[0];
-            Response.Redirect("VisualizarReceta.aspx");
-        }
-
-        protected void cbFiltros_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            llenaGrid();
-        }
-
-        protected void btBuscar_Click(object sender, EventArgs e)
-        {
-            llenaGrid();
-        }
-
-        private void llenaGrid()
-        {
-            SqlConnection con = Conexion.agregarConexion();
-            string query = $"SELECT DISTINCT receta.idReceta, nombre from Receta inner join RecetaEtiqueta on Receta.idReceta = RecetaEtiqueta.idReceta where nombre like '%{txBuscador.Text}%'";
-            for (int i = 0; i < cbFiltros.Items.Count; i++)
-                if (cbFiltros.Items[i].Selected)
-                    query += $" and etiqueta = '{cbFiltros.Items[i].Text}'";
-            SqlCommand cmd = new SqlCommand(query,con);
-            SqlDataReader rd = cmd.ExecuteReader();
-            gvBuscarRecetas.DataSource = rd;
-            gvBuscarRecetas.DataBind();
         }
     }
 }
