@@ -89,6 +89,7 @@ insert into Ingrediente values (97,'Papaya', 20.00)
 insert into Ingrediente values (98,'Pi�a', 15.00)
 insert into Ingrediente values (99,'Pl�tano macho', 15.00)
 
+
 --PRUEBAS ES IMPORTANTE DAR DE ALTA EN ORDEN (POR TABLA)
 --Alta de un Usuario de prueba
 INSERT INTO Usuario VALUES (1, 'usuario', 'usuario@gmail.com', 'usuario')
@@ -162,11 +163,6 @@ select * from Nutriologo --para ver todos
 
 --QUERIES PARA EL PROYECTO (NO EJECUTAR)
 
---Login
-select Nutriologo.contrasena from Nutriologo where cedula = '{}' --no olvidar guardar c�dula en el Session
-select Usuario.contrasena, idUsuario from Usuario where correo = '{}' --no olvidar guardar el id en el Session
-select idLista from ListaSuper where idUsuario = {Session["idUsuario"]} --tras el login de usuario
-
 --Recetas
 --para mostrar al inicio en el grid:
 select idReceta,nombre from Receta
@@ -238,4 +234,5 @@ insert into RecetaEtiqueta values ({idReceta},'{etiqueta}')
 	--se va recorriendo el checkboxlist y si est� seleccionada se hace la inserci�n
 insert into RecetaIngrediente ({idReceta},{idIngrediente},{cantidad})
 	--se ir� recorriendo el grid de ingredientes seleccionados para esta parte
+
 

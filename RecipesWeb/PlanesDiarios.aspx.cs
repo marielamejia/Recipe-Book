@@ -19,22 +19,7 @@ namespace RecipesWeb
             }
             
         }
-        protected void btnUsuario_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("usuarioPrincipal.aspx");
-        }
-        protected void btnLista_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ListaSuper.aspx");
-        }
-        protected void btnRecetas_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("RecetasUsuario.aspx");
-        }
-        protected void btnPlan_Click(object sender, EventArgs e)
-        {
-            //esta pag
-        }
+
         protected void btnMostrarPlan_Click(object sender, EventArgs e)
         {
             
@@ -91,6 +76,22 @@ namespace RecipesWeb
         {
 
         }
+        //Botones del footer para navegar entre páginas del usuario
+        protected void btnUsuario_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("usuarioPrincipal.aspx");
+        }
+        protected void btnLista_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ListaSuper.aspx");
+        }
+        protected void btnRecetas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecetasUsuario.aspx");
+        }
+        protected void btnPlan_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PlanesDiarios.aspx");
 
         protected void llenarPlanes()
         {
