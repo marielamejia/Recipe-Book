@@ -66,8 +66,8 @@
     <form id="form1" runat="server">
         <div>
             <div class="header">
-            </div>
             <h1>Tu cuenta</h1>
+            </div>
                 <br />
                 <label for="Nombre">Nombre:</label>
                 <asp:Label ID="lbNombre" runat="server" ForeColor="#FF6A6A"></asp:Label>  

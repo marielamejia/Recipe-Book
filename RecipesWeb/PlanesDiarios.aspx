@@ -47,8 +47,8 @@
     <form id="form1" runat="server">
         <div>
             <div class="header">
-            </div>
             <h2>Planes</h2>
+            </div>
             <br />
             Nuevo Plan:
             <asp:TextBox ID="txCrearPlan" runat="server"></asp:TextBox>

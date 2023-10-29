@@ -89,36 +89,10 @@ insert into Ingrediente values (97,'Papaya', 20.00)
 insert into Ingrediente values (98,'Pi�a', 15.00)
 insert into Ingrediente values (99,'Pl�tano macho', 15.00)
 
---Alta de un Nutri�logo de prueba
-insert into Nutriologo values ('123', 'nutri', 'nutri')
---Alta de un Usuario de prueba
-insert into Usuario values (1, 'usuario', 'usuario@gmail.com', 'usuario')
 
-
---Queries para el proyecto standalone
-
---Login
-select contrasena from Administrador where usuAdmin = '{}'
-
---Ingrediente
-insert into Ingrediente values ({}, {}, '{}') --para alta
-delete from Ingrediente where idIngrediente = {} --para baja
-select * from Ingrediente where nombre like '%{}%' --b�squeda
-select * from Ingrediente --para ver todos
-update Ingrediente set precioPromPorKg = {} where idIngrediente = {} --para actualizar el precio
-
---Nutr�logo
-insert into Nutriologo values ('{}', '{}', '{}') --para alta
-delete from Nutriologo where cedula = '{}' --para baja
-select * from Nutriologo --para ver todos
 
 
 --Queries para el proyecto web
-
---Login
-select Nutriologo.contrasena from Nutriologo where cedula = '{}' --no olvidar guardar c�dula en el Session
-select Usuario.contrasena, idUsuario from Usuario where correo = '{}' --no olvidar guardar el id en el Session
-select idLista from ListaSuper where idUsuario = {Session["idUsuario"]} --tras el login de usuario
 
 --Recetas
 --para mostrar al inicio en el grid:
@@ -192,6 +166,7 @@ insert into RecetaEtiqueta values ({idReceta},'{etiqueta}')
 insert into RecetaIngrediente ({idReceta},{idIngrediente},{cantidad})
 	--se ir� recorriendo el grid de ingredientes seleccionados para esta parte
 
+
 --Registro de un nutriologo
 INSERT INTO Nutriologo VALUES(1, 'nutriAdmin', 'contra') 
 --Registro de algunas recetas
@@ -208,6 +183,7 @@ INSERT INTO RecetaEtiqueta VALUES(1,'Gluten-free')
 INSERT INTO RecetaEtiqueta VALUES(1,'Obesidad')
 INSERT INTO RecetaEtiqueta VALUES(1,'Diabetes')
 INSERT INTO RecetaEtiqueta VALUES(1,'Hipertensión')
+INSERT INTO RecetaEtiqueta VALUES(2,'Diabetes')
 
 --Queries para el registro
 SELECT distinct etiqueta FROM RecetaEtiqueta
