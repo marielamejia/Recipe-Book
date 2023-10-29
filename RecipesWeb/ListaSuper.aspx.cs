@@ -11,7 +11,7 @@ namespace RecipesWeb
 {
     public partial class ListaSuper : System.Web.UI.Page
     {
-        
+        //para cargar los datos de la lista de súper en el grid 
         private void llenarGrid()
         {
             //se buscan nombre, precio y cantidad guardada de todos los ingredientes en la lista de super del usuario
@@ -23,13 +23,13 @@ namespace RecipesWeb
             gVListaSuper.DataSource = rd;
             gVListaSuper.DataBind();
             rd.Close();
-            //se busca el total de elementos
+            //se mustra también el total de elementos
             lbCuantos.Text = gVListaSuper.Rows.Count.ToString();
             con.Close();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            llenarGrid();
+            llenarGrid();//se llena el grid
         }
 
         //para eliminar un sólo ingrediente de la lista
@@ -48,7 +48,7 @@ namespace RecipesWeb
         //para vaciar por completo la lista
         protected void btLimpiar_Click(object sender, EventArgs e)
         {
-            //se elimina la información de la base de la lista del usuario
+            //se elimina toda la información de la lista del usuario
             SqlConnection con = Conexion.agregarConexion();
             string query = $"delete from IngredienteListaSuper where idLista = {Session["idLista"]}";
             SqlCommand cmd = new SqlCommand(query, con);

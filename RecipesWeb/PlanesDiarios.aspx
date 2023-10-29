@@ -75,6 +75,7 @@
         <div>
             <div class="header">
             <h2>Planes</h2>
+            </div>
             <h3>Crear plan</h3>
             Nombre:
             <asp:TextBox ID="txCrearPlan" runat="server"></asp:TextBox>
@@ -111,8 +112,6 @@
                 <asp:Button ID="btnLista" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Lista de Super" Width="140px" OnClick="btnLista_Click" />
             </div>
            </footer>
-        <div>
-        </div>
         </div>
     </form>
 </body>

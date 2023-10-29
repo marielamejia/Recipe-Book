@@ -15,42 +15,35 @@ namespace RecipesWeb
         {
             if (!IsPostBack)
             {
+                //se cargan los ingredientes registrados en la base y las etiquetas actualmente usadas
                 llenarEtiquetas();
                 llenarIngredientes();
             }
         }
 
-        protected void btnCuenta_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("nutriologoPrincipal.aspx");
-        }
-        protected void btnAgregar_Click(object sender, EventArgs e)
-        {
-            //boton de esta pagina
-        }
-        protected void btnModificar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("nutriologoModificaRecetas.aspx");
-        }
-
+        //para registra una receta
         protected void btnSubirReceta_Click(object sender, EventArgs e)
         {
             SqlConnection con = Conexion.agregarConexion();
             if (con != null)
             {
+                //se genera el siguiente id contando las recetas ya registradas
                 String queryCount = String.Format("SELECT COUNT(DISTINCT idReceta) FROM Receta");
                 SqlCommand cmdCount = new SqlCommand(queryCount, con);
                 int idNuevo = (int)cmdCount.ExecuteScalar() + 1;
                 cmdCount.ExecuteReader().Close();
 
+                //alta de la receta
                 String queryRegistro = String.Format("INSERT INTO Receta VALUES({0}, '{1}', '{2}')", idNuevo, txtNombreReceta.Text, txtInstrucciones.Text);
                 SqlCommand cmdRegistro = new SqlCommand(queryRegistro, con);
                 cmdRegistro.ExecuteNonQuery();
 
+                //creación del registro que une a la receta con el nutriólogo que la escribió
                 String queryReceta = String.Format("INSERT INTO RegistroReceta VALUES({0}, {1}, {2})", idNuevo, 100 + idNuevo, (string)Session["cedula"]);
                 SqlCommand cmdReceta = new SqlCommand(queryReceta, con);
                 cmdReceta.ExecuteNonQuery();
 
+                //se registran las etiquetas que satisface la receta según marcado en los checkbox
                 foreach (ListItem item in chkEtiquetas.Items)
                 {
                     if (item.Selected)
@@ -61,6 +54,7 @@ namespace RecipesWeb
                         cmdEtiqueta.ExecuteNonQuery();
                     }
                 }
+                //se registran los ingredientes que usa la receta según marcado en la lista
                 foreach (ListItem item in lstIngredientesAgregados.Items)
                 {
                     int ingredienteId = int.Parse(item.Value);
@@ -88,11 +82,13 @@ namespace RecipesWeb
                 }
                 con.Close();
             }
+            //aviso de que se realizó el alta
             txtNombreReceta.Text = "";
             txtInstrucciones.Text = "Se agregó la receta";
             lstIngredientesAgregados.Items.Clear();
         }
 
+        //para seleccionar un ingrediente como parte de la receta que se está creando:
         protected void btnAgregarIngrediente_Click(object sender, EventArgs e)
         {
             lstIngredientesAgregados.Items.Add(ddlIngredientes.SelectedItem);
@@ -131,6 +127,21 @@ namespace RecipesWeb
                 ddlIngredientes.DataBind();
             }
         }
+
+        //botones del footer para navegar las páginas de nutriólogo
+        protected void btnCuenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("nutriologoPrincipal.aspx");
+        }
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("nutriologoAgregaRecetas.aspx");
+        }
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("nutriologoModificaRecetas.aspx");
+        }
+
     }
 
 }

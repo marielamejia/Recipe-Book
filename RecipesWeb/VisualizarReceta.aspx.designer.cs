@@ -33,6 +33,15 @@ namespace RecipesWeb
         protected global::System.Web.UI.WebControls.Label lbNombre;
 
         /// <summary>
+        /// lbEtiquetas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbEtiquetas;
+
+        /// <summary>
         /// gvIngredientes control.
         /// </summary>
         /// <remarks>
@@ -40,15 +49,6 @@ namespace RecipesWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvIngredientes;
-
-        /// <summary>
-        /// listaEtiquetas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList listaEtiquetas;
 
         /// <summary>
         /// lbInstrucciones control.
@@ -96,12 +96,39 @@ namespace RecipesWeb
         protected global::System.Web.UI.WebControls.Button btAddIngsALista;
 
         /// <summary>
-        /// btVolver control.
+        /// btnUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btVolver;
+        protected global::System.Web.UI.WebControls.Button btnUsuario;
+
+        /// <summary>
+        /// btnRecetas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRecetas;
+
+        /// <summary>
+        /// btnPlan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPlan;
+
+        /// <summary>
+        /// btnLista control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLista;
     }
 }

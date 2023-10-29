@@ -33,13 +33,14 @@ namespace RecipesWeb
                 gvIngredientes.DataSource = rd;
                 gvIngredientes.DataBind();
                 rd.Close();
-                //llenado de lista de etiquetas
+                //se muestran las etiquetas
                 query = $"select etiqueta from RecetaEtiqueta where idReceta = {Session["idReceta"]}";
                 cmd = new SqlCommand(query, con);
                 rd = cmd.ExecuteReader();
-                listaEtiquetas.DataSource = rd;
-                listaEtiquetas.DataTextField = "etiqueta";
-                listaEtiquetas.DataBind();
+                while (rd.Read())
+                {
+                    lbEtiquetas.Text += rd.GetString(0) + "\t";
+                }
                 rd.Close();
                 //llenado dropdown list de planes del usuario
                 query = $"select idPlan, nombre from PlanDia where idUsuario = {Session["id"]}";
@@ -49,13 +50,14 @@ namespace RecipesWeb
                 ddPlanes.DataValueField = "idPlan";
                 ddPlanes.DataTextField = "nombre";
                 ddPlanes.DataBind();
+                ddPlanes.SelectedIndex = 0;
                 rd.Close();
                 con.Close();
             }
         }
         protected void btAgregarIngsALista_Click(object sender, EventArgs e)
         {
-            if (ddPlanes.SelectedIndex > 0)
+            if (ddPlanes.Items.Count > 0)
             {
                 SqlConnection con = Conexion.agregarConexion();
                 string query = $"insert into RecetaPlan values({Session["idReceta"]},{ddPlanes.SelectedValue})";
@@ -115,32 +117,21 @@ namespace RecipesWeb
         }
 
         //Botones del footer para navegar entre páginas del usuario
-        protected void btVolver_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("RecetasUsuario.aspx");
-        }
         protected void btnUsuario_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("usuarioPrincipal.aspx");
         }
-
         protected void btnLista_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("ListaSuper.aspx");
         }
         protected void btnRecetas_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("RecetasUsuario.aspx");
         }
-
         protected void btnPlan_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void gvBuscarRecetas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            Response.Redirect("PlanesDiarios.aspx");
         }
     }
 }

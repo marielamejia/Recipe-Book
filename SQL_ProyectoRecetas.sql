@@ -1,7 +1,7 @@
 create database BDnutricion
 use BDnutricion
 
---Creaci�n de tablas
+--Creacion de tablas
 
 create table Administrador(
 	usuAdmin varchar(20) not null primary key,
@@ -112,11 +112,10 @@ INSERT INTO RecetaIngrediente VALUES (3, 97, 1)
 INSERT INTO RecetaIngrediente VALUES (3, 96, 2)
 INSERT INTO RecetaIngrediente VALUES (4, 93, 1)
 INSERT INTO RecetaIngrediente VALUES (4, 94, 2)
---Registro de algunas etiquetas
+--Registro de algunas etiquetas en recetas
 INSERT INTO RecetaEtiqueta VALUES(1,'Obesidad')
 INSERT INTO RecetaEtiqueta VALUES(1,'Diabetes')
 INSERT INTO RecetaEtiqueta VALUES(1,'Hipertensión')
---Registro de algunas etiquetas en recetas
 INSERT INTO RecetaEtiqueta VALUES(2,'Diabetes')
 INSERT INTO RecetaEtiqueta VALUES(2,'Obesidad')
 INSERT INTO RecetaEtiqueta VALUES(3,'Hipertensión')
@@ -138,101 +137,3 @@ INSERT INTO ListaSuper VALUES(1, 5, 1)
 INSERT INTO IngredienteListaSuper VALUES(94, 1, 2)
 INSERT INTO IngredienteListaSuper VALUES(97, 1, 1)
 INSERT INTO IngredienteListaSuper VALUES(83, 1, 1)
---Queries para el proyecto standalone
---Login
-select contrasena from Administrador where usuAdmin = '{}'
-
---Queries para el registro
-SELECT distinct etiqueta FROM RecetaEtiqueta
-SELECT idIngrediente, nombre FROM Ingrediente
-
-SELECT COUNT(DISTINCT idReceta) FROM Receta
-
---Ingrediente
-insert into Ingrediente values ({}, {}, '{}') --para alta
-delete from Ingrediente where idIngrediente = {} --para baja
-select * from Ingrediente where nombre like '%{}%' --b�squeda
-select * from Ingrediente --para ver todos
-update Ingrediente set precioPromPorKg = {} where idIngrediente = {} --para actualizar el precio
-
---Nutr�logo
-insert into Nutriologo values ('{}', '{}', '{}') --para alta
-delete from Nutriologo where cedula = '{}' --para baja
-select * from Nutriologo --para ver todos
-
-
---QUERIES PARA EL PROYECTO (NO EJECUTAR)
-
---Recetas
---para mostrar al inicio en el grid:
-select idReceta,nombre from Receta
---para el buscador (no olvides resetear filtros tras buscar):
-select Receta.idReceta,Receta.nombre from Receta where nombre like '{%nombreBuscado%}'
---para filtrar por etiquetas (se recorren los renglones del grid y si el query regresa tupla se a�ade al nuevo grid):
-select * from RecetaEtiqueta where idReceta = {idReceta} and etiqueta like '{etiquetaBuscada}'
---para mostrar la receta (en el lado derecho):
-select instrucciones from Receta where idReceta = {idReceta} --para instrucciones
-select etiqueta from RecetaEtiqueta where idReceta = {idReceta} --para las etiquetas (vaciar en una lista)
-select Ingrediente.nombre, RecetaIngrediente.numPiezas from RecetaIngrediente inner join Ingrediente 
-	on RecetaIngrediente.idIngrediente = Ingrediente.idIngrediente where idReceta = {idReceta} 
-	--para listar ingredientes en un grid (el id va invisible)
---para a�adir la receta a un plan semanal:
-select idPlan, nombre from PlanDia where idUsuario = {Session["idUsuario"]} --para llenar una dropdownlist
-insert into RecetaPlan values ({idReceta},{idPlan}) --para agregar, si hay error es porque ya estab a�adida
-
---Planes Diarios
---para mostrar los planes activos (grid):
-select idPlan, nombre from PlanDiario where idUsuario = {Session["idUsuario"]}
---para listar las recetas de un plan al picarle en el bot�n del respectivo rengl�n:
-select Receta.idReceta,Receta.nombre from Receta inner join RecetaPlan on Receta.idReceta = RecetaPlan.idReceta
-	where RecetaPlan.idPlan = {idPlan} --(vaciar en otro grid)
---para mostrar la receta (al picarle en el bot�n del respectivo rengl�n):
-select instrucciones from Receta where idReceta = {idReceta} --para instrucciones
-select etiqueta from RecetaEtiqueta where idReceta = {idReceta} --para las etiquetas
-select Ingrediente.nombre, RecetaIngrediente.numPiezas from RecetaIngrediente inner join Ingrediente 
-	on RecetaIngrediente.idIngrediente = Ingrediente.idIngrediente where idReceta = {idReceta} 
-	--para listar ingredientes (en un tercer grid, el id va invisible)
---para a�adir los ingredientes a la lista al picarle en el bot�n de su respectivo rengl�n:
-select numPiezas from IngredienteListaSuper where idLista = {"Session["idLista"]"} and idIngrediente = {idIngrediente}
-	--para saber si ya estaba:
-update IngredienteListaSuper set numPiezas = {piezasAnteriores + piezasReceta} 
-	where idLista = {"Session["idLista"]"} and idIngrediente = {idIngrediente} --si ya se encontraba
-insert into IngredienteListaSuper values ({Session["idLista"]},{idIngrediente},{piezasReceta}) --si no se encontraba
-
---ListaSuper
---para mostrar ingredientes (en un gridview):
-select Ingrediente,idIngrediente, Ingrediente.nombre, Ingrediente.PrecioPromPorKilo, IngredienteLista.numPiezas
-	from Ingrediente inner join IngredienteLista on Ingrediente.idIngrediente = IngredienteLista.idIngrediente
-	where idLista = {idLista}
---para eliminar ingredientes (al picarle al bot�n de su respectivo rengl�n):
-delete from IngredienteLista where idLista = {Session["idLista"]} and idIngrediente = {idIngrediente}
---para limpiar la lista (en alg�n bot�n):
-delete from IngredienteLista where idLista = {Session["idLista"]}
-
---Nutri�logo
---mostrar recetas (en un gridview):
-select Receta.idReceta,Receta.nombre from Receta inner join RegistroReceta on Receta.idReceta = RegistroReceta.idReceta
-	where RegristroReceta.cedula = '{Session["cedula"]}'
---para mostrar la receta (al picarle en el bot�n del respectivo rengl�n):
-select instrucciones from Receta where idReceta = {idReceta} --para instrucciones
-select etiqueta from RecetaEtiqueta where idReceta = {idReceta} --para las etiquetas
-select Ingrediente.nombre, RecetaIngrediente.numPiezas from RecetaIngrediente inner join Ingrediente 
-	on RecetaIngrediente.idIngrediente = Ingrediente.idIngrediente where idReceta = {idReceta} 
-	--para listar ingredientes (en un tercer grid, el id va invisible)
---Crear una nueva receta (va en otra p�gina distinta a la de mostrar)
---para mostrar los ingredientes con los que trabajar (en un grid con el id invisible y columna de bot�n para agregar):
-select idIngrediente,nombre from Ingrediente
-	--al dar click en el bot�n de agregar el rengl�n debe copiarse en un segundo grid casi igual pero que en vez de 
-	--bot�n para agregar tenga un campo en blanco para que se escriba la cantidad (se ingresa en piezas, no en gramos)
---para llenar el checkboxlist con las etiquetas:
-select distinct etiqueta from RecetaEtiqueta
---para el alta de la receta (habr� que pensar bien en c�mo se genera el ID):
-insert into Receta values ({idReceta}, '{nombre}', '{instrucciones}')
-insert into RegistroReceta values ({idReceta},{idRegistro},'{Session["cedula"]') 
-	--maybe el id del registro puede ser el mismo que el de la etiqueta??
-insert into RecetaEtiqueta values ({idReceta},'{etiqueta}') 
-	--se va recorriendo el checkboxlist y si est� seleccionada se hace la inserci�n
-insert into RecetaIngrediente ({idReceta},{idIngrediente},{cantidad})
-	--se ir� recorriendo el grid de ingredientes seleccionados para esta parte
-
-

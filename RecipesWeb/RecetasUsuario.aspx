@@ -48,13 +48,6 @@
         <div>
             <div class="header">
             <h1>Recetas</h1>
-           <footer>
-            <div class="button-container">
-                <asp:Button ID="btnUsuario" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Perfil" Width="140px" OnClick="btnUsuario_Click" />
-                <asp:Button ID="btnLista" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Super" Width="140px" OnClick="btnLista_Click" />
-                <asp:Button ID="btnRecetas" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Recetas" Width="140px" OnClick="btnRecetas_Click" />
-                <asp:Button ID="btnPlan" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Planes" Width="140px" OnClick="btnPlan_Click" />
-            </div>
         </div>
         <br />
         <asp:TextBox ID="txBuscador" runat="server" Width="499px" BorderColor="Black" BorderWidth="2" Height="24px" style="margin-top: 0px"></asp:TextBox>
@@ -71,6 +64,7 @@
                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Mostrar" ShowHeader="True" Text="ver" />
             </Columns>
         </asp:GridView>
+            </div>
            <footer>
             <div class="button-container">
                 <asp:Button ID="btnUsuario" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Perfil" Width="140px" OnClick="btnUsuario_Click" />

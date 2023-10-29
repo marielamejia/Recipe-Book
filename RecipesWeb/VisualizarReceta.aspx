@@ -26,8 +26,8 @@
             color: white;
             text-align: center;
             position: fixed;
-            bottom: -284px;
-            left: -3px; 
+            bottom: 9px;
+            left: 2px; 
             width: 100%; 
         }
         .button-container {
@@ -54,6 +54,13 @@
             <asp:Label ID="lbNombre" runat="server"></asp:Label>
             <br />
             <br />
+            <strong>Etiquetas:<br />
+            </strong>
+            <asp:Label ID="lbEtiquetas" runat="server"></asp:Label>
+            <strong>
+            <br />
+            </strong>
+            <br />
             <strong>Ingredientes:</strong><br />
             <br />
         <asp:GridView ID="gvIngredientes" runat="server" CssClass="centered-gridview" style="margin: 0 auto; text-align: center;" AutoGenerateColumns="False" DataKeyNames="id">
@@ -65,10 +72,6 @@
             </Columns>
         </asp:GridView>
             <br />
-            <br />
-            <strong>Etiquetas:</strong><asp:BulletedList ID="listaEtiquetas" runat="server" EnableTheming="True">
-            </asp:BulletedList>
-            <br />
             <strong>Instrucciones:</strong><br />
             <asp:Label ID="lbInstrucciones" runat="server"></asp:Label>
             <br />
@@ -76,7 +79,7 @@
             <strong>&nbsp;Guardar en un plan: </strong>
             <asp:DropDownList ID="ddPlanes" runat="server" AutoPostBack="True">
             </asp:DropDownList>
-            <asp:Button ID="btAgregarIngsALista" runat="server" Height="42px" Text="Agregar" Width="133px" OnClick="btAgregarIngsALista_Click" />
+            <asp:Button ID="btAgregarIngsALista" runat="server" Height="36px" Text="Agregar" Width="133px" OnClick="btAgregarIngsALista_Click" />
             &nbsp;&nbsp;&nbsp;
             <br />
             <br />
@@ -85,9 +88,14 @@
             <br />
             <asp:Button ID="btAddIngsALista" runat="server" OnClick="btAddIngsALista_Click" Text="Agregar ingredientes a lista de súper" Width="484px" />
             <br />
-            <br />
-            <asp:Button ID="btVolver" runat="server" BackColor="#FF9900" OnClick="btVolver_Click" Text="Volver" />
-            <br />
+            <footer>
+            <div class="button-container">
+                <asp:Button ID="btnUsuario" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Perfil" Width="140px" OnClick="btnUsuario_Click" />
+                <asp:Button ID="btnRecetas" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Recetas" Width="140px" OnClick="btnRecetas_Click" />
+                <asp:Button ID="btnPlan" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Planes" Width="140px" OnClick="btnPlan_Click" />
+                <asp:Button ID="btnLista" runat="server" margin="12px" BackColor="Black" BorderWidth="4px" border-radius="6px" ForeColor="White" Height="50px" font-size="18px" font="sans-serif" Text="Lista de Super" Width="140px" OnClick="btnLista_Click" />
+            </div>
+           </footer>
         </div>
     </form>
 </body>

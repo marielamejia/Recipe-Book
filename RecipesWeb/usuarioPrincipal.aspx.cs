@@ -15,7 +15,7 @@ namespace RecipesWeb
         {
             if (!IsPostBack)
             {
-                //se muestran los datos del usuario en la ventana
+                //se buscan los datos del usuario y se muestran en la ventana
                 SqlConnection con = Conexion.agregarConexion();
                 string query = $"select nombre, correo, contrasena from Usuario where idUsuario = {Session["id"]}";
                 SqlCommand cmd = new SqlCommand(query, con);

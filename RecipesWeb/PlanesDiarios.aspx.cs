@@ -52,7 +52,45 @@ namespace RecipesWeb
 
         protected void btAgregarAListaSuper_Click(object sender, EventArgs e)
         {
-
+            SqlConnection con = Conexion.agregarConexion();
+            SqlCommand cmd;
+            SqlDataReader rd;
+            string query;
+            for (int j = 0; j<gvRecetasDelPlan.DataKeys.Count; j++)
+            {
+                Session["idReceta"] = gvRecetasDelPlan.DataKeys[j];
+                query = $"select Ingrediente.idIngrediente, numPiezas from Ingrediente inner join RecetaIngrediente on Ingrediente.idIngrediente = RecetaIngrediente.idIngrediente where idReceta = {Session["idReceta"]}";
+                cmd = new SqlCommand(query, con);
+                rd = cmd.ExecuteReader();
+                List<Int16> IDs = new List<short>();
+                List<Decimal> piezasIng = new List<decimal>();
+                while (rd.Read())
+                {
+                    IDs.Add(rd.GetInt16(0));
+                    piezasIng.Add(rd.GetDecimal(1));
+                }
+                rd.Close();
+                Decimal piezasPrevias;
+                for (int i = 0; i < IDs.Count; i++)
+                {
+                    query = $"select numPiezas from IngredienteListaSuper where idLista = {Session["idLista"]} and idIngrediente = {IDs[i]}";
+                    cmd = new SqlCommand(query, con);
+                    rd = cmd.ExecuteReader();
+                    if (rd.Read()) //el ingrediente ya se encontraba en la lista, sólo se actualiza la cantidad
+                    {
+                        piezasPrevias = rd.GetDecimal(0);
+                        query = $"update IngredienteListaSuper set numPiezas = {piezasIng[i] + piezasPrevias} where idLista = {Session["idLista"]} and idIngrediente = {IDs[i]}";
+                    }
+                    else //se registra un nuevo ingrediente en la lista
+                    {
+                        query = $"insert into IngredienteListaSuper values ({IDs[i]},{Session["idLista"]},{piezasIng[i]})";
+                    }
+                    rd.Close();
+                    cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            con.Close();
         }
 
         protected void ddPlanes_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,22 +130,20 @@ namespace RecipesWeb
         protected void btnPlan_Click(object sender, EventArgs e)
         {
             Response.Redirect("PlanesDiarios.aspx");
+        }
 
         protected void llenarPlanes()
         {
             SqlConnection con = Conexion.agregarConexion();
-            if (con != null)
-            {
-                String query = String.Format("SELECT nombre, idPlan FROM PlanDia WHERE idUsuario={0}", Session["id"]);
-                SqlCommand cmd = new SqlCommand(query, con);
-                SqlDataReader rd = cmd.ExecuteReader();
-                ddPlan.DataSource = rd;
-                ddPlan.DataTextField = "nombre";
-                ddPlan.DataValueField = "idPlan";
-                ddPlan.DataBind();
-                rd.Close();
-                con.Close();
-            }
+            String query = String.Format("SELECT nombre, idPlan FROM PlanDia WHERE idUsuario={0}", Session["id"]);
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader rd = cmd.ExecuteReader();
+            ddPlan.DataSource = rd;
+            ddPlan.DataTextField = "nombre";
+            ddPlan.DataValueField = "idPlan";
+            ddPlan.DataBind();
+            rd.Close();
+            con.Close();
         }
 
         protected void gvRecetasDelPlan_RowCommand(object sender, GridViewCommandEventArgs e)
